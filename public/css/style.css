@@ -1,6 +1,12 @@
+/* HOME */
+.home_title {
+    color: white;
+    text-align: center;
+}
+
 /* PARTENAIRES */
 
-body{
+body {
     background-color: black;
 }
 
@@ -9,7 +15,13 @@ body{
     color: white;
 }
 
-.ptn_ctn{
+.ptn_ctn {
     text-align: center;
     color: white;
+}
+
+.ptn_ctn img {
+    margin: 0px;
+    padding: 0px;
+    width: 200px;
 }

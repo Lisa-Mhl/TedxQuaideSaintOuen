@@ -7,9 +7,11 @@
     <h1 class="ptn_title">Partenaires</h1>
 
     <div class="ptn_ctn">
-        {% for item in partners %}
-            <p>Partenaires {{ item.category }}</p> <br>
-            <img src="{{ item.logo }}" alt="{{ item.name }}"> <br>
+        {% for category in categories %}
+            <p>Partenaires {{ category.name }}</p><br>
+            {% for item in partners %}
+                <img src="{{ item.logo }}" alt="{{ item.name }}"> <br>
+            {% endfor %}
         {% endfor %}
     </div>
 
