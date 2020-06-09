@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Partenaires{% endblock %}
+
+{% block body %}
+
+    <h1>Partenaires</h1>
+
+    {% for item in partners %}
+        {{ item.category }} <br>
+       <img src="{{ item.logo }}" alt="{{ item.name }}">
+    {% endfor %}
+
+    <h2> Intéressé pour devenir partenaire de TEDxSaintOuen ? </h2>
+
+{% endblock %}

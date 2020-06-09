@@ -27,6 +27,11 @@ class Partner
      */
     private $logo;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=CategoryPartner::class, inversedBy="partners")
+     */
+    private $category;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +57,18 @@ class Partner
     public function setLogo(string $logo): self
     {
         $this->logo = $logo;
+
+        return $this;
+    }
+
+    public function getCategory(): ?CategoryPartner
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?CategoryPartner $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }
