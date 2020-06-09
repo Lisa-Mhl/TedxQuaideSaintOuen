@@ -1,3 +1,7 @@
+.red{
+    color: #e62b1e;
+}
+
 /* HOME */
 .home_title {
     color: white;
@@ -13,15 +17,31 @@ body {
 .ptn_title {
     text-align: center;
     color: white;
+    padding-top: 2em;
+    font-size: 4em;
+    font-family: Helvetica, sans-serif;
 }
 
 .ptn_ctn {
     text-align: center;
     color: white;
+
 }
 
 .ptn_ctn img {
     margin: 0px;
     padding: 0px;
     width: 200px;
+}
+
+.ptn_ctg{
+    font-size: 1.5em;
+    font-family: Helvetica, sans-serif;
+}
+
+.ptn_contact {
+    text-align: center;
+    color: white;
+    font-size: 1.3em;
+    font-family: Helvetica, sans-serif;
 }

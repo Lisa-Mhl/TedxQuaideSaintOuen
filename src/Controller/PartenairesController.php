@@ -16,9 +16,8 @@ class PartenairesController extends AbstractController
     public function index(PartnerRepository $partnerRepository, CategoryPartnerRepository $categoryPartnerRepository)
     {
         return $this->render('partenaires/index.html.twig', [
-            'partners' => $partnerRepository->findAll(),
+            'partners' => $partnerRepository->findAll(), // MODIFIER PAR FIND BY !!
             'categories' => $categoryPartnerRepository->findAll(),
-
         ]);
     }
 }
