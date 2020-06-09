@@ -10,11 +10,12 @@
         {% for category in categories %}
             <p class="ptn_ctg">Partenaires {{ category.name }}</p><br>
             {% for item in partners %}
-                <img src="{{ item.logo }}" alt="{{ item.name }}"> <br>
+                <img src="{{ item.logo }}" alt="{{ item.name }}">
             {% endfor %}
         {% endfor %}
+        <br>
     </div>
 
-    <h2 class="ptn_contact"> Vous souhaitez devenir  partenaire de <br> <span class="red">TEDx</span> Saint-Ouen ? </h2>
+    <h2 class="ptn_contact"> Vous souhaitez devenir partenaire de <br> <span class="red">TEDx</span> Saint-Ouen ? </h2>
 
 {% endblock %}
