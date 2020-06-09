@@ -4,13 +4,15 @@
 
 {% block body %}
 
-    <h1>Partenaires</h1>
+    <h1 class="ptn_title">Partenaires</h1>
 
-    {% for item in partners %}
-        {{ item.category }} <br>
-       <img src="{{ item.logo }}" alt="{{ item.name }}">
-    {% endfor %}
+    <div class="ptn_ctn">
+        {% for item in partners %}
+            <p>Partenaires {{ item.category }}</p> <br>
+            <img src="{{ item.logo }}" alt="{{ item.name }}"> <br>
+        {% endfor %}
+    </div>
 
-    <h2> Intéressé pour devenir partenaire de TEDxSaintOuen ? </h2>
+    <h2 class="ptn_title"> Intéressé pour devenir partenaire de TEDxSaintOuen ? </h2>
 
 {% endblock %}
