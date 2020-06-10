@@ -9,7 +9,7 @@
         {% for category in categories %}
             <p class="ptn_ctg">Partenaires {{ category.name }}</p><br>
             {% for partner in category.partners %}
-                <img src="{{ partner.logo }}" alt="{{ partner.name }}">
+                <img id="team_pix" src="{{ partner.logo }}" alt="{{ partner.name }}">
             {% endfor %}
         {% endfor %}
         <br>
