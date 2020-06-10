@@ -2,7 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Speaker;
+use App\Entity\Talk;
 use App\Repository\CategoryPartnerRepository;
+use App\Repository\SpeakerRepository;
+use App\Repository\TalkRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\PartnerRepository;
@@ -27,6 +31,17 @@ class HomeController extends AbstractController
         return $this->render('home/partners.html.twig', [
             'partners' => $partnerRepository->findAll(),
             'categories' => $categoryPartnerRepository->findAll(),
+        ]);
+    }
+
+    /**
+     * @Route("/talks", name="talks", methods={"GET"})
+     */
+    public function talks(TalkRepository $talkRepository)
+    {
+
+        return $this->render('home/talk.html.twig', [
+            'talks' => $talkRepository->findAll(),
         ]);
     }
 }
