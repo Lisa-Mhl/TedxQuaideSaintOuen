@@ -90,6 +90,58 @@ body {
     margin-top: 5em;
 }
 
+/*apropos */
+.section_
+{
+    display: flex;
+}
+
+.title1
+{
+    margin-top: 215px;
+    text-align: center;
+    font-size: 65px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.title2
+{
+    text-align: center;
+    font-size: 65px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.para1
+{
+    max-width: 400px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.2em;
+}
+
+.fusion
+{
+    margin-left: -255px;
+}
+.apropos
+{
+    text-align: center;
+}
+
+.triangle
+{
+    display : inline-block;
+    height :0px;
+    width :0px;
+    border-bottom : 700px solid transparent;
+    border-left : 700px solid #e62b1e;
+}
+
+
 /* TALKS */
 
 .talks_banner {
