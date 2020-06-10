@@ -134,4 +134,28 @@ body {
     padding: 30px 16px;
     background-color: white;
 
+
+/* EQUIPES */
+
+.team_ctn {
+    text-align: center;
+    color: white;
+}
+
+.team_ctn img {
+    padding: 0px;
+    border-radius: 100% ;
+    height: 200px;
+    width: 200px;
+}
+
+.team_name {
+    font-size: 1.5em;
+    margin-bottom: 0px;
+}
+
+.team_job {
+    font-size: 1em;
+    margin-top: 10px;
+    padding-bottom: 20px;
 }

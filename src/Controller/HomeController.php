@@ -7,6 +7,7 @@ use App\Entity\Talk;
 use App\Repository\CategoryPartnerRepository;
 use App\Repository\SpeakerRepository;
 use App\Repository\TalkRepository;
+use App\Repository\TeamRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\PartnerRepository;
@@ -39,9 +40,17 @@ class HomeController extends AbstractController
      */
     public function talks(TalkRepository $talkRepository)
     {
-
         return $this->render('home/talk.html.twig', [
             'talks' => $talkRepository->findAll(),
+        ]);
+    }
+
+     * @Route("/equipes", name="equipes", methods={"GET"})
+     */
+    public function teams(TeamRepository $teamRepository)
+    {
+        return $this->render('home/teams.html.twig', [
+            'teams' => $teamRepository->findAll(),
         ]);
     }
 }

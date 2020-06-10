@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Equipes{% endblock %}
+
+{% block body %}
+
+    <h1 class="ptn_title">Equipes</h1>
+    <div class="team_ctn">
+        {% for team in teams %}
+            <img src="{{ team.photo }}">
+            <p class="team_name">{{ team.name }}</p>
+            <p class="team_job">  {{ team.job }}</p>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}
