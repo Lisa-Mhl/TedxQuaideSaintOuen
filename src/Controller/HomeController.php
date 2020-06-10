@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\CategoryPartnerRepository;
+use App\Repository\TeamRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\PartnerRepository;
@@ -29,4 +30,15 @@ class HomeController extends AbstractController
             'categories' => $categoryPartnerRepository->findAll(),
         ]);
     }
+
+    /**
+     * @Route("/equipes", name="equipes", methods={"GET"})
+     */
+    public function teams(TeamRepository $teamRepository)
+    {
+        return $this->render('home/teams.html.twig', [
+            'teams' => $teamRepository->findAll(),
+        ]);
+    }
+
 }
