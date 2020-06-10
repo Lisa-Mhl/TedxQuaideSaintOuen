@@ -29,4 +29,28 @@ class HomeController extends AbstractController
             'categories' => $categoryPartnerRepository->findAll(),
         ]);
     }
+
+
+
+    /**
+     * @Route("/apropos", name="apropos_de_nous")
+     */
+    public function about()
+    {
+        return $this->render('apropos_de_nous/index.html.twig', [
+            'controller_name' => 'AproposDeNousController',
+        ]);
+    }
+
+
+    /**
+     * @Route("/footer", name="footer")
+     */
+    public function footer()
+    {
+        return $this->render('footer/footer.html.twig', [
+            'controller_name' => 'HomeController'
+        ]);
+    }
+
 }

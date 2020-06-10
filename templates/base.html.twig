@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    {% endblock %}
+</head>
+<nav class="navbar">
+    <a class="navlogo" href="/"><img alt="LOGO TEDx SAINT OUEN"></a>
+    <a class="navlink" href="/talks">Talks</a>
+    <a class="navlink" href="/partenaires">Partenaires</a>
+    <a class="navlink" href="/equipes">Equipes</a>
+    <a class="navlink" href="/speakers">Speakers</a>
+</nav>
+<body>
+{% block body %}{% endblock %}
+{% block javascripts %}{% endblock %}
+</body>
 </html>
