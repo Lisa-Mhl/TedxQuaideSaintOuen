@@ -7,11 +7,9 @@
     <h1 class="ptn_title">Partenaires</h1>
 
     <div class="ptn_ctn">
-        {% for category in categories %}
-            <p class="ptn_ctg">Partenaires {{ category.name }}</p><br>
-            {% for item in partners %}
-                <img src="{{ item.logo }}" alt="{{ item.name }}">
-            {% endfor %}
+        {% for partner in partners %}
+            <p class="ptn_ctg">Partenaires {{ partner.category.name }}</p><br>
+            <img src="{{ partner.logo }}" alt="{{ partner.name }}">
         {% endfor %}
         <br>
     </div>

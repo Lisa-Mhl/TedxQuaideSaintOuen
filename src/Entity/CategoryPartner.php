@@ -29,6 +29,24 @@ class CategoryPartner
      */
     private $partners;
 
+    private $logo;
+
+    /**
+     * @return mixed
+     */
+    public function getLogo()
+    {
+        return $this->logo;
+    }
+
+    /**
+     * @param mixed $logo
+     */
+    public function setLogo($logo): void
+    {
+        $this->logo = $logo;
+    }
+
     public function __toString()
     {
         return $this->getName();
