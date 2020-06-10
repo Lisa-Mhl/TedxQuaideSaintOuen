@@ -1,8 +1,47 @@
-.red{
+.red {
     color: #e62b1e;
 }
 
+/* NAVBAR */
+
+.navbar {
+    font-family: Helvetica;
+    font-size: 1.3em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.navlink {
+    color: white;
+    text-decoration: none;
+    padding-right: 0.5em;
+}
+
+.navlogo {
+    color: white;
+    text-decoration: none;
+    position: fixed;
+    top: 0.9em;
+    left: 0.5em;
+}
+
+.navbar,
+.navlink {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+
+.navlink:hover {
+    color: #e62b1e;
+}
+
+.navlogo:hover {
+    opacity: 70%;
+}
+
 /* HOME */
+
 .home_title {
     color: white;
     text-align: center;
@@ -30,12 +69,12 @@ body {
 
 .ptn_ctn img {
     padding: 0px;
-    width: 23symfony0px;
+    width: 23 symfony0px;
     height: 200px;
 
 }
 
-.ptn_ctg{
+.ptn_ctg {
     font-size: 1.5em;
     font-family: Helvetica, sans-serif;
     margin-top: 5em;
