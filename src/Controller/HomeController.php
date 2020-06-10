@@ -45,6 +45,7 @@ class HomeController extends AbstractController
         ]);
     }
 
+    /**
      * @Route("/equipes", name="equipes", methods={"GET"})
      */
     public function teams(TeamRepository $teamRepository)
