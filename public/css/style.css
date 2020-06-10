@@ -1,0 +1,50 @@
+.red{
+    color: #e62b1e;
+}
+
+/* HOME */
+.home_title {
+    color: white;
+    text-align: center;
+}
+
+/* PARTENAIRES */
+
+body {
+    background-color: black;
+}
+
+.ptn_title {
+    text-align: center;
+    color: white;
+    padding-top: 2em;
+    font-size: 4em;
+    font-family: Helvetica, sans-serif;
+}
+
+.ptn_ctn {
+    text-align: center;
+    color: white;
+
+}
+
+.ptn_ctn img {
+    padding: 0px;
+    width: 23symfony0px;
+    height: 200px;
+
+}
+
+.ptn_ctg{
+    font-size: 1.5em;
+    font-family: Helvetica, sans-serif;
+    margin-top: 5em;
+}
+
+.ptn_contact {
+    text-align: center;
+    color: white;
+    font-size: 1.3em;
+    font-family: Helvetica, sans-serif;
+    margin-top: 5em;
+}

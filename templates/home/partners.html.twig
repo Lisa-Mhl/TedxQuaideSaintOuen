@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Partenaires{% endblock %}
+
+{% block body %}
+
+    <h1 class="ptn_title">Partenaires</h1>
+
+    <div class="ptn_ctn">
+        {% for partner in partners %}
+            <p class="ptn_ctg">Partenaires {{ partner.category.name }}</p><br>
+            <img src="{{ partner.logo }}" alt="{{ partner.name }}">
+        {% endfor %}
+        <br>
+    </div>
+
+    <h2 class="ptn_contact"> Vous souhaitez devenir partenaire de <br> <span class="red">TEDx</span> Saint-Ouen ? </h2>
+
+{% endblock %}
