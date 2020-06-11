@@ -70,6 +70,13 @@ body {
     font-family: Helvetica, sans-serif;
 }
 
+.ptn_subtitle {
+    color: white;
+    font-family: Helvetica;
+    text-align: center;
+    font-size: 1.3em;
+}
+
 .ptn_ctn {
     text-align: center;
     color: white;
@@ -111,7 +118,6 @@ body {
     font-size: 65px;
     font-weight: bold;
     font-family: Helvetica, sans-serif;
-
 }
 
 .title2 {
@@ -120,7 +126,6 @@ body {
     font-weight: bold;
     font-family: Helvetica, sans-serif;
     color: white;
-
 }
 
 .para1 {
@@ -219,6 +224,7 @@ body {
     margin-top: 10px;
     padding-bottom: 20px;
 }
+
 
 /* CONTACT */
 
