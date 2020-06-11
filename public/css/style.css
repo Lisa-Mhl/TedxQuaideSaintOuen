@@ -38,8 +38,9 @@
 }
 
 .navlogo:hover {
-    opacity: 70%;
+    opacity: 90%;
     text-decoration: none;
+    color: white;
 }
 
 /* HOME */
