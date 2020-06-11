@@ -33,12 +33,40 @@ class HomeController extends AbstractController
 
     /**
      * @Route("/partenaires", name="partenaires", methods={"GET"})
+     * @param Request $request
+     * @param MailerInterface $mailer
+     * @return Response
+     * @throws TransportExceptionInterface
      */
-    public function partners(PartnerRepository $partnerRepository, CategoryPartnerRepository $categoryPartnerRepository)
+    public function partners(PartnerRepository $partnerRepository, CategoryPartnerRepository $categoryPartnerRepository, Request $request, MailerInterface $mailer)
     {
+        $contact = new Contact();
+        $form = $this->createForm(ContactType::class, $contact);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $contact->setCreatedAt(new \DateTime());
+            $entityManager->persist($contact);
+            $entityManager->flush();
+
+            $email = (new TemplatedEmail())
+                ->from($this->getParameter('mailer_from'))
+                ->to($contact->getEmail())
+                ->subject("Nous avons bien reçu votre message !")
+                ->htmlTemplate('emails/notification.html.twig')
+                ->context([
+                    'contact' => $contact,
+                ]);
+
+            $mailer->send($email);
+
+            return $this->redirectToRoute('home');
+        }
         return $this->render('home/partners.html.twig', [
             'partners' => $partnerRepository->findAll(),
             'categories' => $categoryPartnerRepository->findAll(),
+            'form' => $form->createView(),
         ]);
     }
   
