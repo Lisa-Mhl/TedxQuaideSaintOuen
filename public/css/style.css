@@ -73,6 +73,7 @@ body {
 .ptn_ctn {
     text-align: center;
     color: white;
+    justify-content: space-between;
 
 }
 
@@ -80,7 +81,8 @@ body {
     padding: 0px;
     width: 230px;
     height: 200px;
-
+    margin-right: 30px;
+    margin-left: 30px;
 }
 
 .ptn_ctg {
