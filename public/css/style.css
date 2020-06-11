@@ -187,6 +187,10 @@ body {
     background-color: white;
 }
 
+.row {
+    width: 100%;
+}
+
 /* EQUIPES */
 
 .team_ctn {
