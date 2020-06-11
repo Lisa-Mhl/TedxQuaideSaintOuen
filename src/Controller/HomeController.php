@@ -69,16 +69,6 @@ class HomeController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
-  
-    /**
-     * @Route("/apropos", name="apropos_de_nous")
-     */
-    public function about()
-    {
-        return $this->render('apropos_de_nous/index.html.twig', [
-            'controller_name' => 'AproposDeNousController',
-        ]);
-    }
 
     /**
      * @Route("/footer", name="footer")

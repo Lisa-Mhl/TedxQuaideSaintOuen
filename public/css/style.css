@@ -98,16 +98,17 @@ body {
 }
 
 /*apropos */
+
 .section_ {
     display: flex;
 }
 
 .title1 {
+    color: white;
     margin-top: 215px;
-    text-align: center;
     font-size: 65px;
     font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif;
 
 }
 
@@ -115,23 +116,19 @@ body {
     text-align: center;
     font-size: 65px;
     font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif;
+    color: white;
 
 }
 
 .para1 {
     max-width: 400px;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif;
     line-height: 1.2em;
-}
-
-.fusion {
-    margin-left: -255px;
-}
-
-.apropos {
-    text-align: center;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .triangle {
