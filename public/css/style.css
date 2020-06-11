@@ -21,8 +21,12 @@
     color: white;
     text-decoration: none;
     position: fixed;
-    top: 0.9em;
+    top: 0.4em;
     left: 0.5em;
+}
+
+#logonav {
+    width: 400px;
 }
 
 .navbar,
@@ -145,6 +149,7 @@ body {
     background-color: rgb(226, 42, 25);
     padding-bottom: 30px;
     padding-top: 2em;
+    margin-top: 0.8em;
 }
 
 .talks_banner img {
@@ -193,6 +198,9 @@ body {
 .team_ctn {
     text-align: center;
     color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em;
 }
 
 .team_ctn img {
@@ -232,5 +240,11 @@ form {
 
 .btn:hover {
     opacity: 80%;
+}
+
+#logocontact {
+    margin-left: 100px;
+    width: 400px;
+
 }
 

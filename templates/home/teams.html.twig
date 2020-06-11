@@ -5,13 +5,16 @@
 {% block body %}
 
     <h1 class="ptn_title">Equipes</h1>
-    <div class="team_ctn">
+    <div class="row">
         {% for team in teams %}
-            <img src="{{ team.photo }}">
-            <p class="team_name">{{ team.name }}</p>
-            <p class="team_job">  {{ team.job }}</p>
+            <div class="team_ctn col-3">
+                <img src="{{ team.photo }}">
+                <p class="team_name">{{ team.name }}</p>
+                <p class="team_job">  {{ team.job }}</p>
+            </div>
         {% endfor %}
     </div>
+
 
 
 {% endblock %}
