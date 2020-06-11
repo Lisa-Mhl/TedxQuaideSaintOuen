@@ -34,10 +34,12 @@
 
 .navlink:hover {
     color: #e62b1e;
+    text-decoration: none;
 }
 
 .navlogo:hover {
     opacity: 70%;
+    text-decoration: none;
 }
 
 /* HOME */
@@ -227,5 +229,13 @@ form{
 
 .form_ctn{
     color: white;
+}
+
+.btn{
+    background-color: #e62b1e;
+}
+
+.btn:hover{
+    opacity: 80%;
 }
 
