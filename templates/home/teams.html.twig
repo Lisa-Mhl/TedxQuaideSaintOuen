@@ -3,8 +3,10 @@
 {% block title %}Equipes{% endblock %}
 
 {% block body %}
-
     <h1 class="ptn_title">Equipes</h1>
+    </div>
+    <p class="ptn_subtitle"> TedxQuaideSaintOuen existe grâce au travail et aux efforts collectifs de notre équipe.<br>
+        Ensemble, nous créons des idées qui méritent d'être diffusées.</p>
     <div class="row">
         {% for team in teams %}
             <div class="team_ctn col-3">
@@ -15,6 +17,4 @@
         {% endfor %}
     </div>
 
-
-
-{% endblock %}
+    {% endblock %}
