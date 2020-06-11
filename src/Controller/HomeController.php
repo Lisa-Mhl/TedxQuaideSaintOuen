@@ -32,7 +32,7 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/partenaires", name="partenaires", methods={"GET"})
+     * @Route("/partenaires", name="partenaires")
      * @param Request $request
      * @param MailerInterface $mailer
      * @return Response
