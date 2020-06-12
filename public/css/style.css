@@ -2,6 +2,10 @@
     color: #e62b1e;
 }
 
+.bold{
+    font-weight: bold;
+}
+
 /* NAVBAR */
 
 .navbar {
@@ -144,6 +148,7 @@ body {
     width: 0px;
     border-bottom: 700px solid transparent;
     border-left: 700px solid #e62b1e;
+    margin-top: 1em;
 }
 
 
