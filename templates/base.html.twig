@@ -16,52 +16,46 @@
     <a class="navlink" href="/speakers">Speakers</a>
 </nav>
 <body>
+
 {% block body %}{% endblock %}
+
+<footer>
+    <div class="foot">
+        <div >
+            <h3 class="ftitle">A Propos de nous</h3>
+            <p class="para_foot_1"><a href="#">partenaire</a></p>
+            <p><a href="#">contact</a></p>
+            <p><a href="#">Mention légales</a></p>
+        </div>
+        <div class="mytesto">
+            <h3 class="ftitle">Réseaux sociaux</h3>
+            <div class="align_">
+                <a href="#"><img src="https://img.icons8.com/fluent/30/000000/instagram-new.png"/></a>
+                <a href="#"><img src="https://img.icons8.com/color/30/000000/facebook.png"/></a>
+                <a href="#"><img src="https://img.icons8.com/color/30/000000/linkedin-2.png"/></a>
+                <a href="#"><img src="https://img.icons8.com/color/30/000000/twitter-squared.png"/></a>
+                <a href="#"><img src="https://img.icons8.com/fluent/30/000000/youtube-play.png"/></a>
+            </div>
+            <h3 class="title_message"> newsletter</h3>
+            <form class="fdiv">
+
+                <p>
+                    <input type="email" id="email" name="email" placeholder="votre email" class="larg_">
+                    <input type="submit" value="envoyer" class="sub_position"></p>
+            </form>
+        </div>
+
+        <div>
+            <img src ="https://i.postimg.cc/x8FCsdgg/TEDx-Quaide-Saint-Ouen5.png" alt="LOGO TEDx SAINT OUEN" id="logonav"></a>
+        </div>
+    </div>
+    <hr class="ligne_">
+    <h4 class="foot_r"> ©TED<span class="color_x">x</span>SaintOuen</h4>
+</footer>
 {% block javascripts %}
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-{% endblock %} 
-
-
-
-{% block footer %}
-
-<footer>
-    <div class="foot">
-         <div >
-             <h3 class="ftitle">A Propos de nous</h3>
-           <p class="para_foot_1"><a href="#">partenaire</a></p>
-           <p><a href="#">contact</a></p>
-           <p><a href="#">Mention légales</a></p>
-      </div>
-       <div class="mytesto">
-        <h3 class="ftitle">Réseaux sociaux</h3>
-           <div class="align_">
-            <a href="#"><img src="https://img.icons8.com/fluent/30/000000/instagram-new.png"/></a>
-            <a href="#"><img src="https://img.icons8.com/color/30/000000/facebook.png"/></a>
-           <a href="#"><img src="https://img.icons8.com/color/30/000000/linkedin-2.png"/></a>
-           <a href="#"><img src="https://img.icons8.com/color/30/000000/twitter-squared.png"/></a>
-           <a href="#"><img src="https://img.icons8.com/fluent/30/000000/youtube-play.png"/></a>
-           </div>
-           <h3 class="title_message"> newsletter</h3>
-            <form class="fdiv">
-                
-                <p>
-                <input type="email" id="email" name="email" placeholder="votre email" class="larg_">
-                <input type="submit" value="envoyer" class="sub_position"></p>
-              </form>
-       </div>
-
-       <div>
-       <img src ="https://i.postimg.cc/x8FCsdgg/TEDx-Quaide-Saint-Ouen5.png" alt="LOGO TEDx SAINT OUEN" id="logonav"></a>
-        </div>
- </div> 
- <hr class="ligne_">
- <h4 class="foot_r"> ©TED<span class="color_x">x</span>SaintOuen</h4>	
-</footer>
-
-
 {% endblock %}
 </body>
 </html>
