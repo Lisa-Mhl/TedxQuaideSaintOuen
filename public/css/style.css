@@ -73,8 +73,32 @@
 
 .valeurs-ctn {
     background-color: white;
+    margin-top: 5em;
+    margin-bottom: 8em;
 }
 
+.feedback {
+    background-color: white;
+    margin-bottom: 8em;
+}
+
+.comment {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 0px;
+}
+
+.fb_name {
+    text-align: center;
+    font-size: 1em;
+}
+
+.fb_job {
+    text-align: center;
+    color: darkgray;
+    font-size: 0.9em;
+    margin-bottom: 2em;
+}
 
 /* PARTENAIRES */
 

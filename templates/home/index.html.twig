@@ -11,16 +11,25 @@
     {% endfor %}
 
     <div class="valeurs-ctn">
-        <h2 class="nosvaleurs">Nos Valeurs</h2>
-        {% for talk in talks %}
+        <h2 class="nosvaleurs">NOS VALEURS</h2>
+        {% for item in talks %}
             <div class="card_talks col-3">
-                <a href="{{ talk.video }}"><img src="{{ talk.photo }}" alt="Avatar" style="width:100%"></a>
+                <a href="{{ item.video }}"><img src="{{ item.photo }}" alt="Avatar" style="width:100%"></a>
                 <div class="container_talks">
-                    <h4><b>{{ talk.title }}</b></h4>
+                    <h4><b>{{ item.title }}</b></h4>
                 </div>
             </div>
         {% endfor %}
     </div>
+
+    <div class="feedback">
+        <h2 class="nosvaleurs">AVIS</h2>
+        {% for item in feedback %}
+            <p class="comment bold">"{{ item.comment }}"</p>
+            <p class="fb_name bold">{{ item.name }}, <span class="fb_job">{{ item.job }}</p>
+        {% endfor %}
+    </div>
+
     <section class="section_">
         <div class="triangle"></div>
         <div class="fusion">
