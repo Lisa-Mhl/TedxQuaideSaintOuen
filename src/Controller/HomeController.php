@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Contact;
 use App\Form\ContactType;
+use App\Repository\BannerRepository;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use App\Entity\Speaker;
 use App\Entity\Talk;
@@ -24,10 +25,11 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function index()
+    public function index(BannerRepository $bannerRepository)
     {
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
+            'banner' => $bannerRepository->findAll(),
         ]);
     }
 
