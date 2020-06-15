@@ -5,6 +5,7 @@
 .bold {
     font-weight: bold;
 }
+
 /* NAVBAR */
 
 .navbar {
@@ -56,6 +57,24 @@
     color: white;
     text-align: center;
 }
+
+.banner_ctn,
+#banner {
+    display: flex;
+    justify-content: center;
+    height: 450px;
+}
+
+.nosvaleurs {
+    text-align: center;
+    font-size: 4em;
+    font-family: Helvetica, sans-serif;
+}
+
+.valeurs-ctn {
+    background-color: white;
+}
+
 
 /* PARTENAIRES */
 

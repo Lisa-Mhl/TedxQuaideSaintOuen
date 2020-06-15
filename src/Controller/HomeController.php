@@ -25,11 +25,12 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function index(BannerRepository $bannerRepository)
+    public function index(BannerRepository $bannerRepository, TalkRepository $talkRepository)
     {
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'banner' => $bannerRepository->findAll(),
+            'talks' => $talkRepository->findAll(),
         ]);
     }
 
