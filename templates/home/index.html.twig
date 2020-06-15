@@ -23,15 +23,15 @@
     </div>
 
     <div class="feedback">
-        <h2 class="nosvaleurs">AVIS</h2>
+        <h2 class="nosvaleurs red">AVIS</h2>
         {% for item in feedback %}
             <p class="comment bold">"{{ item.comment }}"</p>
             <p class="fb_name bold">{{ item.name }}, <span class="fb_job">{{ item.job }}</p>
         {% endfor %}
     </div>
 
-    <div class="hp_partner">
-        <h2 class="nosvaleurs">NOS PARTENAIRES</h2>
+    <div class="ptn_ctn_hp">
+        <h2 class="hp_partners">NOS PARTENAIRES</h2>
         {% for partner in partners %}
             <img id="team_pix" src="{{ partner.logo }}" alt="{{ partner.name }}">
         {% endfor %}
