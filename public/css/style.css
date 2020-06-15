@@ -24,7 +24,7 @@
 .navlogo {
     color: white;
     text-decoration: none;
-    position: fixed;
+    position: absolute;
     top: 0.4em;
     left: 0.5em;
 }
@@ -56,6 +56,74 @@
 .home_title {
     color: white;
     text-align: center;
+}
+
+.banner_ctn,
+#banner {
+    display: flex;
+    justify-content: center;
+    height: 450px;
+}
+
+.nosvaleurs {
+    text-align: center;
+    font-size: 4em;
+    font-family: Helvetica, sans-serif;
+    margin-bottom: 1em;
+    padding-top: 0.5em;
+}
+
+.valeurs-ctn {
+    background-color: white;
+    margin-top: 5em;
+    padding-bottom: 2em;
+}
+
+.feedback {
+    background-color: white;
+    padding-bottom: 2em;
+}
+
+.comment {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 0px;
+}
+
+.fb_name {
+    text-align: center;
+    font-size: 1em;
+}
+
+.fb_job {
+    text-align: center;
+    color: darkgray;
+    font-size: 0.9em;
+}
+
+.hp_partners{
+    text-align: center;
+    font-size: 4em;
+    font-family: Helvetica, sans-serif;
+    color: white;
+    padding-top: 0.5em;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+}
+
+.ptn_ctn_hp{
+    text-align: center;
+    color: white;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+
+.ptn_ctn_hp img {
+    padding: 0px;
+    width: 130px;
+    height: 100px;
+    margin-right: 30px;
+    margin-left: 30px;
 }
 
 /* PARTENAIRES */
