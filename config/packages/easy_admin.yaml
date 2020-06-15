@@ -3,3 +3,4 @@ easy_admin:
         - App\Entity\Team
         - App\Entity\Partner
         - App\Entity\Talk
+        - App\Entity\Banner
