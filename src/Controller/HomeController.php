@@ -26,13 +26,14 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function index(BannerRepository $bannerRepository, TalkRepository $talkRepository, FeedbackRepository $feedbackRepository)
+    public function index(BannerRepository $bannerRepository, TalkRepository $talkRepository, FeedbackRepository $feedbackRepository, PartnerRepository $partnerRepository)
     {
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'banner' => $bannerRepository->findAll(),
             'talks' => $talkRepository->findAll(),
             'feedback' => $feedbackRepository->findAll(),
+            'partners' => $partnerRepository->findAll(),
         ]);
     }
 

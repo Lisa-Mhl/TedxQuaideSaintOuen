@@ -30,6 +30,13 @@
         {% endfor %}
     </div>
 
+    <div class="hp_partner">
+        <h2 class="nosvaleurs">NOS PARTENAIRES</h2>
+        {% for partner in partners %}
+            <img id="team_pix" src="{{ partner.logo }}" alt="{{ partner.name }}">
+        {% endfor %}
+    </div>
+
     <section class="section_">
         <div class="triangle"></div>
         <div class="fusion">
