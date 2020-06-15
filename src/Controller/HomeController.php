@@ -71,16 +71,6 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/footer", name="footer")
-     */
-    public function footer()
-    {
-        return $this->render('footer/footer.html.twig', [
-            'controller_name' => 'HomeController'
-        ]);
-    }
-
-    /**
      * @Route("/contact", name="contact")
      * @param Request $request
      * @param MailerInterface $mailer
