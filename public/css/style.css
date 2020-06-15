@@ -177,8 +177,8 @@ body {
 
 .talks_title {
     position: absolute;
-    margin-top: 1em;
-    font-size: 4em;
+    margin-top: 0.4em;
+    font-size: 6em;
 }
 
 .bloc_page_content_talks {
@@ -190,7 +190,7 @@ body {
 .card_talks {
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-left: 15em;
+    margin-left: 21em;
 }
 
 .container_talks {
