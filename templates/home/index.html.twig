@@ -20,20 +20,20 @@
         <h2 class="nosvaleurs">NOS VALEURS</h2>
         <div class="row">
             {% for item in articles %}
-                <div class="card_talks col-3">
-                    <img src="{{ item.photo }}" alt="{{ item.title }}">
-
-                    <video>
-                        <source src="{{ item.video }}" alt="{{ item.title }}" style="width:100%">
-                    </video>
-                    <div class="container_talks">
-
-                            <h4><b>{{ item.title }}</b></h4>
-                            <p>{{ item.content }}</p>
-                            <p>{{ item.author }}</p>
-                        </div>
+                <div class="card_article col-3" style="height: 500px">
+                    {% if item.photo %}
+                        <img class="card-img-top" id="pix_article" src="{{ item.photo }}" alt="{{ item.title }}">
+                    {% endif %}
+                    {% if item.video %}
+                        <iframe class="card-img-top" src="{{ item.video }}" width="440" height="360" frameborder="0"
+                                allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    {% endif %}
+                    <div class="card-body">
+                        <h4 class="bold">{{ item.title }}</h4>
+                        <p class="article">{{ item.content }}<br>
+                            <span class="author red">{{ item.author }}</span></p>
                     </div>
-
+                </div>
             {% endfor %}
         </div>
     </div>

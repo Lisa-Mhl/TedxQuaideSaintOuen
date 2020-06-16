@@ -107,6 +107,20 @@
     padding-bottom: 2em;
 }
 
+.article {
+    margin-top: 1em;
+}
+
+iframe {
+    margin: 0px;
+    padding: 0px;
+}
+
+.card_article {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .feedback {
     background-color: white;
     padding-bottom: 2em;
@@ -276,8 +290,6 @@ body {
     margin-top: 0.4em;
     font-size: 6em;
 }
-
-
 
 .bloc_page_content_talks {
     background-color: rgb(28, 28, 28);
