@@ -6,11 +6,11 @@ use App\Entity\Contact;
 use App\Entity\Tag;
 use App\Form\ContactType;
 use App\Form\SearchByTagType;
+use App\Repository\BannerRepository;
+use App\Repository\FeedbackRepository;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
-use App\Entity\Speaker;
 use App\Entity\Talk;
 use App\Repository\CategoryPartnerRepository;
-use App\Repository\SpeakerRepository;
 use App\Repository\TalkRepository;
 use App\Repository\TeamRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -26,10 +26,14 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function index()
+    public function index(BannerRepository $bannerRepository, TalkRepository $talkRepository, FeedbackRepository $feedbackRepository, PartnerRepository $partnerRepository)
     {
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
+            'banner' => $bannerRepository->findAll(),
+            'talks' => $talkRepository->findAll(),
+            'feedback' => $feedbackRepository->findAll(),
+            'partners' => $partnerRepository->findAll(),
         ]);
     }
 
