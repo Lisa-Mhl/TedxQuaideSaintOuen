@@ -20,6 +20,7 @@ use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\PartnerRepository;
+use App\Repository\SpeakerRepository;
 
 class HomeController extends AbstractController
 {
@@ -73,6 +74,16 @@ class HomeController extends AbstractController
             'partners' => $partnerRepository->findAll(),
             'categories' => $categoryPartnerRepository->findAll(),
             'form' => $form->createView(),
+        ]);
+    }
+    
+    /**
+     * @Route("/speakers", name="speakers")
+     */
+    public function speakers(SpeakerRepository $SpeakerRepository)
+    {
+        return $this->render('home/speakers.html.twig',[
+            'speakers'=> $SpeakerRepository->findAll()
         ]);
     }
 

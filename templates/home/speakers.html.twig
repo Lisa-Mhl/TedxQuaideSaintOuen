@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}speakers{% endblock %}
+
+{% block body %}
+
+    <h1 class="ptn_title">Speakers</h1>
+    <div class="ptn_ctn">
+        {% for speaker in speakers %}
+        <img  src="{{ speaker.photo }}" alt="{{ speaker.name }}">
+            <p> {{ speaker.name }}</p><br>
+            <p> {{ speaker.job }}</p><br>
+        {% endfor %}
+        <br>
+    </div>
+
+{% endblock %}
