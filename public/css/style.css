@@ -340,3 +340,8 @@ footer a {
     color: red;
 }
 
+.tag {
+    color: lightgrey;
+    font-weight: bold;
+}
+

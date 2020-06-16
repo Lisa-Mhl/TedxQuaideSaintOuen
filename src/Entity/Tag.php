@@ -6,6 +6,7 @@ use App\Repository\TagRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=TagRepository::class)
@@ -21,6 +22,8 @@ class Tag
 
     /**
      * @ORM\Column(type="string", length=20)
+     * @Assert\NotBlank(message="Ce champs ne peut pas etre vide")
+     * @Assert\Length(max="50", maxMessage="Ce champs est trop long")
      */
     private $name;
 
