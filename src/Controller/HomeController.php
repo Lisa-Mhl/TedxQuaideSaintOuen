@@ -137,6 +137,7 @@ class HomeController extends AbstractController
         $tag = new Tag();
         $form = $this->createForm(SearchByTagType::class, $tag);
         $form->handleRequest($request);
+
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->get('name')->getData();
             if ($data === null) {
