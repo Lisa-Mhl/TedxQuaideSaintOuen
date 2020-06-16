@@ -65,6 +65,34 @@
     height: 450px;
 }
 
+.banner_ctn,
+.link-banner {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.link-banner {
+    width: 45%;
+    justify-content: center;
+
+}
+
+.bannerBtn {
+    width: 15%;
+    background-color: #e62b1e;
+    margin-left: 2em;
+    border: none;
+    color: white;
+}
+
+.bannerBtn:hover {
+    opacity: 70%;
+}
+
 .nosvaleurs {
     text-align: center;
     font-size: 4em;
@@ -77,6 +105,20 @@
     background-color: white;
     margin-top: 5em;
     padding-bottom: 2em;
+}
+
+.article {
+    margin-top: 1em;
+}
+
+iframe {
+    margin: 0px;
+    padding: 0px;
+}
+
+.card_article {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .feedback {
@@ -101,7 +143,7 @@
     font-size: 0.9em;
 }
 
-.hp_partners{
+.hp_partners {
     text-align: center;
     font-size: 4em;
     font-family: Helvetica, sans-serif;
@@ -111,7 +153,7 @@
     padding-bottom: 1em;
 }
 
-.ptn_ctn_hp{
+.ptn_ctn_hp {
     text-align: center;
     color: white;
     justify-content: space-between;
