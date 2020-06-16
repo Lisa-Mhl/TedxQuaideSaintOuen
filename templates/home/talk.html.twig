@@ -12,7 +12,7 @@
         </div>
         <div class="row">
             <div class="float-left">
-                {{ form_row(form.name, { 'label': ' ', 'attr': {'placeholder': 'Tag'}}) }}
+                {{ form_row(form.name, { 'label': ' '}) }}
             </div>
             <div>
                 <button class="btn float-right">{{ button_label|default('Rechercher') }}</button>
@@ -36,7 +36,7 @@
                     </div>
                 {% endfor %}
             {% else %}
-                <h2>No talks match your tags</h2>
+                <h2>Nous n'avond rien trouvé</h2>
             {% endif %}
         </div>
     </div>

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Contact;
+use App\Entity\Speaker;
 use App\Entity\Tag;
 use App\Form\ContactType;
 use App\Form\SearchByTagType;
@@ -123,7 +124,7 @@ class HomeController extends AbstractController
 
         return $this->render('home/contact.html.twig', [
             'form' => $form->createView(),
-          ]);
+        ]);
     }
 
     /**
@@ -131,7 +132,7 @@ class HomeController extends AbstractController
      * @param Request $request
      * @return Response
      */
-    public function talks(Request $request) :Response
+    public function talks(Request $request): Response
     {
         $tag = new Tag();
         $form = $this->createForm(SearchByTagType::class, $tag);
@@ -140,7 +141,12 @@ class HomeController extends AbstractController
             $data = $form->get('name')->getData();
             $tag = $this->getDoctrine()->getRepository(Tag::class)->findOneBy(['name' => $data]);
             if ($tag === null) {
-                $talk = $this->getDoctrine()->getRepository(Talk::class)->findOneBy(['title' => $data]);
+                $speaker = $this->getDoctrine()->getRepository(Speaker::class)->findOneBy(['name' => $data]);
+                if ($speaker === null) {
+                    $talk = $this->getDoctrine()->getRepository(Talk::class)->findOneBy(['title' => $data]);
+                } else {
+                    $talk = $speaker->getTalks();
+                }
             } else {
                 $talk = $tag->getTalks();
             }
