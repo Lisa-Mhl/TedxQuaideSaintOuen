@@ -139,16 +139,20 @@ class HomeController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->get('name')->getData();
-            $tag = $this->getDoctrine()->getRepository(Tag::class)->findOneBy(['name' => $data]);
-            if ($tag === null) {
-                $speaker = $this->getDoctrine()->getRepository(Speaker::class)->findOneBy(['name' => $data]);
-                if ($speaker === null) {
-                    $talk = $this->getDoctrine()->getRepository(Talk::class)->findOneBy(['title' => $data]);
-                } else {
-                    $talk = $speaker->getTalks();
-                }
+            if ($data === null) {
+                $talk = $this->getDoctrine()->getRepository(Talk::class)->findAll();
             } else {
-                $talk = $tag->getTalks();
+                $tag = $this->getDoctrine()->getRepository(Tag::class)->findOneBy(['name' => $data]);
+                if ($tag === null) {
+                    $speaker = $this->getDoctrine()->getRepository(Speaker::class)->findOneBy(['name' => $data]);
+                    if ($speaker === null) {
+                        $talk = $this->getDoctrine()->getRepository(Talk::class)->findOneBy(['title' => $data]);
+                    } else {
+                        $talk = $speaker->getTalks();
+                    }
+                } else {
+                    $talk = $tag->getTalks();
+                }
             }
         } else {
             $talk = $this->getDoctrine()->getRepository(Talk::class)->findAll();
