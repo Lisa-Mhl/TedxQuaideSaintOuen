@@ -3,14 +3,14 @@
 namespace App\Controller;
 
 use App\Entity\Contact;
+use App\Entity\Tag;
 use App\Form\ContactType;
+use App\Form\SearchByTagType;
 use App\Repository\BannerRepository;
 use App\Repository\FeedbackRepository;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
-use App\Entity\Speaker;
 use App\Entity\Talk;
 use App\Repository\CategoryPartnerRepository;
-use App\Repository\SpeakerRepository;
 use App\Repository\TalkRepository;
 use App\Repository\TeamRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -113,14 +113,32 @@ class HomeController extends AbstractController
             'form' => $form->createView(),
           ]);
     }
-  
+
     /**
-     * @Route("/talks", name="talks", methods={"GET"})
+     * @Route("/talks", name="talks")
+     * @param Request $request
+     * @return Response
      */
-    public function talks(TalkRepository $talkRepository)
+    public function talks(Request $request) :Response
     {
+        $tag = new Tag();
+        $form = $this->createForm(SearchByTagType::class, $tag);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->get('name')->getData();
+            $tag = $this->getDoctrine()->getRepository(Tag::class)->findOneBy(['name' => $data]);
+            if ($tag === null) {
+                $talk = $this->getDoctrine()->getRepository(Talk::class)->findOneBy(['title' => $data]);
+            } else {
+                $talk = $tag->getTalks();
+            }
+        } else {
+            $talk = $this->getDoctrine()->getRepository(Talk::class)->findAll();
+        }
+
         return $this->render('home/talk.html.twig', [
-            'talks' => $talkRepository->findAll(),
+            'talks' => $talk,
+            'form' => $form->createView(),
         ]);
     }
 
