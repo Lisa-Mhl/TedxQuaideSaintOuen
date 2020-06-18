@@ -113,8 +113,7 @@ class HomeController extends AbstractController
      */
     public function talks(Request $request, Searcher $searcher) :Response
     {
-        $tag = new Tag();
-        $form = $this->createForm(SearchByTagType::class, $tag);
+        $form = $this->createForm(SearchByTagType::class);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
