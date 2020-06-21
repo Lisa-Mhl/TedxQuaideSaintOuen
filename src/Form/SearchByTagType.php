@@ -7,28 +7,13 @@ use Doctrine\DBAL\Types\TextType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Routing\RouterInterface;
 
 class SearchByTagType extends AbstractType
 {
-    /**
-     * @var RouterInterface
-     */
-    private $router;
-
-    public function __construct(RouterInterface $router)
-    {
-        $this->router = $router;
-    }
-
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', null, ['attr' => [
-                'class' => 'js-search-autocomplete',
-                'data-autocomplete-url' => $this->router->generate('admin_utility_tags')
-            ]
-            ]);
+            ->add('name', null, ['attr' => ['class' => 'js-search-autocomplete']]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
