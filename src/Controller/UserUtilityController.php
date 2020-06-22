@@ -3,6 +3,7 @@
 
 namespace App\Controller;
 
+use App\Repository\SpeakerRepository;
 use App\Repository\TagRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -12,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class UserUtilityController extends AbstractController
 {
     /**
-     * @Route("/admin/utility/tags", name="admin_utility_tags" , methods="GET")
+     * @Route("/utility/tags", name="utility_tags" , methods="GET")
      */
     public function getTagsApi(TagRepository $tagRepository, Request $request)
     {
@@ -20,6 +21,18 @@ class UserUtilityController extends AbstractController
 
         return $this->json([
             'tags' => $tags
+        ], 200, [], ['groups' => ['search']]);
+    }
+
+    /**
+     * @Route("/utility/speakers", name="utility_speakers" , methods="GET")
+     */
+    public function getSpeakersApi(SpeakerRepository $speakerRepository, Request $request)
+    {
+        $speakers = $speakerRepository->findAllMatching($request->query->get('query'));
+
+        return $this->json([
+            'speakers' => $speakers
         ], 200, [], ['groups' => ['search']]);
     }
 }

@@ -19,6 +19,31 @@ class SpeakerRepository extends ServiceEntityRepository
         parent::__construct($registry, Speaker::class);
     }
 
+    /**
+     * @return Speaker[]
+     */
+    public function findAllSpeaker()
+    {
+        return $this->createQueryBuilder('s')
+            ->orderBy('s.name', 'ASC')
+            ->getQuery()
+            ->execute()
+            ;
+    }
+
+    /**
+     * @return Speaker[]
+     */
+    public function findAllMatching(string $query, int $limit = 3)
+    {
+        return $this->createQueryBuilder('s')
+            ->andWhere('s.name LIKE :query')
+            ->setParameter('query', '%'.$query.'%')
+            ->setMaxResults($limit)
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Speaker[] Returns an array of Speaker objects
     //  */

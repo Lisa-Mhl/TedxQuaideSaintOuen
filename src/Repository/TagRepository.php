@@ -34,7 +34,7 @@ class TagRepository extends ServiceEntityRepository
     /**
      * @return Tag[]
      */
-    public function findAllMatching(string $query, int $limit = 5)
+    public function findAllMatching(string $query, int $limit = 3)
     {
         return $this->createQueryBuilder('t')
             ->andWhere('t.name LIKE :query')

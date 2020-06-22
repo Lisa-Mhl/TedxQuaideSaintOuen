@@ -26,7 +26,8 @@ class SearchByTagType extends AbstractType
         $builder
             ->add('name', null, ['attr' => [
                 'class' => 'js-search-autocomplete',
-                'data-autocomplete-url' => $this->router->generate('admin_utility_tags')
+                'data-tag-url' => $this->router->generate('utility_tags'),
+                'data-speaker-url' => $this->router->generate('utility_speakers')
             ]
             ]);
     }
