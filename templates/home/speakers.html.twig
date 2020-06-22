@@ -5,11 +5,13 @@
 {% block body %}
 
     <h1 class="ptn_title">Speakers</h1>
-    <div class="ptn_ctn">
+    <div class="speakers_ctn">
         {% for speaker in speakers %}
-        <img  src="{{ speaker.photo }}" alt="{{ speaker.name }}">
-            <p> {{ speaker.name }}</p><br>
-            <p> {{ speaker.job }}</p><br>
+            <div class="team_ctn">
+                <img src="{{ speaker.photo }}" alt="{{ speaker.name }}">
+                <p class="speakerName"> {{ speaker.name }}<br>
+                <p> {{ speaker.job }}</p><br>
+            </div>
         {% endfor %}
         <br>
     </div>
