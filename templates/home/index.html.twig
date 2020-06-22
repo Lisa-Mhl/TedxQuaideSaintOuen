@@ -3,6 +3,56 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
+
+    {% for item in banner %}
+        <div class="banner_ctn">
+            <img id="banner" src="{{ item.photo }}" alt="{{ item.title }}">
+            <div class="link-banner">
+                <p class="bannerLink">Regarder les Talks 2020 ici :</p>
+                <a href="{{ path('talks') }}">
+                    <button class="bannerBtn bold">Talks 2020</button>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="valeurs-ctn">
+        <h2 class="nosvaleurs">NOS VALEURS</h2>
+        <div class="row">
+            {% for item in articles %}
+                <div class="card_article col-3" style="height: 500px">
+                    {% if item.photo %}
+                        <img class="card-img-top" id="pix_article" src="{{ item.photo }}" alt="{{ item.title }}">
+                    {% endif %}
+                    {% if item.video %}
+                        <iframe class="card-img-top" src="{{ item.video }}" width="440" height="360" frameborder="0"
+                                allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    {% endif %}
+                    <div class="card-body">
+                        <h4 class="bold">{{ item.title }}</h4>
+                        <p class="article">{{ item.content }}<br>
+                            <span class="author red">{{ item.author }}</span></p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="feedback">
+        <h2 class="nosvaleurs red">AVIS</h2>
+        {% for item in feedback %}
+            <p class="comment bold">"{{ item.comment }}"</p>
+            <p class="fb_name bold">{{ item.name }}, <span class="fb_job">{{ item.job }}</p>
+        {% endfor %}
+    </div>
+
+    <div class="ptn_ctn_hp">
+        <h2 class="hp_partners">NOS PARTENAIRES</h2>
+        {% for partner in partners %}
+            <img id="team_pix" src="{{ partner.logo }}" alt="{{ partner.name }}">
+        {% endfor %}
+    </div>
+
     <section class="section_">
         <div class="triangle"></div>
         <div class="fusion">

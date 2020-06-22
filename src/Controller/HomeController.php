@@ -3,12 +3,18 @@
 namespace App\Controller;
 
 use App\Entity\Contact;
-use App\Form\ContactType;
-use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use App\Entity\Speaker;
+use App\Entity\Tag;
+use App\Form\ContactType;
+use App\Form\SearchByTagType;
+use App\Repository\ArticleRepository;
+use App\Repository\BannerRepository;
+use App\Repository\FeedbackRepository;
+use App\Service\Mailer;
+use App\Service\Searcher;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use App\Entity\Talk;
 use App\Repository\CategoryPartnerRepository;
-use App\Repository\SpeakerRepository;
 use App\Repository\TalkRepository;
 use App\Repository\TeamRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -18,27 +24,30 @@ use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\PartnerRepository;
+use App\Repository\SpeakerRepository;
 
 class HomeController extends AbstractController
 {
     /**
      * @Route("/", name="home")
+     * @return Response
      */
-    public function index()
+    public function index(BannerRepository $bannerRepository, ArticleRepository $articleRepository, FeedbackRepository $feedbackRepository, PartnerRepository $partnerRepository) :Response
     {
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
+            'banner' => $bannerRepository->findAll(),
+            'articles' => $articleRepository->findAll(),
+            'feedback' => $feedbackRepository->findAll(),
+            'partners' => $partnerRepository->findAll(),
         ]);
     }
 
     /**
      * @Route("/partenaires", name="partenaires")
-     * @param Request $request
-     * @param MailerInterface $mailer
      * @return Response
-     * @throws TransportExceptionInterface
      */
-    public function partners(PartnerRepository $partnerRepository, CategoryPartnerRepository $categoryPartnerRepository, Request $request, MailerInterface $mailer)
+    public function partners(PartnerRepository $partnerRepository, CategoryPartnerRepository $categoryPartnerRepository, Request $request, Mailer $mailer) :Response
     {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
@@ -49,17 +58,8 @@ class HomeController extends AbstractController
             $contact->setCreatedAt(new \DateTime());
             $entityManager->persist($contact);
             $entityManager->flush();
-
-            $email = (new TemplatedEmail())
-                ->from($this->getParameter('mailer_from'))
-                ->to($contact->getEmail())
-                ->subject("Nous avons bien reçu votre message !")
-                ->htmlTemplate('emails/notification.html.twig')
-                ->context([
-                    'contact' => $contact,
-                ]);
-
-            $mailer->send($email);
+            // CALL METHOD IN SERVICE TO SEND MAIL
+            $mailer->contactMail($contact);
 
             return $this->redirectToRoute('home');
         }
@@ -71,23 +71,21 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/footer", name="footer")
+     * @Route("/speakers", name="speakers")
+     * @return Response
      */
-    public function footer()
+    public function speakers(SpeakerRepository $SpeakerRepository) :Response
     {
-        return $this->render('footer/footer.html.twig', [
-            'controller_name' => 'HomeController'
+        return $this->render('home/speakers.html.twig',[
+            'speakers'=> $SpeakerRepository->findAll()
         ]);
     }
 
     /**
      * @Route("/contact", name="contact")
-     * @param Request $request
-     * @param MailerInterface $mailer
      * @return Response
-     * @throws TransportExceptionInterface
      */
-    public function contact(Request $request, MailerInterface $mailer): Response
+    public function contact(Request $request, Mailer $mailer) :Response
     {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
@@ -98,40 +96,46 @@ class HomeController extends AbstractController
             $contact->setCreatedAt(new \DateTime());
             $entityManager->persist($contact);
             $entityManager->flush();
-
-            $email = (new TemplatedEmail())
-                ->from($this->getParameter('mailer_from'))
-                ->to($contact->getEmail())
-                ->subject("Nous avons bien reçu votre message !")
-                ->htmlTemplate('emails/notification.html.twig')
-                ->context([
-                    'contact' => $contact,
-                ]);
-
-            $mailer->send($email);
+            // CALL METHOD IN SERVICE TO SEND MAIL
+            $mailer->contactMail($contact);
 
             return $this->redirectToRoute('home');
         }
 
         return $this->render('home/contact.html.twig', [
             'form' => $form->createView(),
-          ]);
-    }
-  
-    /**
-     * @Route("/talks", name="talks", methods={"GET"})
-     */
-    public function talks(TalkRepository $talkRepository)
-    {
-        return $this->render('home/talk.html.twig', [
-            'talks' => $talkRepository->findAll(),
         ]);
     }
 
     /**
-     * @Route("/equipes", name="equipes", methods={"GET"})
+     * @Route("/talks", name="talks")
+     * @return Response
      */
-    public function teams(TeamRepository $teamRepository)
+    public function talks(Request $request, Searcher $searcher) :Response
+    {
+        $tag = new Tag();
+        $form = $this->createForm(SearchByTagType::class, $tag);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->get('name')->getData();
+            // CALL METHOD IN SERVICE TO SEARCH TAG AND SPEAKER
+            $talk = $searcher->searchByTagSpeaker($data);
+        } else {
+            $talk = $this->getDoctrine()->getRepository(Talk::class)->findAll();
+        }
+
+        return $this->render('home/talk.html.twig', [
+            'talks' => $talk,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/equipes", name="equipes")
+     * @return Response
+     */
+    public function teams(TeamRepository $teamRepository) :Response
     {
         return $this->render('home/teams.html.twig', [
             'teams' => $teamRepository->findAll(),

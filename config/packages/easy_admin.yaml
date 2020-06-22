@@ -1,0 +1,6 @@
+easy_admin:
+    entities:
+        - App\Entity\Team
+        - App\Entity\Partner
+        - App\Entity\Talk
+        - App\Entity\Banner
