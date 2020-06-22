@@ -402,6 +402,16 @@ form {
 
 
 /*Footer*/
+.filtre_
+{
+    /* filter:sepia(100%) hue-rotate(950deg); */
+    filter: grayscale(100%);
+}
+
+.filtre_:hover
+{
+    filter: sepia(100%)  grayscale(100%);
+}
 .ftitle {
     color: white;
 }
@@ -414,6 +424,11 @@ footer {
 footer a {
     color: red;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+footer a:hover
+{
+    color: white;
 }
 
 .foot {
