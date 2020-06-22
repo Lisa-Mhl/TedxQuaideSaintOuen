@@ -63,6 +63,7 @@
     display: flex;
     justify-content: center;
     height: 450px;
+    max-width: 1400px;
 }
 
 .banner_ctn,
@@ -84,9 +85,10 @@
 .bannerBtn {
     width: 15%;
     background-color: #e62b1e;
-    margin-left: 2em;
+    margin-left: 3.2em;
     border: none;
     color: white;
+
 }
 
 .bannerBtn:hover {
@@ -107,13 +109,11 @@
     padding-bottom: 2em;
 }
 
-.article {
-    margin-top: 1em;
-}
-
-iframe {
-    margin: 0px;
-    padding: 0px;
+#pix_article{
+    height: 15em ;
+    margin-top: 4em;
+    margin-bottom: 4em;
+    width: 26em;
 }
 
 .card_article {
@@ -195,7 +195,7 @@ body {
     text-align: center;
     color: white;
     justify-content: space-between;
-
+    flex-direction: column;
 }
 
 .ptn_ctn img {
@@ -218,7 +218,7 @@ body {
     font-size: 1.3em;
     font-family: Helvetica, sans-serif;
     margin-top: 5em;
-}
+   }
 
 /*apropos */
 
@@ -367,6 +367,7 @@ form {
 
 .form_ctn {
     color: white;
+    flex-direction: column;
 }
 
 .btn {
@@ -382,6 +383,21 @@ form {
     width: 400px;
 
 }
+
+/*Speakers */
+.speakerName{
+    margin-top: 1em;
+    margin-bottom: 5px;
+}
+
+.speakers_ctn {
+    display: flex;
+    text-align: center;
+    color: white;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
 
 /*Footer*/
 .ftitle {
@@ -401,25 +417,18 @@ footer a {
 .foot {
     display: flex;
     justify-content: space-around;
-
-
 }
+
 
 /**/
 .align_ {
     display: flex;
     justify-content: space-around;
-
-
 }
 
 .fdiv {
-
-
     position: relative;
-
     right: 85px;
-
 }
 
 .larg_ {
@@ -452,7 +461,6 @@ footer a {
 
 .ligne_ {
     background: white;
-
 }
 
 .foot_r {
