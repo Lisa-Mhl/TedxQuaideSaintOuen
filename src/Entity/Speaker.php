@@ -6,6 +6,7 @@ use App\Repository\SpeakerRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=SpeakerRepository::class)
@@ -26,6 +27,7 @@ class Speaker
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Groups("search")
      */
     private $name;
 
