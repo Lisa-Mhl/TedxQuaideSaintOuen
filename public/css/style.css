@@ -195,7 +195,7 @@ body {
     text-align: center;
     color: white;
     justify-content: space-between;
-
+    flex-direction: column;
 }
 
 .ptn_ctn img {
@@ -368,6 +368,21 @@ form {
 
 }
 
+/*Speakers */
+.speakerName{
+    margin-top: 1em;
+    margin-bottom: 5px;
+}
+
+.speakers_ctn {
+    display: flex;
+    text-align: center;
+    color: white;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+
 /*Footer*/
 .ftitle {
     color: white;
@@ -386,25 +401,18 @@ footer a {
 .foot {
     display: flex;
     justify-content: space-around;
-
-
 }
+
 
 /**/
 .align_ {
     display: flex;
     justify-content: space-around;
-
-
 }
 
 .fdiv {
-
-
     position: relative;
-
     right: 85px;
-
 }
 
 .larg_ {
@@ -437,7 +445,6 @@ footer a {
 
 .ligne_ {
     background: white;
-
 }
 
 .foot_r {

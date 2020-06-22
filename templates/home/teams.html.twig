@@ -7,7 +7,7 @@
     </div>
     <p class="ptn_subtitle"> <span class="red bold">TEDx</span> QuaideSaintOuen existe grâce au travail et aux efforts collectifs de notre équipe.<br>
         Ensemble, nous créons des idées qui méritent d'être diffusées.</p>
-    <div class="row">
+
         {% for team in teams %}
             <div class="team_ctn col-3">
                 <img src="{{ team.photo }}">
@@ -15,6 +15,6 @@
                 <p class="team_job">  {{ team.job }}</p>
             </div>
         {% endfor %}
-    </div>
+
 
     {% endblock %}
