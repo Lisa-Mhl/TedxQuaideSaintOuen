@@ -25,7 +25,7 @@
                         <img class="card-img-top" id="pix_article" src="{{ item.photo }}" alt="{{ item.title }}">
                     {% endif %}
                     {% if item.video %}
-                        <iframe class="card-img-top" src="{{ item.video }}" width="440" height="360" frameborder="0"
+                        <iframe class="card-img-top" src="{{ item.video }}" height="300" frameborder="0"
                                 allow="autoplay; fullscreen" allowfullscreen></iframe>
                     {% endif %}
                     <div class="card-body">
@@ -44,6 +44,25 @@
             <p class="comment bold"><span class="red">"</span> {{ item.comment }} <span class="red">"</span></p>
             <p class="fb_name bold">{{ item.name }}, <span class="fb_job">{{ item.job }}</p><br>
         {% endfor %}
+
+        <p class="post_comment red">Poster un avis</p>
+
+        {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+        <div>
+            {{ form_errors(form) }}
+        </div>
+        <div>
+            {{ form_row(form.name, {'label': 'Prénom'}) }}
+        </div>
+        <div>
+            {{ form_row(form.job, {'label': 'Job'}) }}
+        </div>
+        <div class="message">
+            {{ form_row(form.comment, {'label': 'Commentaire'}) }}
+        </div>
+
+        <button class="btn">{{ button_label|default('Envoyer') }}</button>
+        {{ form_end(form) }}
     </div>
 
     <div class="ptn_ctn_hp">
@@ -53,12 +72,9 @@
         {% endfor %}
     </div>
 
-    <section class="section_">
-        <div class="triangle"></div>
-        <div class="fusion">
-            <h1 class="title1"> A propos de nous </h1>
-            <p class="para1">Osez le savoir est la traduction de « Sapere Aude », le cri de guerre du Siècle des
-                Lumières, aux XVIIe et XVIIIe siècles.</p>
-        </div>
-    </section>
+    <div class="edito_ctn">
+        <h1 class="edito_title"> A propos de nous </h1>
+        <img class="edito" src="https://i.postimg.cc/sx7SSPPL/screen.png" alt="edito">
+    </div>
+
 {% endblock %}

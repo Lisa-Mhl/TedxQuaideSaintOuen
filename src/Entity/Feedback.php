@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\FeedbackRepository;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -19,16 +20,21 @@ class Feedback
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Ce champ ne peut pas etre vide")
      */
     private $comment;
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Assert\NotBlank(message="Ce champ ne peut pas etre vide")
+     * @Assert\Length(max="50", maxMessage="Ce champ est trop long")
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Assert\Length(max="50", maxMessage="Ce champ est trop long")
+     * @Assert\NotBlank(message="Ce champ ne peut pas etre vide")
      */
     private $job;
 
@@ -72,4 +78,5 @@ class Feedback
 
         return $this;
     }
+
 }
