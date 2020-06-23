@@ -76,7 +76,7 @@
     margin-right: auto
 }
 
-.bannerLink{
+.bannerLink {
     margin-top: 1em;
 }
 
@@ -84,7 +84,7 @@
     width: 45%;
     background-color: #e62b1e;
     margin-left: 3.2em;
-     border: none;
+    border: none;
     color: white;
 }
 
@@ -115,6 +115,21 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.statistics,
+.stat {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.stat {
+    background-color: #e62b1e;
+    color: white;
+    width: 20%;
+    text-align: center;
+}
+
 
 .feedback {
     background-color: white;

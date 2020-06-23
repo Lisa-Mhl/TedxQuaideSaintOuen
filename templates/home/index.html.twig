@@ -5,7 +5,7 @@
 {% block body %}
 
     {% for item in banner %}
-        <div class="banner_ctn">
+        <div class="banner_ctn" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
             <img id="banner" src="{{ item.photo }}" alt="{{ item.title }}">
             <div class="link-banner">
                 <p class="bannerLink">Regarder les Talks 2020 ici :</p>
@@ -39,11 +39,16 @@
     </div>
 
     <div class="feedback">
+        <div class="statistics">
+            <div class="stat bold"> 100 <br>Participants</div>
+            <div class="stat bold"> 7 <br>Speakers</div>
+        </div>
         <h2 class="nosvaleurs red">AVIS</h2>
         {% for item in feedback %}
             <p class="comment bold"><span class="red">"</span> {{ item.comment }} <span class="red">"</span></p>
             <p class="fb_name bold">{{ item.name }}, <span class="fb_job">{{ item.job }}</p><br>
         {% endfor %}
+
 
         <p class="post_comment red">Poster un avis</p>
 
@@ -63,6 +68,8 @@
 
         <button class="btn">{{ button_label|default('Envoyer') }}</button>
         {{ form_end(form) }}
+    </div>
+
     </div>
 
     <div class="ptn_ctn_hp">
