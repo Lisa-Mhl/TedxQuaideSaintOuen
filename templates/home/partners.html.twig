@@ -3,8 +3,10 @@
 {% block title %}Partenaires{% endblock %}
 
 {% block body %}
+    <div class="talks_banner" xmlns="http://www.w3.org/1999/html">
+        <h1 class="ptn_title">Partenaires</h1>
+    </div>
 
-    <h1 class="ptn_title">Partenaires</h1>
     <div class="ptn_ctn">
         {% for category in categories %}
             <p class="ptn_ctg">Partenaires {{ category.name }}</p><br>
