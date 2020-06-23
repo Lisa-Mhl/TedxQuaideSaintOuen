@@ -3,9 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Contact;
+use App\Entity\Feedback;
 use App\Entity\Speaker;
 use App\Entity\Tag;
 use App\Form\ContactType;
+use App\Form\FeedBackType;
 use App\Form\SearchByTagType;
 use App\Repository\ArticleRepository;
 use App\Repository\BannerRepository;
@@ -32,14 +34,25 @@ class HomeController extends AbstractController
      * @Route("/", name="home")
      * @return Response
      */
-    public function index(BannerRepository $bannerRepository, ArticleRepository $articleRepository, FeedbackRepository $feedbackRepository, PartnerRepository $partnerRepository) :Response
+    public function index(BannerRepository $bannerRepository, ArticleRepository $articleRepository, Request $request, FeedbackRepository $feedbackRepository, PartnerRepository $partnerRepository): Response
     {
+        $feedback = new Feedback();
+        $form = $this->createForm(FeedBackType::class, $feedback);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($feedback);
+            $entityManager->flush();
+            return $this->redirectToRoute('home');
+        }
+
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'banner' => $bannerRepository->findAll(),
             'articles' => $articleRepository->findAll(),
             'feedback' => $feedbackRepository->findAll(),
             'partners' => $partnerRepository->findAll(),
+            'form' => $form->createView(),
         ]);
     }
 
@@ -47,7 +60,7 @@ class HomeController extends AbstractController
      * @Route("/partenaires", name="partenaires")
      * @return Response
      */
-    public function partners(PartnerRepository $partnerRepository, CategoryPartnerRepository $categoryPartnerRepository, Request $request, Mailer $mailer) :Response
+    public function partners(PartnerRepository $partnerRepository, CategoryPartnerRepository $categoryPartnerRepository, Request $request, Mailer $mailer): Response
     {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
@@ -74,10 +87,10 @@ class HomeController extends AbstractController
      * @Route("/speakers", name="speakers")
      * @return Response
      */
-    public function speakers(SpeakerRepository $SpeakerRepository) :Response
+    public function speakers(SpeakerRepository $SpeakerRepository): Response
     {
-        return $this->render('home/speakers.html.twig',[
-            'speakers'=> $SpeakerRepository->findAll()
+        return $this->render('home/speakers.html.twig', [
+            'speakers' => $SpeakerRepository->findAll()
         ]);
     }
 
@@ -85,7 +98,7 @@ class HomeController extends AbstractController
      * @Route("/contact", name="contact")
      * @return Response
      */
-    public function contact(Request $request, Mailer $mailer) :Response
+    public function contact(Request $request, Mailer $mailer): Response
     {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
@@ -111,7 +124,7 @@ class HomeController extends AbstractController
      * @Route("/talks", name="talks")
      * @return Response
      */
-    public function talks(Request $request, Searcher $searcher) :Response
+    public function talks(Request $request, Searcher $searcher): Response
     {
         $form = $this->createForm(SearchByTagType::class);
         $form->handleRequest($request);
@@ -134,7 +147,7 @@ class HomeController extends AbstractController
      * @Route("/equipes", name="equipes")
      * @return Response
      */
-    public function teams(TeamRepository $teamRepository) :Response
+    public function teams(TeamRepository $teamRepository): Response
     {
         return $this->render('home/teams.html.twig', [
             'teams' => $teamRepository->findAll(),

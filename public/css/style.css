@@ -62,8 +62,8 @@
 #banner {
     display: flex;
     justify-content: center;
-    height: 450px;
-    max-width: 1400px;
+    height: 600px;
+    max-width: 500px;
 }
 
 .banner_ctn,
@@ -76,19 +76,16 @@
     margin-right: auto
 }
 
-.link-banner {
-    width: 45%;
-    justify-content: center;
-
+.bannerLink{
+    margin-top: 1em;
 }
 
 .bannerBtn {
-    width: 15%;
+    width: 45%;
     background-color: #e62b1e;
     margin-left: 3.2em;
-    border: none;
+     border: none;
     color: white;
-
 }
 
 .bannerBtn:hover {
@@ -110,9 +107,7 @@
 }
 
 #pix_article {
-    height: 15em;
-    margin-top: 4em;
-    margin-bottom: 4em;
+    height: 300px;
     width: 26em;
 }
 
@@ -146,6 +141,14 @@
     font-size: 0.9em;
 }
 
+.post_comment {
+    text-align: center;
+    font-size: 1.5em;
+    font-family: Helvetica, sans-serif;
+    margin-bottom: 0.5em;
+    padding-top: 0.5em;
+}
+
 .hp_partners {
     text-align: center;
     font-size: 4em;
@@ -169,6 +172,28 @@
     height: 100px;
     margin-right: 30px;
     margin-left: 30px;
+}
+
+.edito_ctn,
+.edito {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.edito {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.edito_title {
+    text-align: center;
+    color: white;
+    padding-top: 1em;
+    padding-bottom: 1.5em;
+    font-size: 4em;
+    font-family: Helvetica, sans-serif;
 }
 
 /* PARTENAIRES */
@@ -222,48 +247,6 @@ body {
     font-family: Helvetica, sans-serif;
     margin-top: 5em;
 }
-
-/*apropos */
-
-.section_ {
-    display: flex;
-}
-
-.title1 {
-    color: white;
-    margin-top: 215px;
-    font-size: 65px;
-    font-weight: bold;
-    font-family: Helvetica, sans-serif;
-}
-
-.title2 {
-    text-align: center;
-    font-size: 65px;
-    font-weight: bold;
-    font-family: Helvetica, sans-serif;
-    color: white;
-}
-
-.para1 {
-    max-width: 400px;
-    text-align: center;
-    font-family: Helvetica, sans-serif;
-    line-height: 1.2em;
-    color: white;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.triangle {
-    display: inline-block;
-    height: 0px;
-    width: 0px;
-    border-bottom: 700px solid transparent;
-    border-left: 700px solid #e62b1e;
-    margin-top: 1em;
-}
-
 
 /* TALKS */
 
@@ -402,16 +385,15 @@ form {
 
 
 /*Footer*/
-.filtre_
-{
+.filtre_ {
     /* filter:sepia(100%) hue-rotate(950deg); */
     filter: grayscale(100%);
 }
 
-.filtre_:hover
-{
-    filter: sepia(100%)  grayscale(100%);
+.filtre_:hover {
+    filter: sepia(100%) grayscale(100%);
 }
+
 .ftitle {
     color: white;
 }
@@ -426,8 +408,7 @@ footer a {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-footer a:hover
-{
+footer a:hover {
     color: white;
 }
 
