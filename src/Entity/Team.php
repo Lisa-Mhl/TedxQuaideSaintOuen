@@ -32,6 +32,11 @@ class Team
      */
     private $job;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=CategoryTeam::class, inversedBy="teams")
+     */
+    private $category;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +74,18 @@ class Team
     public function setJob(string $job): self
     {
         $this->job = $job;
+
+        return $this;
+    }
+
+    public function getCategory(): ?CategoryTeam
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?CategoryTeam $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }

@@ -1,6 +1,20 @@
 easy_admin:
     entities:
+        - App\Entity\Talk
+        - App\Entity\Tag
         - App\Entity\Team
         - App\Entity\Partner
-        - App\Entity\Talk
         - App\Entity\Banner
+        - App\Entity\Speaker
+        - App\Entity\Feedback
+        - App\Entity\Edito
+        - App\Entity\Stats
+        - App\Entity\Article
+        - App\Entity\Footer
+        - App\Entity\Contact
+        - App\Entity\CategoryPartner
+        - App\Entity\LegalMentions
+
+
+
+
