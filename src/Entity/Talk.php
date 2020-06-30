@@ -54,6 +54,11 @@ class Talk
      */
     private $speakers;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $ispublished = true;
+
     public function __construct()
     {
         $this->tags = new ArrayCollection();
@@ -143,6 +148,8 @@ class Talk
         return $this;
     }
 
+
+
     public function removeTag(Tag $tag): self
     {
         if ($this->tags->contains($tag)) {
@@ -188,5 +195,17 @@ class Talk
     public function __toString()
     {
         return $this->getTitle();
+    }
+
+    public function getIspublished(): ?bool
+    {
+        return $this->ispublished;
+    }
+
+    public function setIspublished(bool $ispublished): self
+    {
+        $this->ispublished = $ispublished;
+
+        return $this;
     }
 }

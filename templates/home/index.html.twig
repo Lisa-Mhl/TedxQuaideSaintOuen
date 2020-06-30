@@ -45,8 +45,10 @@
         </div>
         <h2 class="nosvaleurs red">AVIS</h2>
         {% for item in feedback %}
-            <p class="comment bold"><span class="red">"</span> {{ item.comment }} <span class="red">"</span></p>
-            <p class="fb_name bold">{{ item.name }}, <span class="fb_job">{{ item.job }}</p><br>
+            {% if item.ispublished is same as(true) %}
+                <p class="comment bold"><span class="red">"</span> {{ item.comment }} <span class="red">"</span></p>
+                <p class="fb_name bold">{{ item.name }}, <span class="fb_job">{{ item.job }}</p><br>
+            {% endif %}
         {% endfor %}
 
         <p class="post_comment red bold">Poster un avis</p>
