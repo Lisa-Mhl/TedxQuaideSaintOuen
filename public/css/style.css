@@ -416,9 +416,9 @@ form {
 }
 
 /* Speakers Details */
-.details{
+.details {
     display: flex;
-   justify-content: center;
+    justify-content: center;
 }
 
 .details_ctn {
@@ -435,11 +435,17 @@ form {
 }
 
 .details_pix {
-    height: 350px;
-    padding-right: 20px;
-
+    margin-left: 30px;
+    margin-bottom: 20px;
+    height: 300px;
+    border-color: #2a2928;
+    border-style: groove;
+    box-shadow: 10px 10px 5px #2a2928;
 }
 
+#details_info {
+    margin-left: 30px;
+}
 
 /*Footer*/
 .filtre_ {
