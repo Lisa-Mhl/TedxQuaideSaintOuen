@@ -408,12 +408,39 @@ form {
     margin-top: 3em;
 }
 
-.speaker_ctn img{
+.speaker_ctn img {
     padding: 0;
     border-radius: 5%;
     width: 60%;
     height: 180px;
 }
+
+/* Speakers Details */
+.details{
+    display: flex;
+   justify-content: center;
+}
+
+.details_ctn {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5em;
+}
+
+.description {
+    width: 30%;
+    text-align: justify;
+    flex-direction: row;
+    margin-top: 6em;
+}
+
+.details_pix {
+    height: 350px;
+    padding-right: 20px;
+
+}
+
+
 /*Footer*/
 .filtre_ {
     /* filter:sepia(100%) hue-rotate(950deg); */
