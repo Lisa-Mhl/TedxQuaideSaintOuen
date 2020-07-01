@@ -3,7 +3,9 @@
 {% block title %}A propos de {{ speaker.name }}{% endblock %}
 
 {% block body %}
-    <h1 class="text-center text-white">A propos de <span class="red"> {{ speaker.name }}</span></h1>
+    <div class="talks_banner" xmlns="http://www.w3.org/1999/html">
+        <h1 class="ptn_title">A propos de {{ speaker.name }}</h1>
+    </div>
     <div class="details">
         <p class="description text-white">{{ speaker.description }} <br><br>
             {% if speaker.link %}
