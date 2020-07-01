@@ -20,20 +20,22 @@
         <h2 class="nosvaleurs">Nos Valeurs</h2>
         <div class="row">
             {% for item in articles %}
-                <div class="card_article col-3">
-                    {% if item.photo %}
-                        <img class="card-img-top" id="pix_article" src="{{ item.photo }}" alt="{{ item.title }}">
-                    {% endif %}
-                    {% if item.video %}
-                        <iframe class="card-img-top" src="{{ item.video }}" height="300" frameborder="0"
-                                allow="autoplay; fullscreen" allowfullscreen></iframe>
-                    {% endif %}
-                    <div class="card-body">
-                        <h4 class="bold">{{ item.title }}</h4>
-                        <p class="article">{{ item.content }}<br>
-                            <span class="author red">{{ item.author }}</span></p>
+                {% if item.ispublished is same as(true) %}
+                    <div class="card_article col-3">
+                        {% if item.photo %}
+                            <img class="card-img-top" id="pix_article" src="{{ item.photo }}" alt="{{ item.title }}">
+                        {% endif %}
+                        {% if item.video %}
+                            <iframe class="card-img-top" src="{{ item.video }}" height="300" frameborder="0"
+                                    allow="autoplay; fullscreen" allowfullscreen></iframe>
+                        {% endif %}
+                        <div class="card-body">
+                            <h4 class="bold">{{ item.title }}</h4>
+                            <p class="article">{{ item.content }}<br>
+                                <span class="author red">{{ item.author }}</span></p>
+                        </div>
                     </div>
-                </div>
+                {% endif %}
             {% endfor %}
         </div>
     </div>

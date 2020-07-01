@@ -45,7 +45,7 @@ class Article
     /**
      * @ORM\Column(type="boolean")
      */
-    private $ispublished;
+    private $ispublished = true;
 
     public function getId(): ?int
     {
