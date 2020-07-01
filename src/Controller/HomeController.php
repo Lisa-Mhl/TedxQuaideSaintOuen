@@ -96,6 +96,18 @@ class HomeController extends AbstractController
     }
 
     /**
+     * @Route("/speakers/{id}", name="info")
+     * @return Response
+     */
+    public function info(Speaker $speaker): Response
+    {
+        return $this->render('home/speakers.details.html.twig', [
+            'speaker' => $speaker,
+        ]);
+    }
+
+
+    /**
      * @Route("/contact", name="contact")
      * @return Response
      */
