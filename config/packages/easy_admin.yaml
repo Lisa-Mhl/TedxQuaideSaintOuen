@@ -1,6 +1,159 @@
 easy_admin:
+    site_name: 'TedX Admin'
     entities:
-        - App\Entity\Team
-        - App\Entity\Partner
-        - App\Entity\Talk
-        - App\Entity\Banner
+        Talks:
+            class: App\Entity\Talk
+            list:
+                fields:
+                    - { property: 'ispublished', type: 'toggle', label: 'Publié' }
+                    - { property: 'photo', type: 'image' }
+                    - { property: 'title', label: 'Titre' }
+                    - 'video'
+                    - 'speakers'
+                    - 'tags'
+                    - { property: 'content', label: 'Contenu' }
+                    - { property: 'created_at', label: 'Date' }
+            edit:
+                fields:
+                    - 'photo'
+                    - { property: 'title', label: 'Titre' }
+                    - 'video'
+                    - 'speakers'
+                    - 'tags'
+                    - { property: 'content', label: 'Contenu' }
+                    - { property: 'created_at', label: 'Date' }
+            form:
+                fields:
+                    - 'title'
+                    - 'video'
+                    - 'photo'
+                    - { property: 'speakers', type_options: { by_reference: false }}
+                    - { property: 'tags', type_options: { by_reference: false }}
+                    - { property: 'content', label: 'Contenu' }
+                    - { property: 'created_at', label: 'Date' }
+
+        Articles:
+            class: App\Entity\Article
+            list:
+                fields:
+                    - { property: 'ispublished', type: 'toggle', label: 'Publié' }
+                    - { property: 'photo', type: 'image' }
+                    - { property: 'title', label: 'Titre' }
+                    - { property: 'author', label: 'Auteur' }
+                    - 'video'
+                    - 'content'
+            edit:
+                fields:
+                    - 'photo'
+                    - { property: 'title', label: 'Titre' }
+                    - { property: 'author', label: 'Auteur' }
+                    - 'video'
+                    - 'content'
+            form:
+                fields:
+                    - 'photo'
+                    - { property: 'title', label: 'Titre' }
+                    - { property: 'author', label: 'Auteur' }
+                    - 'video'
+                    - 'content'
+
+        Speakers:
+            class: App\Entity\Speaker
+            list:
+                fields:
+                    - { property: 'photo', type: 'image' }
+                    - { property: 'name', label: 'Nom' }
+                    - { property: 'job', label: 'Métier' }
+                    - { property: 'link', label: 'Lien' }
+                    - { property: 'talks', type_options: { by_reference: false }}
+            edit:
+                fields:
+                    - 'photo'
+                    - { property: 'name', label: 'Nom' }
+                    - { property: 'job', label: 'Métier' }
+                    - { property: 'link', label: 'Lien' }
+                    - { property: 'talks', type_options: { by_reference: false }}
+            form:
+                fields:
+                    - 'photo'
+                    - { property: 'name', label: 'Nom' }
+                    - { property: 'job', label: 'Métier' }
+                    - { property: 'link', label: 'Lien' }
+                    - { property: 'talks', type_options: { by_reference: false }}
+
+        Tags:
+            class: App\Entity\Tag
+
+        Equipe:
+            class: App\Entity\Team
+            list:
+                fields:
+                    - { property: 'photo', type: 'image' }
+                    - { property: 'name', label: 'Nom' }
+                    - { property: 'job', label: 'Métier' }
+                    - { property: 'link', label: 'Lien' }
+                    - { property: 'category', label: 'Catégorie', type_options: { by_reference: false }}
+            edit:
+                fields:
+                    - 'photo'
+                    - { property: 'name', label: 'Nom' }
+                    - { property: 'job', label: 'Métier' }
+                    - { property: 'link', label: 'Lien' }
+                    - { property: 'category', label: 'Catégorie', type_options: { by_reference: true }}
+            form:
+                fields:
+                    - 'photo'
+                    - { property: 'name', label: 'Nom' }
+                    - { property: 'job', label: 'Métier' }
+                    - { property: 'link', label: 'Lien' }
+                    - { property: 'category', label: 'Catégorie', type_options: { by_reference: false }}
+
+        Partenaires:
+            class: App\Entity\Partner
+
+        Bannière:
+            class: App\Entity\Banner
+
+        Avis:
+            class: App\Entity\Feedback
+            list:
+                fields:
+                    - { property: 'ispublished', type: 'toggle', label: 'Publié' }
+                    - { property: 'comment', label: 'Commentaire' }
+                    - { property: 'name', label: 'Auteur' }
+                    - { property: 'job', label: 'Métier' }
+            edit:
+                fields:
+                    - { property: 'comment', label: 'Commentaire' }
+                    - { property: 'name', label: 'Auteur' }
+                    - { property: 'job', label: 'Métier' }
+            form:
+                fields:
+                    - { property: 'comment', label: 'Commentaire' }
+                    - { property: 'name', label: 'Auteur' }
+                    - { property: 'job', label: 'Métier' }
+
+        Edito:
+            class: App\Entity\Edito
+
+        Statistiques:
+            class: App\Entity\Stats
+
+        Footer:
+            class: App\Entity\Footer
+
+        Contact:
+            class: App\Entity\Contact
+
+        Catégorie_Partenaires:
+            class: App\Entity\CategoryPartner
+
+        Catégorie_Equipes:
+            class: App\Entity\CategoryTeam
+
+        Mentions_Légales:
+            class: App\Entity\LegalMentions
+
+
+
+

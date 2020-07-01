@@ -20,20 +20,22 @@
         <h2 class="nosvaleurs">Nos Valeurs</h2>
         <div class="row">
             {% for item in articles %}
-                <div class="card_article col-3">
-                    {% if item.photo %}
-                        <img class="card-img-top" id="pix_article" src="{{ item.photo }}" alt="{{ item.title }}">
-                    {% endif %}
-                    {% if item.video %}
-                        <iframe class="card-img-top" src="{{ item.video }}" height="300" frameborder="0"
-                                allow="autoplay; fullscreen" allowfullscreen></iframe>
-                    {% endif %}
-                    <div class="card-body">
-                        <h4 class="bold">{{ item.title }}</h4>
-                        <p class="article">{{ item.content }}<br>
-                            <span class="author red">{{ item.author }}</span></p>
+                {% if item.ispublished is same as(true) %}
+                    <div class="card_article col-3">
+                        {% if item.photo %}
+                            <img class="card-img-top" id="pix_article" src="{{ item.photo }}" alt="{{ item.title }}">
+                        {% endif %}
+                        {% if item.video %}
+                            <iframe class="card-img-top" src="{{ item.video }}" height="300" frameborder="0"
+                                    allow="autoplay; fullscreen" allowfullscreen></iframe>
+                        {% endif %}
+                        <div class="card-body">
+                            <h4 class="bold">{{ item.title }}</h4>
+                            <p class="article">{{ item.content }}<br>
+                                <span class="author red">{{ item.author }}</span></p>
+                        </div>
                     </div>
-                </div>
+                {% endif %}
             {% endfor %}
         </div>
     </div>
@@ -45,8 +47,10 @@
         </div>
         <h2 class="nosvaleurs red">AVIS</h2>
         {% for item in feedback %}
-            <p class="comment bold"><span class="red">"</span> {{ item.comment }} <span class="red">"</span></p>
-            <p class="fb_name bold">{{ item.name }}, <span class="fb_job">{{ item.job }}</p><br>
+            {% if item.ispublished is same as(true) %}
+                <p class="comment bold"><span class="red">"</span> {{ item.comment }} <span class="red">"</span></p>
+                <p class="fb_name bold">{{ item.name }}, <span class="fb_job">{{ item.job }}</p><br>
+            {% endif %}
         {% endfor %}
 
         <p class="post_comment red bold">Poster un avis</p>

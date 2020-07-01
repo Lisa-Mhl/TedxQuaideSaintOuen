@@ -32,6 +32,21 @@ class Team
      */
     private $job;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=CategoryTeam::class, inversedBy="teams")
+     */
+    private $category;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $link;
+
+    public function __toString()
+    {
+        return $this->name;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +84,30 @@ class Team
     public function setJob(string $job): self
     {
         $this->job = $job;
+
+        return $this;
+    }
+
+    public function getCategory(): ?CategoryTeam
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?CategoryTeam $category): self
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    public function getLink(): ?string
+    {
+        return $this->link;
+    }
+
+    public function setLink(string $link): self
+    {
+        $this->link = $link;
 
         return $this;
     }

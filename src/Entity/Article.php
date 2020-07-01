@@ -42,6 +42,11 @@ class Article
      */
     private $photo;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $ispublished = true;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -103,6 +108,18 @@ class Article
     public function setPhoto(?string $photo): self
     {
         $this->photo = $photo;
+
+        return $this;
+    }
+
+    public function getIspublished(): ?bool
+    {
+        return $this->ispublished;
+    }
+
+    public function setIspublished(bool $ispublished): self
+    {
+        $this->ispublished = $ispublished;
 
         return $this;
     }

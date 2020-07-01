@@ -11,6 +11,7 @@ use App\Form\FeedBackType;
 use App\Form\SearchByTagType;
 use App\Repository\ArticleRepository;
 use App\Repository\BannerRepository;
+use App\Repository\CategoryTeamRepository;
 use App\Repository\FeedbackRepository;
 use App\Service\Mailer;
 use App\Service\Searcher;
@@ -147,10 +148,11 @@ class HomeController extends AbstractController
      * @Route("/equipes", name="equipes")
      * @return Response
      */
-    public function teams(TeamRepository $teamRepository): Response
+    public function teams(TeamRepository $teamRepository, CategoryTeamRepository $categoryTeamRepository): Response
     {
         return $this->render('home/teams.html.twig', [
             'teams' => $teamRepository->findAll(),
+            'categories' => $categoryTeamRepository->findAll(),
         ]);
     }
 }

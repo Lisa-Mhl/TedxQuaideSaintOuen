@@ -38,6 +38,11 @@ class Feedback
      */
     private $job;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $ispublished = false;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -75,6 +80,18 @@ class Feedback
     public function setJob(string $job): self
     {
         $this->job = $job;
+
+        return $this;
+    }
+
+    public function getIspublished(): ?bool
+    {
+        return $this->ispublished;
+    }
+
+    public function setIspublished(bool $ispublished): self
+    {
+        $this->ispublished = $ispublished;
 
         return $this;
     }
