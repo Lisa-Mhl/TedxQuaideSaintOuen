@@ -6,7 +6,7 @@
 
     {% for item in banner %}
         <div class="banner_ctn" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
-            <img id="banner" src="{{ item.photo }}" alt="{{ item.title }}">
+            <img id="banner" src="{{ asset('uploads/files/' ~ item.photo) }}" alt="{{ item.title }}">
             <div class="link-banner">
                 <p class="bannerLink">Regarder les Talks 2020 ici :</p>
                 <a href="{{ path('talks') }}">

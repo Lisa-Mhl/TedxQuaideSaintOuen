@@ -22,7 +22,7 @@
                 {% for talk in talks %}
                     {% if talk.ispublished is same as(true) %}
                         <div class="card_talks col-3">
-                            <a href="{{ talk.video }}"><img src="{{ talk.photo }}" alt="Avatar" style="width:100%"></a>
+                            <a href="{{ talk.video }}"><img src="{{ asset('uploads/files/' ~ talk.photo) }}" alt="Avatar" style="width:100%"></a>
                             <div class="container_talks">
                                 <h4><b>{{ talk.title }}</b></h4>
                                 {% for speaker in talk.speakers %}

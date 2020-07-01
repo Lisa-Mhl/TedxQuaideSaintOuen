@@ -6,7 +6,7 @@ easy_admin:
             list:
                 fields:
                     - { property: 'ispublished', type: 'toggle', label: 'Publié' }
-                    - { property: 'photo', type: 'image' }
+                    - { property: 'photo', type: 'image', base_path: "%uploads_path%" }
                     - { property: 'title', label: 'Titre' }
                     - 'video'
                     - 'speakers'
@@ -15,22 +15,20 @@ easy_admin:
                     - { property: 'created_at', label: 'Date' }
             edit:
                 fields:
-                    - 'photo'
+                    - { property: 'photoFile', type: 'vich_image', label: 'Fichier photo' }
                     - { property: 'title', label: 'Titre' }
                     - 'video'
                     - 'speakers'
                     - 'tags'
                     - { property: 'content', label: 'Contenu' }
-                    - { property: 'created_at', label: 'Date' }
             form:
                 fields:
-                    - 'title'
+                    - { property: 'photoFile', type: 'vich_image', label: 'Fichier photo' }
+                    - { property: 'title', label: 'Titre' }
                     - 'video'
-                    - 'photo'
                     - { property: 'speakers', type_options: { by_reference: false }}
                     - { property: 'tags', type_options: { by_reference: false }}
                     - { property: 'content', label: 'Contenu' }
-                    - { property: 'created_at', label: 'Date' }
 
         Articles:
             class: App\Entity\Article
@@ -110,9 +108,36 @@ easy_admin:
 
         Partenaires:
             class: App\Entity\Partner
+            list:
+                fields:
+                    - { property: 'logo', type: 'image' }
+                    - { property: 'name', label: 'Nom' }
+                    - { property: 'category', label: 'Catégorie', type_options: { by_reference: false }}
+            edit:
+                fields:
+                    - 'logo'
+                    - { property: 'name', label: 'Nom' }
+                    - { property: 'category', label: 'Catégorie', type_options: { by_reference: true }}
+            form:
+                fields:
+                    - 'logo'
+                    - { property: 'name', label: 'Nom' }
+                    - { property: 'category', label: 'Catégorie', type_options: { by_reference: false }}
 
-        Bannière:
+        Banniere:
             class: App\Entity\Banner
+            list:
+                fields:
+                    - { property: 'photo', type: 'image', base_path: "%uploads_path%" }
+                    - { property: 'title', label: 'Titre' }
+            edit:
+                fields:
+                    - { property: 'photoFile', type: 'vich_image', label: 'Fichier photo' }
+                    - { property: 'title', label: 'Titre' }
+            form:
+                fields:
+                    - { property: 'photoFile', type: 'vich_image', label: 'Fichier photo' }
+                    - { property: 'title', label: 'Titre' }
 
         Avis:
             class: App\Entity\Feedback
