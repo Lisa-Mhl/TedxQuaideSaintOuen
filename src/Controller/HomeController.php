@@ -13,6 +13,7 @@ use App\Repository\ArticleRepository;
 use App\Repository\BannerRepository;
 use App\Repository\CategoryTeamRepository;
 use App\Repository\FeedbackRepository;
+use App\Repository\StatsRepository;
 use App\Service\Mailer;
 use App\Service\Searcher;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
@@ -35,7 +36,7 @@ class HomeController extends AbstractController
      * @Route("/", name="home")
      * @return Response
      */
-    public function index(BannerRepository $bannerRepository, ArticleRepository $articleRepository, Request $request, FeedbackRepository $feedbackRepository, PartnerRepository $partnerRepository): Response
+    public function index(BannerRepository $bannerRepository, ArticleRepository $articleRepository, Request $request, FeedbackRepository $feedbackRepository, PartnerRepository $partnerRepository, StatsRepository $statsRepository): Response
     {
         $feedback = new Feedback();
         $form = $this->createForm(FeedBackType::class, $feedback);
@@ -53,6 +54,7 @@ class HomeController extends AbstractController
             'articles' => $articleRepository->findAll(),
             'feedback' => $feedbackRepository->findAll(),
             'partners' => $partnerRepository->findAll(),
+            'stats' => $statsRepository->findOneBy([]),
             'form' => $form->createView(),
         ]);
     }

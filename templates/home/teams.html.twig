@@ -16,7 +16,7 @@
                 <div class="row">
                     {% for team in category.teams %}
                         <div class="team_ctn">
-                            <a href="{{ team.link }}" target="_blank"><img src="{{ team.photo }}" alt="{{ team.name }}"></a>
+                            <a href="{{ team.link }}" target="_blank"><img src="{{ asset('uploads/files/' ~ team.photo) }}" alt="{{ team.name }}"></a>
                             <p class="team_name">{{ team.name }}</p>
                             <p class="team_job red bold">{{ team.job }}</p>
                         </div>

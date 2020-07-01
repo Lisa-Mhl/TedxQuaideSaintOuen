@@ -4,9 +4,14 @@ namespace App\Entity;
 
 use App\Repository\PartnerRepository;
 use Doctrine\ORM\Mapping as ORM;
+use DateTimeInterface;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=PartnerRepository::class)
+ * @Vich\Uploadable()
  */
 class Partner
 {
@@ -26,6 +31,18 @@ class Partner
      * @ORM\Column(type="string", length=255)
      */
     private $logo;
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @var DateTimeInterface|null
+     */
+    private $updatedAt;
+
+    /**
+     * @Vich\UploadableField(mapping="logo_photo", fileNameProperty="logo")
+     * @var File
+     */
+    private $logoFile;
 
     /**
      * @ORM\ManyToOne(targetEntity=CategoryPartner::class, inversedBy="partners")
@@ -59,7 +76,7 @@ class Partner
         return $this->logo;
     }
 
-    public function setLogo(string $logo): self
+    public function setLogo(?string $logo): self
     {
         $this->logo = $logo;
 
@@ -76,5 +93,35 @@ class Partner
         $this->category = $category;
 
         return $this;
+    }
+
+    /**
+     * @param File|UploadedFile|null $logoFile
+     */
+    public function setLogoFile(?File $logoFile = null): void
+    {
+        $this->logoFile = $logoFile;
+        if (null !== $logoFile) {
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+    }
+    public function getLogoFile(): ?File
+    {
+        return $this->logoFile;
+    }
+
+    /**
+     * @return DateTimeInterface|null
+     */
+    public function getUpdatedAt(): ?DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+    /**
+     * @param DateTimeInterface|null $updatedAt
+     */
+    public function setUpdatedAt(?DateTimeInterface $updatedAt): void
+    {
+        $this->updatedAt = $updatedAt;
     }
 }
