@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}speakers{% endblock %}
+
+{% block body %}
+    <div class="talks_banner" xmlns="http://www.w3.org/1999/html">
+        <h1 class="ptn_title">Mentions Légales</h1>
+    </div>
+    {% for item in legalMentions %}
+        <p class="legalMentions text-white">{{ item.content }}</p>
+    {% endfor %}
+
+{% endblock %}

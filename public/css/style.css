@@ -414,6 +414,16 @@ form {
     width: 60%;
     height: 180px;
 }
+
+/*Legal Mentions*/
+.legalMentions{
+    width: 60%;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+}
+
 /*Footer*/
 .filtre_ {
     /* filter:sepia(100%) hue-rotate(950deg); */
