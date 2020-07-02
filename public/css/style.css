@@ -270,6 +270,12 @@ body {
     margin-left: 1em;
 }
 
+.img-talk {
+    vertical-align: middle;
+    border-style: none;
+    height: 14em;
+}
+
 .form_ctn,
 .form-search {
     display: flex;
@@ -312,15 +318,20 @@ body {
     padding-bottom: 50px;
 }
 
+.ctn-talks {
+    display: flex;
+    justify-content: center;
+}
+
 .card_talks {
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-left: 20em;
 }
 
 .container_talks {
     padding: 30px 16px;
     background-color: white;
+    height: 13em;
 }
 
 .row {
@@ -411,7 +422,6 @@ form {
 .speaker_ctn img {
     padding: 0;
     border-radius: 5%;
-    width: 60%;
     height: 180px;
 }
 
@@ -458,6 +468,17 @@ form {
 }
 
 /*Footer*/
+
+input#news_letter_email{
+    width: fit-content;
+    text-align: left;
+}
+
+.logo-foot {
+    width: 400px;
+    margin-right: -5em;
+}
+
 .filtre_ {
     /* filter:sepia(100%) hue-rotate(950deg); */
     filter: grayscale(100%);
@@ -469,6 +490,7 @@ form {
 
 .ftitle {
     color: white;
+    text-align: center;
 }
 
 footer {
@@ -487,7 +509,8 @@ footer a:hover {
 
 .foot {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin-left: 2em;
 }
 
 
