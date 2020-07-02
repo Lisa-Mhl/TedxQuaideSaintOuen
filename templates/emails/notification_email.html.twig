@@ -1,0 +1,59 @@
+{% extends 'base_email.html.twig' %}
+
+{% block body %}
+    <row class="welcome">
+        <columns>
+            <spacer size="35"></spacer>
+            <h1>
+                <center>
+                    Bien reçu !
+                </center>
+            </h1>
+            <spacer size="10"></spacer>
+        </columns>
+    </row>
+    <spacer size="30"></spacer>
+    <row>
+        <columns>
+            <p>
+                L'équipe de <strong>TedX Quai de Saint-Ouen</strong> a bien reçu votre message,
+                nous sommes entrain de l'étudier et nous reviendrons vers vous prochainement !
+            </p>
+        </columns>
+    </row>
+    <row class="message">
+        <columns>
+            <spacer size="35"></spacer>
+            <h2>
+                <center>
+                    Votre Message
+                </center>
+            </h2>
+            <spacer size="20"></spacer>
+        </columns>
+    </row>
+    <row>
+        <columns>
+            <p>
+                {{ contact.message }}
+            </p>
+        </columns>
+    </row>
+    <hr>
+    <row>
+        <columns>
+            <p>
+                N'hésitez pas à revenir vers nous si vous avez d'autres questions sur ce sujet ou
+                sur d'autres thèmes, nous serons ravis de vous aider et essaierons de répondre
+                du mieux possible.
+            </p>
+        </columns>
+    </row>
+    <row>
+        <columns>
+            <center>
+                <button href="{{ url('home') }}">Accueil</button>
+            </center>
+        </columns>
+    </row>
+{% endblock %}
