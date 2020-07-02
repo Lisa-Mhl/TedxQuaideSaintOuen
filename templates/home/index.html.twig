@@ -6,7 +6,7 @@
 
     {% for item in banner %}
         <div class="banner_ctn" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
-            <img id="banner" src="{{ item.photo }}" alt="{{ item.title }}">
+            <img id="banner" src="{{ asset('uploads/files/' ~ item.photo) }}" alt="{{ item.title }}">
             <div class="link-banner">
                 <p class="bannerLink">Regarder les Talks 2020 ici :</p>
                 <a href="{{ path('talks') }}">
@@ -23,7 +23,7 @@
                 {% if item.ispublished is same as(true) %}
                     <div class="card_article col-3">
                         {% if item.photo %}
-                            <img class="card-img-top" id="pix_article" src="{{ item.photo }}" alt="{{ item.title }}">
+                            <img class="card-img-top" id="pix_article" src="{{ asset('uploads/files/' ~ item.photo) }}" alt="{{ item.title }}">
                         {% endif %}
                         {% if item.video %}
                             <iframe class="card-img-top" src="{{ item.video }}" height="300" frameborder="0"
@@ -42,8 +42,8 @@
 
     <div class="feedback">
         <div class="statistics">
-            <div class="stat bold"> 100 <br>Participants</div>
-            <div class="stat bold"> 7 <br>Speakers</div>
+            <div class="stat bold"> {{ stats.attendees }} <br>Participants</div>
+            <div class="stat bold"> {{ stats.speakers }} <br>Speakers</div>
         </div>
         <h2 class="nosvaleurs red">AVIS</h2>
         {% for item in feedback %}
@@ -78,7 +78,7 @@
     <div class="ptn_ctn_hp">
         <h2 class="hp_partners">Nos Partenaires</h2>
         {% for partner in partners %}
-            <img id="team_pix" src="{{ partner.logo }}" alt="{{ partner.name }}">
+            <img id="team_pix" src="{{ asset('uploads/files/' ~ partner.logo) }}" alt="{{ partner.name }}">
         {% endfor %}
     </div>
 

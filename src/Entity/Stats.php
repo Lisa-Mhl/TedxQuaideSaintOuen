@@ -27,11 +27,6 @@ class Stats
      */
     private $speakers;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $user_reached;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -57,18 +52,6 @@ class Stats
     public function setSpeakers(int $speakers): self
     {
         $this->speakers = $speakers;
-
-        return $this;
-    }
-
-    public function getUserReached(): ?int
-    {
-        return $this->user_reached;
-    }
-
-    public function setUserReached(int $user_reached): self
-    {
-        $this->user_reached = $user_reached;
 
         return $this;
     }

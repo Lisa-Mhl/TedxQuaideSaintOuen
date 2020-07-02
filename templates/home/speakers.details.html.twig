@@ -12,7 +12,7 @@
             <a href="{{ speaker.link }}" target="_blank">En savoir plus</a></p>
         {% endif %}
         <div class="details_ctn">
-            <img class="details_pix" src="{{ speaker.photo }}" alt="{{ speaker.name }}">
+            <img class="details_pix" src="{{ asset('uploads/files/' ~ speaker.photo) }}" alt="{{ speaker.name }}">
             <p id="details_info" class="text-white">{{ speaker.name }}, <span class="red"> {{ speaker.job }} </span></p>
         </div>
     </div>

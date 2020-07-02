@@ -1,0 +1,22 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        banner_photo:
+            uri_prefix:         '%uploads_path%'
+            upload_destination: '%kernel.project_dir%/public/%uploads_path%'
+        talk_photo:
+            uri_prefix:         '%uploads_path%'
+            upload_destination: '%kernel.project_dir%/public/%uploads_path%'
+        article_photo:
+            uri_prefix:         '%uploads_path%'
+            upload_destination: '%kernel.project_dir%/public/%uploads_path%'
+        speaker_photo:
+            uri_prefix:         '%uploads_path%'
+            upload_destination: '%kernel.project_dir%/public/%uploads_path%'
+        team_photo:
+            uri_prefix:         '%uploads_path%'
+            upload_destination: '%kernel.project_dir%/public/%uploads_path%'
+        logo_photo:
+            uri_prefix:         '%uploads_path%'
+            upload_destination: '%kernel.project_dir%/public/%uploads_path%'
