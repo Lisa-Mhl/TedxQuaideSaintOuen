@@ -1,3 +1,8 @@
+*{
+    font-family: Helvetica, serif;
+    letter-spacing: 1px;
+}
+
 .red {
     color: #e62b1e;
 }
@@ -9,7 +14,6 @@
 /* NAVBAR */
 
 .navbar {
-    font-family: Helvetica;
     font-size: 1.3em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
@@ -95,7 +99,6 @@
 .nosvaleurs {
     text-align: center;
     font-size: 4em;
-    font-family: Helvetica, sans-serif;
     margin-bottom: 1em;
     padding-top: 0.5em;
 }
@@ -228,7 +231,6 @@ body {
 
 .ptn_subtitle {
     color: white;
-    font-family: Helvetica;
     text-align: center;
     font-size: 1.3em;
     margin-top: 2em;
@@ -251,7 +253,6 @@ body {
 
 .ptn_ctg {
     font-size: 1.5em;
-    font-family: Helvetica, sans-serif;
     margin-top: 5em;
 }
 
@@ -259,7 +260,6 @@ body {
     text-align: center;
     color: white;
     font-size: 1.3em;
-    font-family: Helvetica, sans-serif;
     margin-top: 5em;
 }
 
@@ -296,7 +296,6 @@ body {
 .talks_banner
 .talks_title {
     color: white;
-    font-family: Helvetica, sans-serif;
     margin-left: 8.7em;
 }
 
@@ -416,12 +415,13 @@ form {
 }
 
 /*Legal Mentions*/
-.legalMentions{
+.legalMentions {
     width: 60%;
     text-align: justify;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2em;
+}
 
 /* Speakers Details */
 .details {
@@ -477,7 +477,6 @@ footer {
 
 footer a {
     color: red;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 footer a:hover {
