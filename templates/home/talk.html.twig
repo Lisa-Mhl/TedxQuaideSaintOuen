@@ -18,6 +18,7 @@
             </div>
             {{ form_end(form) }}
         <div class="ctn-talks">
+            <div class="row">
             {% if talks %}
                 {% for talk in talks %}
                     {% if talk.ispublished is same as(true) %}
@@ -40,6 +41,7 @@
                     <h2 class="hp_partners">Nous n'avons rien trouvé</h2>
                 </div>
             {% endif %}
+        </div>
         </div>
     </div>
 {% endblock %}
