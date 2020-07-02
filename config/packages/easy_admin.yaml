@@ -1,5 +1,5 @@
 easy_admin:
-    site_name: 'TedX Admin'
+    site_name: 'TedX admin'
     formats:
         datetime: 'd/M/yy H:m'
     design:
@@ -100,6 +100,7 @@ easy_admin:
                     - { property: 'job', label: 'Métier' }
                     - { property: 'link', label: 'Lien' }
                     - { property: 'talks', type_options: { by_reference: false }}
+                    - 'description'
             form:
                 fields:
                     - { property: 'photoFile', type: 'vich_image', label: 'Fichier photo' }
@@ -107,6 +108,7 @@ easy_admin:
                     - { property: 'job', label: 'Métier' }
                     - { property: 'link', label: 'Lien' }
                     - { property: 'talks', type_options: { by_reference: false }}
+                    - 'description'
 
         Tags:
             class: App\Entity\Tag
@@ -198,10 +200,11 @@ easy_admin:
 
         Avis:
             class: App\Entity\Feedback
-            disabled_actions: ['new','edit']
+            disabled_actions: ['new']
             list:
                 actions:
                     - { name: 'show', icon: 'eye', label: 'Voir', css_class: 'btn btn-primary' }
+                    - { name: 'edit', label: false }
                     - { name: 'delete', icon: 'trash-alt', label: 'Suppr', css_class: 'btn btn-danger' }
                     - { name: 'new', icon: 'plus', label: 'Ajouter', css_class: 'btn btn-success' }
                 fields:
@@ -209,12 +212,9 @@ easy_admin:
                     - { property: 'comment', label: 'Commentaire' }
                     - { property: 'name', label: 'Auteur' }
                     - { property: 'job', label: 'Métier' }
-            edit:
-                fields:
-                    - { property: 'comment', label: 'Commentaire' }
-                    - { property: 'name', label: 'Auteur' }
-                    - { property: 'job', label: 'Métier' }
-            form:
+            show:
+                actions:
+                    - { name: 'edit', label: false, icon: false, css_class: '' }
                 fields:
                     - { property: 'comment', label: 'Commentaire' }
                     - { property: 'name', label: 'Auteur' }
@@ -277,6 +277,7 @@ easy_admin:
             disabled_actions: ['new','edit']
             list:
                 actions:
+                    - { name: 'email_contact', type: 'route', label: 'Repondre', icon: 'pencil', css_class: 'btn btn-dark', target: '_blank' }
                     - { name: 'show', icon: 'eye', label: 'Voir', css_class: 'btn btn-primary' }
                     - { name: 'delete', icon: 'trash-alt', label: 'Suppr', css_class: 'btn btn-danger' }
                     - { name: 'new', icon: 'plus', label: 'Ajouter', css_class: 'btn btn-success' }
@@ -286,6 +287,8 @@ easy_admin:
                     - { property: 'subject', label: 'Sujet' }
                     - { property: 'created_at', label: 'Date' }
             show:
+                actions:
+                    - { name: 'email_contact', type: 'route', label: 'Repondre', icon: 'pencil', css_class: 'btn btn-dark', target: '_blank' }
                 fields:
                     - { property: 'name', label: 'Nom' }
                     - { property: 'email', type: 'email' }

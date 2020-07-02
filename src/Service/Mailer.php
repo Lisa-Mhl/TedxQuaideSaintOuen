@@ -21,7 +21,7 @@ class Mailer
             ->from($this->param->get('mailer_from'))
             ->to($entity->getEmail())
             ->subject("Nous avons bien reçu votre message !")
-            ->htmlTemplate('emails/notification.html.twig')
+            ->htmlTemplate('emails/notification_email.html.twig')
             ->context([
                 'contact' => $entity,
             ]);
