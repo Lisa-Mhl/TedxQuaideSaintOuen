@@ -415,6 +415,14 @@ form {
     height: 180px;
 }
 
+/*Legal Mentions*/
+.legalMentions{
+    width: 60%;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+
 /* Speakers Details */
 .details {
     display: flex;
@@ -445,6 +453,7 @@ form {
 
 #details_info {
     margin-left: 30px;
+
 }
 
 /*Footer*/

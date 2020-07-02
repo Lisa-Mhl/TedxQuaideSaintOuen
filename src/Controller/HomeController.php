@@ -13,6 +13,7 @@ use App\Repository\ArticleRepository;
 use App\Repository\BannerRepository;
 use App\Repository\CategoryTeamRepository;
 use App\Repository\FeedbackRepository;
+use App\Repository\LegalMentionsRepository;
 use App\Repository\StatsRepository;
 use App\Service\Mailer;
 use App\Service\Searcher;
@@ -167,6 +168,17 @@ class HomeController extends AbstractController
         return $this->render('home/teams.html.twig', [
             'teams' => $teamRepository->findAll(),
             'categories' => $categoryTeamRepository->findAll(),
+        ]);
+    }
+
+    /**
+     * @Route("/mentions-legales", name="mentions")
+     * @return Response
+     */
+    public function legalMentions(LegalMentionsRepository $legalMentionsRepository): Response
+    {
+        return $this->render('home/legal_mentions.html.twig', [
+            'legalMentions' => $legalMentionsRepository->findAll()
         ]);
     }
 }
