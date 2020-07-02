@@ -416,12 +416,13 @@ form {
 }
 
 /*Legal Mentions*/
-.legalMentions{
+.legalMentions {
     width: 60%;
     text-align: justify;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2em;
+}
 
 /* Speakers Details */
 .details {
