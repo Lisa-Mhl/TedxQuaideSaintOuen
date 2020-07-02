@@ -3,12 +3,17 @@
 namespace App\Entity;
 
 use App\Repository\TalkRepository;
+use DateTimeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=TalkRepository::class)
+ * @Vich\Uploadable()
  */
 class Talk
 {
@@ -41,6 +46,7 @@ class Talk
 
     /**
      * @ORM\Column(type="datetime")
+     * @var DateTimeInterface|null
      */
     private $created_at;
 
@@ -55,6 +61,18 @@ class Talk
     private $speakers;
 
     /**
+     * @ORM\Column(type="datetime")
+     * @var DateTimeInterface|null
+     */
+    private $updatedAt;
+
+    /**
+     * @Vich\UploadableField(mapping="talk_photo", fileNameProperty="photo")
+     * @var File
+     */
+    private $photoFile;
+
+    /**
      * @ORM\Column(type="boolean")
      */
     private $ispublished = true;
@@ -63,6 +81,7 @@ class Talk
     {
         $this->tags = new ArrayCollection();
         $this->speakers = new ArrayCollection();
+        $this->created_at = new \DateTimeImmutable();
     }
 
     public function getId(): ?int
@@ -207,5 +226,35 @@ class Talk
         $this->ispublished = $ispublished;
 
         return $this;
+    }
+
+    /**
+     * @param File|UploadedFile|null $photoFile
+     */
+    public function setPhotoFile(?File $photoFile = null): void
+    {
+        $this->photoFile = $photoFile;
+        if (null !== $photoFile) {
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+    }
+    public function getPhotoFile(): ?File
+    {
+        return $this->photoFile;
+    }
+
+    /**
+     * @return DateTimeInterface|null
+     */
+    public function getUpdatedAt(): ?DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+    /**
+     * @param DateTimeInterface|null $updatedAt
+     */
+    public function setUpdatedAt(?DateTimeInterface $updatedAt): void
+    {
+        $this->updatedAt = $updatedAt;
     }
 }
