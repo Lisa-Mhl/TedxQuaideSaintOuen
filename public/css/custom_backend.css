@@ -1,0 +1,35 @@
+:root {
+    /* make the backend contents as wide as the browser window */
+    --body-max-width: 100%;
+    /* change the background color of the <body> */
+    --body-bg: #1c1c1c;
+    /* remove all border radius to make corners straight */
+    --border-radius: 5px;
+}
+
+body {
+    background-color: #1c1c1c;
+}
+
+.sidebar-menu a {
+    color: white;
+}
+
+.sidebar-menu .fa {
+    color: white;
+    filter: none;
+}
+
+.sidebar-menu a:hover {
+    color: #e2231a;
+}
+
+.sidebar-menu li:not(.submenu-active).active .fa, .sidebar-menu li:not(.submenu-active).active a {
+    color: #e2231a;
+    filter: opacity(100%);
+}
+
+.main-header #header-logo a {
+    color: #e2231a;
+    font-size: 30px;
+}

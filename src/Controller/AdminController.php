@@ -9,6 +9,7 @@ use App\Entity\Speaker;
 use App\Entity\Talk;
 use App\Entity\Team;
 use App\Form\ContactAdminType;
+use App\Service\Mailer;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -69,7 +70,7 @@ class AdminController extends AbstractController
     /**
      * @Route("/admin/email_contact", name="email_contact")
      */
-    public function sendEmailContact(Request $request, MailerInterface $mailer)
+    public function sendEmailContact(Request $request, Mailer $mailer)
     {
         $repository = $this->getDoctrine()->getRepository(Contact::class);
         $id = $request->query->get('id');
@@ -79,15 +80,8 @@ class AdminController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $email = (new TemplatedEmail())
-                ->from($this->getParameter('mailer_from'))
-                ->to($contact->getEmail())
-                ->subject("Réponse suite à votre demande")
-                ->htmlTemplate('emails/contact_email.html.twig')
-                ->context([
-                    'contact' => $contact,
-                ]);
-            $mailer->send($email);
+            // CALL METHOD IN SERVICE TO SEND MAIL
+            $mailer->adminContactEmail($contact);
 
             return $this->redirectToRoute('easyadmin', ['entity' => 'Contact']);
         }
