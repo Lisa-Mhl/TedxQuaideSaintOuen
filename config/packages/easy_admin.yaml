@@ -287,7 +287,7 @@ easy_admin:
 
         Contact:
             class: App\Entity\Contact
-            disabled_actions: ['edit']
+            disabled_actions: ['edit','new']
             list:
                 actions:
                     - { name: 'search', label: 'Rechercher' }
