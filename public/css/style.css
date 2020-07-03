@@ -62,7 +62,8 @@
 #banner {
     display: flex;
     justify-content: center;
-    height: 450px;
+    height: 600px;
+    max-width: 500px;
 }
 
 .banner_ctn,
@@ -75,16 +76,14 @@
     margin-right: auto
 }
 
-.link-banner {
-    width: 45%;
-    justify-content: center;
-
+.bannerLink {
+    margin-top: 1em;
 }
 
 .bannerBtn {
-    width: 15%;
+    width: 45%;
     background-color: #e62b1e;
-    margin-left: 2em;
+    margin-left: 3.2em;
     border: none;
     color: white;
 }
@@ -107,18 +106,28 @@
     padding-bottom: 2em;
 }
 
-.article {
-    margin-top: 1em;
-}
-
-iframe {
-    margin: 0px;
-    padding: 0px;
+#pix_article {
+    height: 300px;
+    width: 26em;
 }
 
 .card_article {
     margin-left: auto;
     margin-right: auto;
+}
+
+.statistics,
+.stat {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.stat {
+    background-color: #e62b1e;
+    color: white;
+    width: 20%;
+    text-align: center;
 }
 
 .feedback {
@@ -129,6 +138,9 @@ iframe {
 .comment {
     text-align: center;
     font-size: 1.2em;
+    width: 700px;
+    margin-right: auto;
+    margin-left: auto;
     margin-bottom: 0px;
 }
 
@@ -141,6 +153,14 @@ iframe {
     text-align: center;
     color: darkgray;
     font-size: 0.9em;
+}
+
+.post_comment {
+    text-align: center;
+    font-size: 1.5em;
+    font-family: Helvetica, sans-serif;
+    margin-bottom: 0.5em;
+    padding-top: 0.5em;
 }
 
 .hp_partners {
@@ -168,6 +188,28 @@ iframe {
     margin-left: 30px;
 }
 
+.edito_ctn,
+.edito {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.edito {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.edito_title {
+    text-align: center;
+    color: white;
+    padding-top: 1em;
+    padding-bottom: 1.5em;
+    font-size: 4em;
+    font-family: Helvetica, sans-serif;
+}
+
 /* PARTENAIRES */
 
 body {
@@ -179,7 +221,7 @@ body {
 .ptn_title {
     text-align: center;
     color: white;
-    padding-top: 2em;
+    margin-top: 0.4em;
     font-size: 4em;
     font-family: Helvetica, sans-serif;
 }
@@ -189,13 +231,14 @@ body {
     font-family: Helvetica;
     text-align: center;
     font-size: 1.3em;
+    margin-top: 2em;
 }
 
 .ptn_ctn {
     text-align: center;
     color: white;
     justify-content: space-between;
-
+    flex-direction: column;
 }
 
 .ptn_ctn img {
@@ -220,54 +263,17 @@ body {
     margin-top: 5em;
 }
 
-/*apropos */
-
-.section_ {
-    display: flex;
-}
-
-.title1 {
-    color: white;
-    margin-top: 215px;
-    font-size: 65px;
-    font-weight: bold;
-    font-family: Helvetica, sans-serif;
-}
-
-.title2 {
-    text-align: center;
-    font-size: 65px;
-    font-weight: bold;
-    font-family: Helvetica, sans-serif;
-    color: white;
-}
-
-.para1 {
-    max-width: 400px;
-    text-align: center;
-    font-family: Helvetica, sans-serif;
-    line-height: 1.2em;
-    color: white;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.triangle {
-    display: inline-block;
-    height: 0px;
-    width: 0px;
-    border-bottom: 700px solid transparent;
-    border-left: 700px solid #e62b1e;
-    margin-top: 1em;
-}
-
-
 /* TALKS */
 
 #search {
     height: 2.5em;
     margin-left: 1em;
-    margin-top: 1.5em;
+}
+
+.img-talk {
+    vertical-align: middle;
+    border-style: none;
+    height: 14em;
 }
 
 .form_ctn,
@@ -275,7 +281,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: -4em;
+    margin-top: 4em;
     margin-bottom: 2em;
 }
 
@@ -312,15 +318,20 @@ body {
     padding-bottom: 50px;
 }
 
+.ctn-talks {
+    display: flex;
+    justify-content: center;
+}
+
 .card_talks {
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-left: 20em;
 }
 
 .container_talks {
     padding: 30px 16px;
     background-color: white;
+    height: 13em;
 }
 
 .row {
@@ -337,11 +348,17 @@ body {
     margin-top: 3em;
 }
 
+.team_all {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .team_ctn img {
-    padding: 0px;
+    padding: 0;
     border-radius: 100%;
-    height: 200px;
-    width: 200px;
+    width: 60%;
+    height: 180px;
 }
 
 .team_name {
@@ -355,7 +372,6 @@ body {
     padding-bottom: 20px;
 }
 
-
 /* CONTACT */
 
 form {
@@ -367,6 +383,7 @@ form {
 
 .form_ctn {
     color: white;
+    flex-direction: column;
 }
 
 .btn {
@@ -380,12 +397,100 @@ form {
 #logocontact {
     margin-left: 100px;
     width: 400px;
+}
+
+/*Speakers */
+.speaker_name {
+    font-size: 1.5em;
+    margin-bottom: 0px;
+}
+
+.speakers_all {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.speaker_ctn {
+    text-align: center;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em;
+}
+
+.speaker_ctn img {
+    padding: 0;
+    border-radius: 5%;
+    height: 180px;
+}
+
+/*Legal Mentions*/
+.legalMentions {
+    width: 60%;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+}
+
+/* Speakers Details */
+.details {
+    display: flex;
+    justify-content: center;
+}
+
+.details_ctn {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5em;
+}
+
+.description {
+    width: 30%;
+    text-align: justify;
+    flex-direction: row;
+    margin-top: 6em;
+}
+
+.details_pix {
+    margin-left: 30px;
+    margin-bottom: 20px;
+    height: 300px;
+    border-color: #2a2928;
+    border-style: groove;
+    box-shadow: 10px 10px 5px #2a2928;
+}
+
+#details_info {
+    margin-left: 30px;
 
 }
 
 /*Footer*/
+
+input#news_letter_email{
+    width: fit-content;
+    text-align: left;
+}
+
+.logo-foot {
+    width: 400px;
+    margin-right: -5em;
+}
+
+.filtre_ {
+    /* filter:sepia(100%) hue-rotate(950deg); */
+    filter: grayscale(100%);
+}
+
+.filtre_:hover {
+    filter: sepia(100%) grayscale(100%);
+}
+
 .ftitle {
     color: white;
+    text-align: center;
 }
 
 footer {
@@ -398,28 +503,26 @@ footer a {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+footer a:hover {
+    color: white;
+}
+
 .foot {
     display: flex;
-    justify-content: space-around;
-
-
+    justify-content: space-between;
+    margin-left: 2em;
 }
+
 
 /**/
 .align_ {
     display: flex;
     justify-content: space-around;
-
-
 }
 
 .fdiv {
-
-
     position: relative;
-
     right: 85px;
-
 }
 
 .larg_ {
@@ -452,7 +555,6 @@ footer a {
 
 .ligne_ {
     background: white;
-
 }
 
 .foot_r {

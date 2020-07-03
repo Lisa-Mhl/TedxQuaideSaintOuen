@@ -6,6 +6,7 @@ use App\Repository\TagRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=TagRepository::class)
@@ -20,6 +21,7 @@ class Tag
     private $id;
 
     /**
+     * @Groups("search")
      * @ORM\Column(type="string", length=20)
      */
     private $name;
@@ -32,6 +34,11 @@ class Tag
     public function __construct()
     {
         $this->talks = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->name;
     }
 
     public function getId(): ?int
