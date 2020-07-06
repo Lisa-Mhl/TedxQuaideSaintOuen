@@ -3,16 +3,16 @@
         {{ form_errors(form) }}
     </div>
     <div>
-        {{ form_row(form.subject, {'label': 'Sujet'}) }}
+        {{ form_row(form.subject, {'label': 'Sujet', 'attr': {'class': 'form-contact'}}) }}
     </div>
     <div>
-        {{ form_row(form.name, {'label': 'Nom'}) }}
+        {{ form_row(form.name, {'label': 'Nom', 'attr': {'class': 'form-contact'}}) }}
     </div>
     <div>
-        {{ form_row(form.email, {'label': 'Email'}) }}
+        {{ form_row(form.email, {'label': 'Email', 'attr': {'class': 'form-contact'}}) }}
     </div>
     <div class="message">
-        {{ form_row(form.message, {'label': 'Message'}) }}
+        {{ form_row(form.message, {'label': 'Message', 'attr': {'class': 'form-contact'}}) }}
     </div>
 
     <button class="btn">{{ button_label|default('Envoyer') }}</button>
