@@ -63,7 +63,7 @@
                 {{ form_start(formNewsLetter, {'attr': {'novalidate': 'novalidate'}}) }}
                 <div class="form-ctn">
                     <div class="form-newsletter">
-                        {{ form_row(formNewsLetter.email) }}
+                        {{ form_widget(formNewsLetter.email) }}
                         <button class="btn" id="search">{{ button_label|default("S'inscrire") }}</button>
                     </div>
                 </div>
