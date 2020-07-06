@@ -45,6 +45,11 @@
     text-decoration: none;
 }
 
+#navlinks_:hover
+{
+    color: #e62b1e;
+}
+
 .navlogo:hover {
     opacity: 90%;
     text-decoration: none;
