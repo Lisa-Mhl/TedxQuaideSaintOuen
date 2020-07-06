@@ -270,12 +270,6 @@ body {
     margin-left: 1em;
 }
 
-.img-talk {
-    vertical-align: middle;
-    border-style: none;
-    height: 14em;
-}
-
 .form_ctn,
 .form-search {
     display: flex;
@@ -318,20 +312,19 @@ body {
     padding-bottom: 50px;
 }
 
+.card-talk {
+    border-radius: inherit;
+    border: 2px solid black;
+}
+
 .ctn-talks {
-    display: flex;
-    justify-content: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.card_talks {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.container_talks {
-    padding: 30px 16px;
-    background-color: white;
-    height: 13em;
+.img-talk {
+    border-radius: inherit;
 }
 
 .row {
@@ -572,3 +565,30 @@ footer a:hover {
     font-weight: bold;
 }
 
+/*///////////////////////////////////////////////// ONLY FOR FORM SEARCH AND NAVBAR//////////////////////////////////////////////////*/
+
+@media only screen and (max-width: 1000px) {
+
+    /*TALKS*/
+    .form-search {
+        flex-direction: column;
+    }
+
+    #search {
+        margin-left: 0;
+    }
+}
+
+/*///////////////////////////////////////////////// MOBILE VERSION //////////////////////////////////////////////////*/
+
+@media only screen and (max-width: 600px) {
+
+    /*TALKS*/
+    .form-search {
+        flex-direction: column;
+    }
+
+    #search {
+        margin-left: 0;
+    }
+}
