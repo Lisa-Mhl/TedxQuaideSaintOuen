@@ -270,6 +270,10 @@ body {
     margin-left: 1em;
 }
 
+.not-found-talk {
+    text-align: center;
+}
+
 .form_ctn,
 .form-search {
     display: flex;
@@ -332,6 +336,10 @@ body {
 }
 
 /* EQUIPES */
+
+.ctn-team-all {
+    margin-left: 15px;
+}
 
 .team_ctn {
     text-align: center;
@@ -591,4 +599,25 @@ footer a:hover {
     #search {
         margin-left: 0;
     }
+
+    /* SPEAKERS */
+
+    .mobile-speaker {
+        flex-direction: column;
+    }
+
+    .speaker_ctn  {
+        margin-left: 15px;
+    }
+
+    .mobile-speaker-ctn {
+        max-width: 100%;
+    }
+
+    /* PARTENAIRES */
+
+    #team_pix {
+        margin-bottom: 2em;
+    }
+
 }

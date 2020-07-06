@@ -18,8 +18,8 @@
             </div>
             {{ form_end(form) }}
         <div class="ctn-talks">
-            <div class="card-columns">
             {% if talks %}
+            <div class="card-columns">
                 {% for talk in talks %}
                     {% if talk.ispublished is same as(true) %}
                         <div class="card card-talk">
@@ -32,16 +32,16 @@
                                 {% for tag in talk.tags %}
                                     <small class="tag">#{{ tag.name }}</small>
                                 {% endfor %}
+                            </div>
                         </div>
-                    </div>
                     {% endif %}
                 {% endfor %}
+            </div>
             {% else %}
-                <div>
-                    <h2>Nous n'avons rien trouvé</h2>
+                <div class="not-found-talk">
+                    <h2 class="text-white">Désolé nous n'avons rien trouvé</h2>
                 </div>
             {% endif %}
-        </div>
         </div>
     </div>
 {% endblock %}
