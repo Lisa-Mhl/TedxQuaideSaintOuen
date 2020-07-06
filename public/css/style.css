@@ -622,4 +622,85 @@ footer a:hover {
     }
 
     /* CONTACT */
+
+    /*HOME*/
+    .valeurs-ctn {
+        width: 470px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .banner_ctn {
+        margin-top: 4em;
+        margin-left: -10px;
+    }
+
+    .foot {
+        flex-direction: column;
+    }
+
+    .edito {
+        width: 70%;
+        margin-right: auto;
+        margin-left: 20px;
+    }
+
+    .edito_title {
+        font-size: 2em;
+    }
+
+    #pix_article {
+        margin-left:27px;
+    }
+
+    .mytesto {
+        width: 400px;
+    }
+
+    .foot_r {
+        width: 500px;
+    }
+
+    .ftitle {
+        margin-right: 150px;
+    }
+
+    .edito_title {
+        margin-right: 120px;
+    }
+
+    .hp_partners {
+        font-size: 2em;
+    }
+
+    .ptn_ctn_hp {
+        width: 500px;
+    }
+
+    .feedback {
+        width: 470px;
+    }
+
+    .comment {
+        width: 80%;
+    }
+
+    .card-body {
+        width: 300px;
+        margin-left: 100px;
+        text-align: center;
+    }
+
+    .stat {
+        margin-top: 20px;
+    }
+
+    .card_article {
+        max-width: 100%;
+    }
 }
