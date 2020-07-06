@@ -8,9 +8,9 @@
     </div>
 
     <div class="speakers_all">
-        <div class="row mobile-speaker">
+        <div class="row">
             {% for speaker in speakers %}
-                <div class="speaker_ctn col-4 mobile-speaker-ctn">
+                <div class="speaker_ctn col-4">
                     <a href="{{ path('info', {'id': speaker.id}) }}"><img src="{{ asset('uploads/files/' ~ speaker.photo) }}" alt="{{ speaker.name }}"></a>
                     <p class="speaker_name"> {{ speaker.name }}<br>
                     <p class="red bold">{{ speaker.job }}</p>
