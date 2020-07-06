@@ -26,7 +26,7 @@
                             <img class="card-img-top" id="pix_article" src="{{ asset('uploads/files/' ~ item.photo) }}" alt="{{ item.title }}">
                         {% endif %}
                         {% if item.video %}
-                            <iframe class="card-img-top" src="{{ item.video }}" height="300" frameborder="0"
+                            <iframe class="card-img-top" id="pix_article" src="{{ item.video }}" height="300" frameborder="0"
                                     allow="autoplay; fullscreen" allowfullscreen></iframe>
                         {% endif %}
                         <div class="card-body">
@@ -59,7 +59,7 @@
 
         <p class="post_comment red bold">Poster un avis</p>
 
-        {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+        {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'class': 'form-comment'}}) }}
         <div>
             {{ form_errors(form) }}
         </div>
@@ -75,8 +75,6 @@
 
         <button class="btn">{{ button_label|default('Envoyer') }}</button>
         {{ form_end(form) }}
-    </div>
-
     </div>
 
     <div class="ptn_ctn_hp">
