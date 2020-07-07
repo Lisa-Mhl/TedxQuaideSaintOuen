@@ -12,7 +12,7 @@
     font-family: Helvetica;
     font-size: 1.3em;
     padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    padding-bottom: 3em;
 }
 
 .navlink {
@@ -36,7 +36,6 @@
 .navbar,
 .navlink {
     display: flex;
-    justify-content: flex-end;
     flex-direction: row;
 }
 
@@ -57,6 +56,20 @@
 }
 
 /* HOME */
+.image-partner {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.partner {
+    margin-left: 0;
+}
+
+.comment-ctn {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
 
 .home_title {
     color: white;
@@ -111,11 +124,6 @@
     padding-bottom: 2em;
 }
 
-#pix_article {
-    height: 300px;
-    width: 26em;
-}
-
 .card_article {
     margin-left: auto;
     margin-right: auto;
@@ -143,7 +151,7 @@
 .comment {
     text-align: center;
     font-size: 1.2em;
-    width: 700px;
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 0px;
@@ -271,12 +279,16 @@ body {
 /* TALKS */
 
 #search {
-    height: 2.5em;
     margin-left: 1em;
 }
 
+.not-found-talk {
+    text-align: center;
+}
+
 .form_ctn,
-.form-search {
+.form-search,
+.form-newsletter {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -346,6 +358,10 @@ body {
     margin-top: 3em;
 }
 
+.row-team {
+    margin-left: 0;
+}
+
 .team_all {
     width: 80%;
     margin-left: auto;
@@ -373,7 +389,7 @@ body {
 /* CONTACT */
 
 form {
-    width: 30%;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
@@ -386,6 +402,7 @@ form {
 
 .btn {
     background-color: #e62b1e;
+    height: fit-content;
 }
 
 .btn:hover {
@@ -393,7 +410,6 @@ form {
 }
 
 #logocontact {
-    margin-left: 100px;
     width: 400px;
 }
 
@@ -474,7 +490,6 @@ input#news_letter_email{
 
 .logo-foot {
     width: 400px;
-    margin-right: -5em;
 }
 
 .filtre_ {
@@ -570,7 +585,7 @@ footer a:hover {
     font-weight: bold;
 }
 
-/*///////////////////////////////////////////////// ONLY FOR FORM SEARCH AND NAVBAR//////////////////////////////////////////////////*/
+/*///////////////////////////////////////////////// TABLETTE //////////////////////////////////////////////////*/
 
 @media only screen and (max-width: 1000px) {
 
@@ -582,99 +597,161 @@ footer a:hover {
     #search {
         margin-left: 0;
     }
+
+    /*HOME*/
+
+    .banner_ctn, #banner {
+        display: flex;
+        justify-content: center;
+        height: 500PX;
+        max-width: 400PX;
+    }
+
+    #pix_article {
+        width: 70%;
+    }
+
+    .align_ {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    input#news_letter_email {
+        margin-right: 1em;
+    }
+
+    form.form-comment {
+        width: 70%;
+    }
+
+    .mobile-article {
+        flex-direction: column;
+    }
+
+    .mobile-article-col {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    #logonav {
+        margin-left: -0.5em;
+    }
+
+    .card_article {
+        margin-left: 15px;
+    }
+
+    /* CONTACT */
+
+    form.form-contact {
+        width: 70%;
+    }
+
+    /*FOOTER*/
+
+    .foot {
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .foot-left {
+        text-align: center;
+    }
+
+    .foot-center {
+        text-align: center;
+    }
+
+    .foot-right {
+        text-align: center;
+    }
 }
 
 /*///////////////////////////////////////////////// MOBILE VERSION //////////////////////////////////////////////////*/
 
 @media only screen and (max-width: 600px) {
 
-    /*TALKS*/
-    .form-search {
-        flex-direction: column;
-    }
-
-    #search {
-        margin-left: 0;
-    }
-
     /*HOME*/
-    .valeurs-ctn {
-        width: 470px;
-        display: flex;
-        flex-direction: column;
-    }
 
-    .row {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .banner_ctn {
-        margin-top: 4em;
-        margin-left: -10px;
-    }
-
-    .foot {
-        flex-direction: column;
+    #pix_article {
+        width: 90%;
     }
 
     .edito {
-        width: 70%;
+        width: 95%;
         margin-right: auto;
-        margin-left: 20px;
+        margin-left: auto;
+    }
+
+    .banner_ctn, #banner {
+        display: flex;
+        justify-content: center;
+        height: 300PX;
+        max-width: 250PX;
+    }
+    .comment-all {
+        margin-right: auto;
+        margin-left: auto;
+        width: 90%;
+    }
+
+    .stat {
+        width: 40%;
     }
 
     .edito_title {
         font-size: 2em;
     }
 
-    #pix_article {
-        margin-left:27px;
+    .nosvaleurs {
+        font-size: 2em;
     }
 
-    .mytesto {
-        width: 400px;
+    /*TALKS*/
+
+    .form-talk {
+        flex-direction: column;
     }
 
-    .foot_r {
-        width: 500px;
+    .align_ {
+        display: flex;
+        justify-content: space-evenly;
     }
 
-    .ftitle {
-        margin-right: 150px;
-    }
+    /* PARTENAIRES */
 
-    .edito_title {
-        margin-right: 120px;
+    #team_pix {
+        margin-bottom: 1em;
+        margin-top: 1em
     }
 
     .hp_partners {
         font-size: 2em;
     }
 
-    .ptn_ctn_hp {
-        width: 500px;
+    .ptn_title {
+        font-size: 2em;
     }
 
-    .feedback {
-        width: 470px;
+    /* SPEAKERS */
+
+    .mobile-speaker-all {
+        flex-direction: column;
+        margin-left: 0;
     }
 
-    .comment {
-        width: 80%;
-    }
-
-    .card-body {
-        width: 300px;
-        margin-left: 100px;
-        text-align: center;
-    }
-
-    .stat {
-        margin-top: 20px;
-    }
-
-    .card_article {
+    .mobile-speaker {
         max-width: 100%;
     }
+
+    /* EQUIPE */
+
+    .row-team {
+        margin-left: 15px;
+    }
+
+
+
+
+
 }

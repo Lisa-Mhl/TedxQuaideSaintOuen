@@ -13,7 +13,7 @@
     <div class="team_all">
         <div class="row">
             {% for category in categories %}
-                <div class="row">
+                <div class="row row-team">
                     {% for team in category.teams %}
                         <div class="team_ctn">
                             <a href="{{ team.link }}" target="_blank"><img src="{{ asset('uploads/files/' ~ team.photo) }}" alt="{{ team.name }}"></a>

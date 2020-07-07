@@ -9,12 +9,12 @@
               integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
               crossorigin="anonymous">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-
+        <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABABEQERAAAAEAEAAQAQAAAQAREBABAAABABAAEAEAABEQERAREBAQAAAAAAAAAQAAAAAAAAAQH//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AADYjwAA27cAANi3AADbtwAAiIoAAP/9AAD/+gAA" rel="icon" type="image/x-icon" />
     {% endblock %}
 </head>
 <header >
     <nav class="navbar navbar-expand-lg navbar-dark  ">
-        <a class="navbar-brand" href="/"><img src="https://i.postimg.cc/x8FCsdgg/TEDx-Quaide-Saint-Ouen5.png"
+        <a class="navbar-brand" href="/"><img src="https://i.postimg.cc/3N08BZzR/TEDx-Quaide-Saint-Ouen5-removebg-preview.png"
                                               alt="LOGO TEDx SAINT OUEN" id="logonav"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -44,13 +44,13 @@
 {% block footer %}
 <footer>
     <div class="foot">
-        <div>
+        <div class="foot-left">
             <h3 class="ftitle">A Propos de nous</h3>
             <p class="red"><a href="{{ path('partenaires') }}">Partenaires</a></p>
             <p><a href="{{ path('contact') }}">Contact</a></p>
             <p><a href="{{ path('mentions') }}">Mention légales</a></p>
         </div>
-        <div class="mytesto">
+        <div class="foot-center">
             <h3 class="ftitle">Réseaux sociaux</h3>
             <div class="align_">
                 <a href="#"><img src="https://img.icons8.com/fluent/30/000000/instagram-new.png" class="filtre_"/></a>
@@ -62,15 +62,15 @@
             <h3 class="title_message"> Newsletter</h3>
                 {{ form_start(formNewsLetter, {'attr': {'novalidate': 'novalidate'}}) }}
                 <div class="form-ctn">
-                    <div class="form-search">
-                        {{ form_row(formNewsLetter.email) }}
+                    <div class="form-newsletter">
+                        {{ form_widget(formNewsLetter.email) }}
                         <button class="btn" id="search">{{ button_label|default("S'inscrire") }}</button>
                     </div>
                 </div>
                 {{ form_end(formNewsLetter) }}
         </div>
 
-        <div>
+        <div class="foot-right">
             <img src="https://i.postimg.cc/3N08BZzR/TEDx-Quaide-Saint-Ouen5-removebg-preview.png" alt="LOGO TEDx SAINT OUEN"
                  class="logo-foot"></a>
         </div>
