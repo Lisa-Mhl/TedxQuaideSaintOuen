@@ -15,7 +15,6 @@ easy_admin:
             - {entity: 'Partenaires', icon: 'handshake'}
             - {entity: 'Banniere', icon: 'flag'}
             - {entity: 'Avis', icon: 'comments'}
-            - {entity: 'Edito', icon: 'edit'}
             - {entity: 'Statistiques', icon: 'chart-bar'}
             - {entity: 'NewsLetter', icon: 'envelope-open-text'}
             - {entity: 'Contact', icon: 'address-book'}
@@ -231,23 +230,6 @@ easy_admin:
                     - { property: 'name', label: 'Auteur' }
                     - { property: 'job', label: 'Métier' }
 
-        Edito:
-            class: App\Entity\Edito
-            list:
-                actions:
-                    - { name: 'search', label: 'Rechercher' }
-                    - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
-                    - { name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
-                    - { name: 'new', icon: 'plus', label: 'Ajouter', css_class: 'btn btn-success' }
-                fields:
-                    - { property: 'content', label: 'Contenu' }
-            edit:
-                fields:
-                    - { property: 'content', label: 'Contenu' }
-            form:
-                fields:
-                    - { property: 'content', label: 'Contenu' }
-
         Statistiques:
             class: App\Entity\Stats
             list:
@@ -287,7 +269,7 @@ easy_admin:
 
         Contact:
             class: App\Entity\Contact
-            disabled_actions: ['edit']
+            disabled_actions: ['edit','new']
             list:
                 actions:
                     - { name: 'search', label: 'Rechercher' }
