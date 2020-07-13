@@ -1,0 +1,12 @@
+{% extends '@!EasyAdmin/default/list.html.twig' %}
+
+{% block global_actions %}
+    {{ parent() }}
+
+    {# Add your code here, for example a button on the 'Users' list #}
+    {% if _entity_config.name == "NewsLetter" %}
+        <div class=button-action">
+            <a class="btn btn-dark" href="{{ path('newsletter_email') }}" target="_blank"><i class="fas fa-envelope-open-text"></i> Tous les emails</a>
+        </div>
+    {% endif %}
+{% endblock %}
