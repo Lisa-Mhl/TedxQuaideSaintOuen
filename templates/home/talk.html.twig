@@ -19,10 +19,10 @@
             {{ form_end(form) }}
         <div class="ctn-talks">
             {% if talks %}
-            <div class="card-columns">
+            <div class="row">
                 {% for talk in talks %}
                     {% if talk.ispublished is same as(true) %}
-                        <div class="card card-talk">
+                        <div class="card card-talk col-4">
                             <a href="{{ talk.video }}"><img class="card-img-top img-talk" src="{{ asset('uploads/files/' ~ talk.photo) }}" alt="Avatar" style="width:100%"></a>
                             <div class="card-body">
                                 <h4><b>{{ talk.title }}</b></h4>

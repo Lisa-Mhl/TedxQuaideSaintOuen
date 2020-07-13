@@ -335,6 +335,10 @@ body {
     border: 2px solid black;
 }
 
+.card-top {
+    background-color: black;
+}
+
 .ctn-talks {
     width: 90%;
     margin-left: auto;
@@ -343,6 +347,7 @@ body {
 
 .img-talk {
     border-radius: inherit;
+    height: 15em;
 }
 
 .row {
@@ -354,9 +359,7 @@ body {
 .team_ctn {
     text-align: center;
     color: white;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 3em;
+    margin: 3em auto -5em;
 }
 
 .row-team {
@@ -372,8 +375,7 @@ body {
 .team_ctn img {
     padding: 0;
     border-radius: 100%;
-    width: 60%;
-    height: 180px;
+    height: 50%;
 }
 
 .team_name {
@@ -411,7 +413,7 @@ form {
 }
 
 #logocontact {
-    width: 400px;
+    width: 35%;
 }
 
 /*Speakers */
@@ -429,15 +431,13 @@ form {
 .speaker_ctn {
     text-align: center;
     color: white;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 3em;
+    margin: 3em auto -25em;
 }
 
 .speaker_ctn img {
     padding: 0;
     border-radius: 5%;
-    height: 180px;
+    height: 30%;
 }
 
 /*Legal Mentions*/
@@ -457,6 +457,8 @@ form {
 
 .details_ctn {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     margin-top: 5em;
 }
@@ -470,8 +472,8 @@ form {
 
 .details_pix {
     margin-left: 30px;
+    width: 50%;
     margin-bottom: 20px;
-    height: 300px;
     border-color: #2a2928;
     border-style: groove;
     box-shadow: 10px 10px 5px #2a2928;
@@ -681,6 +683,25 @@ footer a:hover {
         width: 70%;
     }
 
+    /* SPEAKERS */
+
+    .mobile-speaker-all {
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .mobile-speaker {
+        max-width: 100%;
+    }
+
+    .speaker_ctn img {
+        width: 30%;
+    }
+
+    .speaker_ctn {
+        margin: 3em auto 0;
+    }
+
     /*FOOTER*/
     .foot {
         flex-direction: column;
@@ -698,6 +719,12 @@ footer a:hover {
     .foot-right {
         text-align: center;
     }
+
+    /* PARTENAIRES */
+
+    #logocontact {
+        width: 50%;
+    }
 }
 
 /*///////////////////////////////////////////////// MOBILE VERSION //////////////////////////////////////////////////*/
@@ -707,6 +734,20 @@ footer a:hover {
     /*HOME*/
     #pix_article {
         width: 90%;
+    }
+
+    #logonav {
+        width: 100%;
+    }
+
+    .logo-foot {
+        width: 100%;
+    }
+
+    .edito {
+        width: 95%;
+        margin-right: auto;
+        margin-left: auto;
     }
 
     .banner_ctn, #banner {
@@ -762,12 +803,20 @@ footer a:hover {
         margin-top: 1em
     }
 
+    #logocontact {
+        width: 70%;
+    }
+
     .hp_partners {
         font-size: 2em;
     }
 
     .ptn_title {
         font-size: 2em;
+    }
+
+    .speaker_ctn img {
+        width: 50%;
     }
 
     /* SPEAKERS */
@@ -784,6 +833,4 @@ footer a:hover {
     .row-team {
         margin-left: 15px;
     }
-
-
 }
