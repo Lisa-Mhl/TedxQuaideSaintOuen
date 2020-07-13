@@ -9,6 +9,7 @@ use App\Entity\Speaker;
 use App\Entity\Talk;
 use App\Entity\Team;
 use App\Form\ContactAdminType;
+use App\Repository\NewsletterRepository;
 use App\Service\Mailer;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -91,4 +92,15 @@ class AdminController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+    /**
+     * @Route("/admin/newsletter_email", name="newsletter_email")
+     */
+    public function getNewsLetterEmails(NewsletterRepository $newsletterRepository)
+    {
+        return $this->render('admin/newsletter_email.html.twig', [
+            'newsletters' => $newsletterRepository->findAll(),
+        ]);
+    }
+
 }
