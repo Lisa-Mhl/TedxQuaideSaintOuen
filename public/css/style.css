@@ -1,4 +1,4 @@
-*{
+* {
     font-family: Helvetica, serif;
     letter-spacing: 1px;
 }
@@ -48,8 +48,7 @@
     text-decoration: none;
 }
 
-#navlinks_:hover
-{
+#navlinks_:hover {
     color: #e62b1e;
 }
 
@@ -204,17 +203,15 @@
     margin-left: 30px;
 }
 
-.edito_ctn,
-.edito {
+.edito_ctn {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.edito {
+    flex-direction: row;
     width: 80%;
-    margin-right: auto;
+    text-align: justify;
     margin-left: auto;
+    margin-right: auto;
+    font-size: 1.6em;
+
 }
 
 .edito_title {
@@ -224,6 +221,11 @@
     padding-bottom: 1.5em;
     font-size: 4em;
     font-family: Helvetica, sans-serif;
+}
+
+.edito {
+    margin-left: 1em;
+    margin-top: 0.8em;
 }
 
 /* PARTENAIRES */
@@ -484,7 +486,7 @@ form {
 
 /*Footer*/
 
-input#news_letter_email{
+input#news_letter_email {
     width: fit-content;
     text-align: left;
 }
@@ -599,7 +601,6 @@ footer a:hover {
     }
 
     /*HOME*/
-
     .banner_ctn, #banner {
         display: flex;
         justify-content: center;
@@ -641,8 +642,21 @@ footer a:hover {
         margin-left: 15px;
     }
 
-    /* DETAILS */
+    .edito_ctn {
+        flex-direction: column;
+    }
 
+    #edito_img {
+        height: 350px;
+        margin: auto;
+        margin-bottom: 1em;
+    }
+
+    .edito_subtitle {
+        text-align: center;
+    }
+
+    /* DETAILS */
     .details {
         display: flex;
         flex-direction: column;
@@ -660,12 +674,11 @@ footer a:hover {
         margin-left: auto;
     }
 
-    .details_ctn{
+    .details_ctn {
         text-align: center;
     }
 
     /* CONTACT */
-
     form.form-contact {
         width: 70%;
     }
@@ -690,7 +703,6 @@ footer a:hover {
     }
 
     /*FOOTER*/
-
     .foot {
         flex-direction: column;
         margin-left: 0;
@@ -720,7 +732,6 @@ footer a:hover {
 @media only screen and (max-width: 600px) {
 
     /*HOME*/
-
     #pix_article {
         width: 90%;
     }
@@ -745,6 +756,7 @@ footer a:hover {
         height: 300PX;
         max-width: 250PX;
     }
+
     .comment-all {
         margin-right: auto;
         margin-left: auto;
@@ -759,12 +771,16 @@ footer a:hover {
         font-size: 2em;
     }
 
+    .edito_ctn{
+        font-size: 1.1em;
+        text-align: justify;
+    }
+
     .nosvaleurs {
         font-size: 2em;
     }
 
     /*DETAILS SPEAKERS*/
-
     .details_pix {
         width: 60%;
         margin-right: auto;
@@ -772,7 +788,6 @@ footer a:hover {
     }
 
     /*TALKS*/
-
     .form-talk {
         flex-direction: column;
     }
@@ -783,7 +798,6 @@ footer a:hover {
     }
 
     /* PARTENAIRES */
-
     #team_pix {
         margin-bottom: 1em;
         margin-top: 1em
@@ -801,14 +815,21 @@ footer a:hover {
         font-size: 2em;
     }
 
-    /*SPEAKERS*/
-
     .speaker_ctn img {
         width: 50%;
     }
 
-    /* EQUIPE */
+    /* SPEAKERS */
+    .mobile-speaker-all {
+        flex-direction: column;
+        margin-left: 0;
+    }
 
+    .mobile-speaker {
+        max-width: 100%;
+    }
+
+    /* EQUIPE */
     .row-team {
         margin-left: 15px;
     }
