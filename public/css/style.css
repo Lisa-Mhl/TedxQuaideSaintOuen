@@ -1,3 +1,8 @@
+* {
+    font-family: Helvetica, serif;
+    letter-spacing: 1px;
+}
+
 .red {
     color: #e62b1e;
 }
@@ -9,10 +14,9 @@
 /* NAVBAR */
 
 .navbar {
-    font-family: Helvetica;
     font-size: 1.3em;
     padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    padding-bottom: 3em;
 }
 
 .navlink {
@@ -36,13 +40,16 @@
 .navbar,
 .navlink {
     display: flex;
-    justify-content: flex-end;
     flex-direction: row;
 }
 
 .navlink:hover {
     color: #e62b1e;
     text-decoration: none;
+}
+
+#navlinks_:hover {
+    color: #e62b1e;
 }
 
 .navlogo:hover {
@@ -52,6 +59,20 @@
 }
 
 /* HOME */
+.image-partner {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.partner {
+    margin-left: 0;
+}
+
+.comment-ctn {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
 
 .home_title {
     color: white;
@@ -95,7 +116,6 @@
 .nosvaleurs {
     text-align: center;
     font-size: 4em;
-    font-family: Helvetica, sans-serif;
     margin-bottom: 1em;
     padding-top: 0.5em;
 }
@@ -104,11 +124,6 @@
     background-color: white;
     margin-top: 5em;
     padding-bottom: 2em;
-}
-
-#pix_article {
-    height: 300px;
-    width: 26em;
 }
 
 .card_article {
@@ -138,7 +153,7 @@
 .comment {
     text-align: center;
     font-size: 1.2em;
-    width: 700px;
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 0px;
@@ -188,17 +203,15 @@
     margin-left: 30px;
 }
 
-.edito_ctn,
-.edito {
+.edito_ctn {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.edito {
+    flex-direction: row;
     width: 80%;
-    margin-right: auto;
+    text-align: justify;
     margin-left: auto;
+    margin-right: auto;
+    font-size: 1.6em;
+
 }
 
 .edito_title {
@@ -208,6 +221,11 @@
     padding-bottom: 1.5em;
     font-size: 4em;
     font-family: Helvetica, sans-serif;
+}
+
+.edito {
+    margin-left: 1em;
+    margin-top: 0.8em;
 }
 
 /* PARTENAIRES */
@@ -228,7 +246,6 @@ body {
 
 .ptn_subtitle {
     color: white;
-    font-family: Helvetica;
     text-align: center;
     font-size: 1.3em;
     margin-top: 2em;
@@ -251,7 +268,6 @@ body {
 
 .ptn_ctg {
     font-size: 1.5em;
-    font-family: Helvetica, sans-serif;
     margin-top: 5em;
 }
 
@@ -259,25 +275,22 @@ body {
     text-align: center;
     color: white;
     font-size: 1.3em;
-    font-family: Helvetica, sans-serif;
     margin-top: 5em;
 }
 
 /* TALKS */
 
 #search {
-    height: 2.5em;
     margin-left: 1em;
 }
 
-.img-talk {
-    vertical-align: middle;
-    border-style: none;
-    height: 14em;
+.not-found-talk {
+    text-align: center;
 }
 
 .form_ctn,
-.form-search {
+.form-search,
+.form-newsletter {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -292,17 +305,9 @@ body {
     margin-top: 0.8em;
 }
 
-.talks_banner img {
-    height: 200px;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-}
-
 .talks_banner
 .talks_title {
     color: white;
-    font-family: Helvetica, sans-serif;
     margin-left: 8.7em;
 }
 
@@ -319,23 +324,37 @@ body {
 }
 
 .ctn-talks {
-    display: flex;
-    justify-content: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: row;
 }
 
-.card_talks {
-    margin-top: 10px;
-    margin-bottom: 10px;
+.card-talk {
+    width: 450px;
+    background-color: transparent;
+    margin-bottom: 2em;
+    margin-right: 2em;
 }
 
-.container_talks {
-    padding: 30px 16px;
+.card-top {
+    background-color: black;
+}
+
+.img-talk {
+    border-radius: inherit;
+    height: 15em;
+    width: 50em;
+}
+
+.talk_body {
     background-color: white;
-    height: 13em;
 }
 
 .row {
-    width: 100%;
+    display: flex;
+    justify-content: center;
+
 }
 
 /* EQUIPES */
@@ -343,9 +362,11 @@ body {
 .team_ctn {
     text-align: center;
     color: white;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 3em;
+    margin: 3em auto -5em;
+}
+
+.row-team {
+    margin-left: 0;
 }
 
 .team_all {
@@ -357,8 +378,7 @@ body {
 .team_ctn img {
     padding: 0;
     border-radius: 100%;
-    width: 60%;
-    height: 180px;
+    height: 50%;
 }
 
 .team_name {
@@ -375,7 +395,7 @@ body {
 /* CONTACT */
 
 form {
-    width: 30%;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
@@ -388,6 +408,7 @@ form {
 
 .btn {
     background-color: #e62b1e;
+    height: fit-content;
 }
 
 .btn:hover {
@@ -395,8 +416,7 @@ form {
 }
 
 #logocontact {
-    margin-left: 100px;
-    width: 400px;
+    width: 35%;
 }
 
 /*Speakers */
@@ -414,15 +434,13 @@ form {
 .speaker_ctn {
     text-align: center;
     color: white;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 3em;
+    margin: 3em auto -25em;
 }
 
 .speaker_ctn img {
     padding: 0;
     border-radius: 5%;
-    height: 180px;
+    height: 30%;
 }
 
 /*Legal Mentions*/
@@ -442,6 +460,8 @@ form {
 
 .details_ctn {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     margin-top: 5em;
 }
@@ -455,8 +475,8 @@ form {
 
 .details_pix {
     margin-left: 30px;
+    width: 50%;
     margin-bottom: 20px;
-    height: 300px;
     border-color: #2a2928;
     border-style: groove;
     box-shadow: 10px 10px 5px #2a2928;
@@ -469,14 +489,13 @@ form {
 
 /*Footer*/
 
-input#news_letter_email{
+input#news_letter_email {
     width: fit-content;
     text-align: left;
 }
 
 .logo-foot {
     width: 400px;
-    margin-right: -5em;
 }
 
 .filtre_ {
@@ -500,7 +519,6 @@ footer {
 
 footer a {
     color: red;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 footer a:hover {
@@ -572,3 +590,253 @@ footer a:hover {
     font-weight: bold;
 }
 
+/*///////////////////////////////////////////////// TABLETTE //////////////////////////////////////////////////*/
+
+@media only screen and (max-width: 1000px) {
+
+    /*TALKS*/
+    .form-search {
+        flex-direction: column;
+    }
+
+    #search {
+        margin-left: 0;
+    }
+
+    /*HOME*/
+    .banner_ctn, #banner {
+        display: flex;
+        justify-content: center;
+        height: 500PX;
+        max-width: 400PX;
+    }
+
+    #pix_article {
+        width: 70%;
+    }
+
+    .align_ {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    input#news_letter_email {
+        margin-right: 1em;
+    }
+
+    form.form-comment {
+        width: 70%;
+    }
+
+    .mobile-article {
+        flex-direction: column;
+    }
+
+    .mobile-article-col {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    #logonav {
+        margin-left: -0.5em;
+    }
+
+    .card_article {
+        margin-left: 15px;
+    }
+
+    .edito_ctn {
+        flex-direction: column;
+    }
+
+    #edito_img {
+        height: 350px;
+        margin: auto;
+        margin-bottom: 1em;
+    }
+
+    .edito_subtitle {
+        text-align: center;
+    }
+
+    /* DETAILS */
+    .details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .description {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .details_pix {
+        width: 40%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .details_ctn {
+        text-align: center;
+    }
+
+    /* CONTACT */
+    form.form-contact {
+        width: 70%;
+    }
+
+    /* SPEAKERS */
+    .mobile-speaker-all {
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .mobile-speaker {
+        max-width: 100%;
+    }
+
+    .speaker_ctn img {
+        width: 30%;
+    }
+
+    .speaker_ctn {
+        margin: 3em auto 0;
+    }
+
+    /*FOOTER*/
+    .foot {
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .foot-left {
+        text-align: center;
+    }
+
+    .foot-center {
+        text-align: center;
+    }
+
+    .foot-right {
+        text-align: center;
+    }
+
+    /* PARTENAIRES */
+    #logocontact {
+        width: 50%;
+    }
+}
+
+/*///////////////////////////////////////////////// MOBILE VERSION //////////////////////////////////////////////////*/
+
+@media only screen and (max-width: 600px) {
+
+    /*HOME*/
+    #pix_article {
+        width: 90%;
+    }
+
+    #logonav {
+        width: 100%;
+    }
+
+    .logo-foot {
+        width: 100%;
+    }
+
+    .edito {
+        width: 95%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .banner_ctn, #banner {
+        display: flex;
+        justify-content: center;
+        height: 300PX;
+        max-width: 250PX;
+    }
+
+    .comment-all {
+        margin-right: auto;
+        margin-left: auto;
+        width: 90%;
+    }
+
+    .stat {
+        width: 40%;
+    }
+
+    .edito_title {
+        font-size: 2em;
+    }
+
+    .edito_ctn {
+        font-size: 1.1em;
+        text-align: justify;
+    }
+
+    .nosvaleurs {
+        font-size: 2em;
+    }
+
+    /*DETAILS SPEAKERS*/
+    .details_pix {
+        width: 60%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    /*TALKS*/
+    .form-talk {
+        flex-direction: column;
+    }
+
+    .align_ {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .card-talk{
+        margin-right:0px;
+    }
+
+
+    /* PARTENAIRES */
+    #team_pix {
+        margin-bottom: 1em;
+        margin-top: 1em
+    }
+
+    #logocontact {
+        width: 70%;
+    }
+
+    .hp_partners {
+        font-size: 2em;
+    }
+
+    .ptn_title {
+        font-size: 2em;
+    }
+
+    .speaker_ctn img {
+        width: 50%;
+    }
+
+    /* SPEAKERS */
+    .mobile-speaker-all {
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .mobile-speaker {
+        max-width: 100%;
+    }
+
+    /* EQUIPE */
+    .row-team {
+        margin-left: 15px;
+    }
+}

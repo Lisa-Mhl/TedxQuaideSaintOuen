@@ -9,8 +9,9 @@
     <div class="details">
         <p class="description text-white">{{ speaker.description }} <br><br>
             {% if speaker.link %}
-            <a href="{{ speaker.link }}" target="_blank">En savoir plus</a></p>
+            <a href="{{ speaker.link }}" target="_blank">En savoir plus</a><br>
         {% endif %}
+        <a class="backLink" href="{{ path('speakers') }}">Retour aux speakers</a></p>
         <div class="details_ctn">
             <img class="details_pix" src="{{ asset('uploads/files/' ~ speaker.photo) }}" alt="{{ speaker.name }}">
             <p id="details_info" class="text-white">{{ speaker.name }}, <span class="red"> {{ speaker.job }} </span></p>

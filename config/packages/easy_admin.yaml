@@ -15,7 +15,6 @@ easy_admin:
             - {entity: 'Partenaires', icon: 'handshake'}
             - {entity: 'Banniere', icon: 'flag'}
             - {entity: 'Avis', icon: 'comments'}
-            - {entity: 'Edito', icon: 'edit'}
             - {entity: 'Statistiques', icon: 'chart-bar'}
             - {entity: 'NewsLetter', icon: 'envelope-open-text'}
             - {entity: 'Contact', icon: 'address-book'}
@@ -27,7 +26,6 @@ easy_admin:
             class: App\Entity\Talk
             list:
                 actions:
-                    - { name: 'search', label: 'Rechercher' }
                     - { name: 'youtube_talk', type: 'route', label: 'Youtube', icon: 'video', css_class: 'btn btn-dark', target: '_blank' }
                     - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
                     - { name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
@@ -60,7 +58,6 @@ easy_admin:
             class: App\Entity\Article
             list:
                 actions:
-                    - { name: 'search', label: 'Rechercher' }
                     - { name: 'youtube_article', type: 'route', label: 'Youtube', icon: 'video', css_class: 'btn btn-dark', target: '_blank' }
                     - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
                     - { name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
@@ -89,7 +86,6 @@ easy_admin:
             class: App\Entity\Speaker
             list:
                 actions:
-                    - { name: 'search', label: 'Rechercher' }
                     - { name: 'linkedin_speaker', type: 'route', label: 'Linkedin', icon: 'link', css_class: 'btn btn-dark', target: '_blank' }
                     - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
                     - { name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
@@ -120,7 +116,6 @@ easy_admin:
             class: App\Entity\Tag
             list:
                 actions:
-                    - { name: 'search', label: 'Rechercher' }
                     - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
                     - { name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
                     - { name: 'new', icon: 'plus', label: 'Ajouter', css_class: 'btn btn-success' }
@@ -140,7 +135,6 @@ easy_admin:
             class: App\Entity\Team
             list:
                 actions:
-                    - { name: 'search', label: 'Rechercher' }
                     - { name: 'linkedin_team', type: 'route', label: 'Linkedin', icon: 'link', css_class: 'btn btn-dark', target: '_blank' }
                     - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
                     - { name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
@@ -169,7 +163,6 @@ easy_admin:
             class: App\Entity\Partner
             list:
                 actions:
-                    - { name: 'search', label: 'Rechercher' }
                     - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
                     - { name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
                     - { name: 'new', icon: 'plus', label: 'Ajouter', css_class: 'btn btn-success' }
@@ -192,7 +185,6 @@ easy_admin:
             class: App\Entity\Banner
             list:
                 actions:
-                    - { name: 'search', label: 'Rechercher' }
                     - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
                     - { name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
                     - { name: 'new', icon: 'plus', label: 'Ajouter', css_class: 'btn btn-success' }
@@ -213,7 +205,6 @@ easy_admin:
             disabled_actions: ['new']
             list:
                 actions:
-                    - { name: 'search', label: 'Rechercher' }
                     - { name: 'show', icon: 'eye', label: false, css_class: 'btn btn-primary' }
                     - { name: 'edit', label: false }
                     - { name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
@@ -231,28 +222,10 @@ easy_admin:
                     - { property: 'name', label: 'Auteur' }
                     - { property: 'job', label: 'Métier' }
 
-        Edito:
-            class: App\Entity\Edito
-            list:
-                actions:
-                    - { name: 'search', label: 'Rechercher' }
-                    - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
-                    - { name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
-                    - { name: 'new', icon: 'plus', label: 'Ajouter', css_class: 'btn btn-success' }
-                fields:
-                    - { property: 'content', label: 'Contenu' }
-            edit:
-                fields:
-                    - { property: 'content', label: 'Contenu' }
-            form:
-                fields:
-                    - { property: 'content', label: 'Contenu' }
-
         Statistiques:
             class: App\Entity\Stats
             list:
                 actions:
-                    - { name: 'search', label: 'Rechercher' }
                     - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
                     - { name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
                     - { name: 'new', icon: 'plus', label: 'Ajouter', css_class: 'btn btn-success' }
@@ -273,7 +246,6 @@ easy_admin:
             disabled_actions: ['new','edit']
             list:
                 actions:
-                    - { name: 'search', label: 'Rechercher' }
                     - { name: 'show', icon: 'eye', label: false, css_class: 'btn btn-primary' }
                     - { name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
                 fields:
@@ -287,10 +259,9 @@ easy_admin:
 
         Contact:
             class: App\Entity\Contact
-            disabled_actions: ['edit']
+            disabled_actions: ['edit','new']
             list:
                 actions:
-                    - { name: 'search', label: 'Rechercher' }
                     - { name: 'email_contact', type: 'route', label: 'Repondre', icon: 'pencil', css_class: 'btn btn-dark', target: '_blank' }
                     - { name: 'show', icon: 'eye', label: false, css_class: 'btn btn-primary' }
                     - { name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
@@ -313,7 +284,6 @@ easy_admin:
             class: App\Entity\CategoryPartner
             list:
                 actions:
-                    - { name: 'search', label: 'Rechercher' }
                     - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
                     - { name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
                     - { name: 'new', icon: 'plus', label: 'Ajouter', css_class: 'btn btn-success' }
@@ -334,7 +304,6 @@ easy_admin:
             class: App\Entity\CategoryTeam
             list:
                 actions:
-                    - { name: 'search', label: 'Rechercher' }
                     - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
                     - { name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
                     - { name: 'new', icon: 'plus', label: 'Ajouter', css_class: 'btn btn-success' }
@@ -354,7 +323,6 @@ easy_admin:
             class: App\Entity\LegalMentions
             list:
                 actions:
-                    - { name: 'search', label: 'Rechercher' }
                     - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
                     - { name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
                     - { name: 'new', icon: 'plus', label: 'Ajouter', css_class: 'btn btn-success' }
