@@ -1,0 +1,842 @@
+* {
+    font-family: Helvetica, serif;
+    letter-spacing: 1px;
+}
+
+.red {
+    color: #e62b1e;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+/* NAVBAR */
+
+.navbar {
+    font-size: 1.3em;
+    padding-top: 0.5em;
+    padding-bottom: 3em;
+}
+
+.navlink {
+    color: white;
+    text-decoration: none;
+    padding-right: 0.5em;
+}
+
+.navlogo {
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    top: 0.4em;
+    left: 0.5em;
+}
+
+#logonav {
+    width: 400px;
+}
+
+.navbar,
+.navlink {
+    display: flex;
+    flex-direction: row;
+}
+
+.navlink:hover {
+    color: #e62b1e;
+    text-decoration: none;
+}
+
+#navlinks_:hover {
+    color: #e62b1e;
+}
+
+.navlogo:hover {
+    opacity: 90%;
+    text-decoration: none;
+    color: white;
+}
+
+/* HOME */
+.image-partner {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.partner {
+    margin-left: 0;
+}
+
+.comment-ctn {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.home_title {
+    color: white;
+    text-align: center;
+}
+
+.banner_ctn,
+#banner {
+    display: flex;
+    justify-content: center;
+    height: 600px;
+    max-width: 500px;
+}
+
+.banner_ctn,
+.link-banner {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.bannerLink {
+    margin-top: 1em;
+}
+
+.bannerBtn {
+    width: 45%;
+    background-color: #e62b1e;
+    margin-left: 3.2em;
+    border: none;
+    color: white;
+}
+
+.bannerBtn:hover {
+    opacity: 70%;
+}
+
+.nosvaleurs {
+    text-align: center;
+    font-size: 4em;
+    margin-bottom: 1em;
+    padding-top: 0.5em;
+}
+
+.valeurs-ctn {
+    background-color: white;
+    margin-top: 5em;
+    padding-bottom: 2em;
+}
+
+.card_article {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.statistics,
+.stat {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.stat {
+    background-color: #e62b1e;
+    color: white;
+    width: 20%;
+    text-align: center;
+}
+
+.feedback {
+    background-color: white;
+    padding-bottom: 2em;
+}
+
+.comment {
+    text-align: center;
+    font-size: 1.2em;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 0px;
+}
+
+.fb_name {
+    text-align: center;
+    font-size: 1em;
+}
+
+.fb_job {
+    text-align: center;
+    color: darkgray;
+    font-size: 0.9em;
+}
+
+.post_comment {
+    text-align: center;
+    font-size: 1.5em;
+    font-family: Helvetica, sans-serif;
+    margin-bottom: 0.5em;
+    padding-top: 0.5em;
+}
+
+.hp_partners {
+    text-align: center;
+    font-size: 4em;
+    font-family: Helvetica, sans-serif;
+    color: white;
+    padding-top: 0.5em;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+}
+
+.ptn_ctn_hp {
+    text-align: center;
+    color: white;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+
+.ptn_ctn_hp img {
+    padding: 0px;
+    width: 130px;
+    height: 100px;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.edito_ctn {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.6em;
+
+}
+
+.edito_title {
+    text-align: center;
+    color: white;
+    padding-top: 1em;
+    padding-bottom: 1.5em;
+    font-size: 4em;
+    font-family: Helvetica, sans-serif;
+}
+
+.edito {
+    margin-left: 1em;
+    margin-top: 0.8em;
+}
+
+/* PARTENAIRES */
+
+body {
+    background-color: black;
+    color: black;
+    width: 100%;
+}
+
+.ptn_title {
+    text-align: center;
+    color: white;
+    margin-top: 0.4em;
+    font-size: 4em;
+    font-family: Helvetica, sans-serif;
+}
+
+.ptn_subtitle {
+    color: white;
+    text-align: center;
+    font-size: 1.3em;
+    margin-top: 2em;
+}
+
+.ptn_ctn {
+    text-align: center;
+    color: white;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.ptn_ctn img {
+    padding: 0px;
+    width: 230px;
+    height: 200px;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.ptn_ctg {
+    font-size: 1.5em;
+    margin-top: 5em;
+}
+
+.ptn_contact {
+    text-align: center;
+    color: white;
+    font-size: 1.3em;
+    margin-top: 5em;
+}
+
+/* TALKS */
+
+#search {
+    margin-left: 1em;
+}
+
+.not-found-talk {
+    text-align: center;
+}
+
+.form_ctn,
+.form-search,
+.form-newsletter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 4em;
+    margin-bottom: 2em;
+}
+
+.talks_banner {
+    background-color: rgb(226, 42, 25);
+    padding-bottom: 30px;
+    padding-top: 2em;
+    margin-top: 0.8em;
+}
+
+.talks_banner
+.talks_title {
+    color: white;
+    margin-left: 8.7em;
+}
+
+.talks_title {
+    position: absolute;
+    margin-top: 0.4em;
+    font-size: 6em;
+}
+
+.bloc_page_content_talks {
+    background-color: rgb(28, 28, 28);
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+.ctn-talks {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: row;
+}
+
+.card-talk {
+    width: 450px;
+    background-color: transparent;
+    margin-bottom: 2em;
+    margin-right: 2em;
+}
+
+.card-top {
+    background-color: black;
+}
+
+.img-talk {
+    border-radius: inherit;
+    height: 15em;
+    width: 50em;
+}
+
+.talk_body {
+    background-color: white;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+
+}
+
+/* EQUIPES */
+
+.team_ctn {
+    text-align: center;
+    color: white;
+    margin: 3em auto -5em;
+}
+
+.row-team {
+    margin-left: 0;
+}
+
+.team_all {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team_ctn img {
+    padding: 0;
+    border-radius: 100%;
+    height: 50%;
+}
+
+.team_name {
+    font-size: 1.5em;
+    margin-bottom: 0px;
+}
+
+.team_job {
+    font-size: 1em;
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+
+/* CONTACT */
+
+form {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.form_ctn {
+    color: white;
+    flex-direction: column;
+}
+
+.btn {
+    background-color: #e62b1e;
+    height: fit-content;
+}
+
+.btn:hover {
+    opacity: 80%;
+}
+
+#logocontact {
+    width: 35%;
+}
+
+/*Speakers */
+.speaker_name {
+    font-size: 1.5em;
+    margin-bottom: 0px;
+}
+
+.speakers_all {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.speaker_ctn {
+    text-align: center;
+    color: white;
+    margin: 3em auto -25em;
+}
+
+.speaker_ctn img {
+    padding: 0;
+    border-radius: 5%;
+    height: 30%;
+}
+
+/*Legal Mentions*/
+.legalMentions {
+    width: 60%;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+}
+
+/* Speakers Details */
+.details {
+    display: flex;
+    justify-content: center;
+}
+
+.details_ctn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 5em;
+}
+
+.description {
+    width: 30%;
+    text-align: justify;
+    flex-direction: row;
+    margin-top: 6em;
+}
+
+.details_pix {
+    margin-left: 30px;
+    width: 50%;
+    margin-bottom: 20px;
+    border-color: #2a2928;
+    border-style: groove;
+    box-shadow: 10px 10px 5px #2a2928;
+}
+
+#details_info {
+    margin-left: 30px;
+
+}
+
+/*Footer*/
+
+input#news_letter_email {
+    width: fit-content;
+    text-align: left;
+}
+
+.logo-foot {
+    width: 400px;
+}
+
+.filtre_ {
+    /* filter:sepia(100%) hue-rotate(950deg); */
+    filter: grayscale(100%);
+}
+
+.filtre_:hover {
+    filter: sepia(100%) grayscale(100%);
+}
+
+.ftitle {
+    color: white;
+    text-align: center;
+}
+
+footer {
+    background: black;
+    margin-top: 4em;
+}
+
+footer a {
+    color: red;
+}
+
+footer a:hover {
+    color: white;
+}
+
+.foot {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2em;
+}
+
+
+/**/
+.align_ {
+    display: flex;
+    justify-content: space-around;
+}
+
+.fdiv {
+    position: relative;
+    right: 85px;
+}
+
+.larg_ {
+    width: 200px;
+    text-align: center;
+    background: black;
+    color: white;
+    border: 1px solid white;
+    padding: 6px;
+}
+
+.sub_position {
+    position: absolute;
+    top: 0.5px;
+    left: 200px;
+    background: black;
+    color: white;
+    border: 1px solid white;
+    padding: 6px;
+
+}
+
+.title_message {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    top: 30px;
+}
+
+.ligne_ {
+    background: white;
+}
+
+.foot_r {
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.color_x {
+    color: red;
+}
+
+.tag {
+    color: lightgrey;
+    font-weight: bold;
+}
+
+/*///////////////////////////////////////////////// TABLETTE //////////////////////////////////////////////////*/
+
+@media only screen and (max-width: 1000px) {
+
+    /*TALKS*/
+    .form-search {
+        flex-direction: column;
+    }
+
+    #search {
+        margin-left: 0;
+    }
+
+    /*HOME*/
+    .banner_ctn, #banner {
+        display: flex;
+        justify-content: center;
+        height: 500PX;
+        max-width: 400PX;
+    }
+
+    #pix_article {
+        width: 70%;
+    }
+
+    .align_ {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    input#news_letter_email {
+        margin-right: 1em;
+    }
+
+    form.form-comment {
+        width: 70%;
+    }
+
+    .mobile-article {
+        flex-direction: column;
+    }
+
+    .mobile-article-col {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    #logonav {
+        margin-left: -0.5em;
+    }
+
+    .card_article {
+        margin-left: 15px;
+    }
+
+    .edito_ctn {
+        flex-direction: column;
+    }
+
+    #edito_img {
+        height: 350px;
+        margin: auto;
+        margin-bottom: 1em;
+    }
+
+    .edito_subtitle {
+        text-align: center;
+    }
+
+    /* DETAILS */
+    .details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .description {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .details_pix {
+        width: 40%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .details_ctn {
+        text-align: center;
+    }
+
+    /* CONTACT */
+    form.form-contact {
+        width: 70%;
+    }
+
+    /* SPEAKERS */
+    .mobile-speaker-all {
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .mobile-speaker {
+        max-width: 100%;
+    }
+
+    .speaker_ctn img {
+        width: 30%;
+    }
+
+    .speaker_ctn {
+        margin: 3em auto 0;
+    }
+
+    /*FOOTER*/
+    .foot {
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .foot-left {
+        text-align: center;
+    }
+
+    .foot-center {
+        text-align: center;
+    }
+
+    .foot-right {
+        text-align: center;
+    }
+
+    /* PARTENAIRES */
+    #logocontact {
+        width: 50%;
+    }
+}
+
+/*///////////////////////////////////////////////// MOBILE VERSION //////////////////////////////////////////////////*/
+
+@media only screen and (max-width: 600px) {
+
+    /*HOME*/
+    #pix_article {
+        width: 90%;
+    }
+
+    #logonav {
+        width: 100%;
+    }
+
+    .logo-foot {
+        width: 100%;
+    }
+
+    .edito {
+        width: 95%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .banner_ctn, #banner {
+        display: flex;
+        justify-content: center;
+        height: 300PX;
+        max-width: 250PX;
+    }
+
+    .comment-all {
+        margin-right: auto;
+        margin-left: auto;
+        width: 90%;
+    }
+
+    .stat {
+        width: 40%;
+    }
+
+    .edito_title {
+        font-size: 2em;
+    }
+
+    .edito_ctn {
+        font-size: 1.1em;
+        text-align: justify;
+    }
+
+    .nosvaleurs {
+        font-size: 2em;
+    }
+
+    /*DETAILS SPEAKERS*/
+    .details_pix {
+        width: 60%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    /*TALKS*/
+    .form-talk {
+        flex-direction: column;
+    }
+
+    .align_ {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .card-talk{
+        margin-right:0px;
+    }
+
+
+    /* PARTENAIRES */
+    #team_pix {
+        margin-bottom: 1em;
+        margin-top: 1em
+    }
+
+    #logocontact {
+        width: 70%;
+    }
+
+    .hp_partners {
+        font-size: 2em;
+    }
+
+    .ptn_title {
+        font-size: 2em;
+    }
+
+    .speaker_ctn img {
+        width: 50%;
+    }
+
+    /* SPEAKERS */
+    .mobile-speaker-all {
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .mobile-speaker {
+        max-width: 100%;
+    }
+
+    /* EQUIPE */
+    .row-team {
+        margin-left: 15px;
+    }
+}

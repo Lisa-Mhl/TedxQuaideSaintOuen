@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Partenaires{% endblock %}
+
+{% block body %}
+    <div class="talks_banner" xmlns="http://www.w3.org/1999/html">
+        <h1 class="ptn_title">Partenaires</h1>
+    </div>
+
+    <div class="ptn_ctn">
+        {% for category in categories %}
+            <p class="ptn_ctg">Partenaires {{ category.name }}</p><br>
+            {% for partner in category.partners %}
+                <img id="team_pix" src="{{ asset('uploads/files/' ~ partner.logo) }}" alt="{{ partner.name }}">
+            {% endfor %}
+        {% endfor %}
+        <br>
+    </div>
+
+    <div class="form_ctn">
+        <h2 class="ptn_contact"> Devenir partenaire de <br><img
+                    src="https://i.postimg.cc/3N08BZzR/TEDx-Quaide-Saint-Ouen5-removebg-preview.png" alt="LOGO TEDx SAINT OUEN"
+                    id="logocontact"></h2>
+        {% include '/home/_form_contact.html.twig' %}
+    </div>
+{% endblock %}

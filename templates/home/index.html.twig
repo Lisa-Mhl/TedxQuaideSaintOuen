@@ -1,0 +1,116 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+
+    {% for item in banner %}
+        <div class="banner_ctn" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+            <img id="banner" src="{{ asset('uploads/files/' ~ item.photo) }}" alt="{{ item.title }}">
+            <div class="link-banner">
+                <p class="bannerLink">Regarder les Talks 2020 ici :</p>
+                <a href="{{ path('talks') }}">
+                    <button class="bannerBtn bold">Talks 2020</button>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="valeurs-ctn">
+        <h2 class="nosvaleurs">Nos Valeurs</h2>
+        <div class="row mobile-article">
+            {% for item in articles %}
+                {% if item.ispublished is same as(true) %}
+                    <div class="card_article col-3 mobile-article-col">
+                        {% if item.photo %}
+                            <img class="card-img-top" id="pix_article" src="{{ asset('uploads/files/' ~ item.photo) }}"
+                                 alt="{{ item.title }}">
+                        {% endif %}
+                        {% if item.video %}
+                            <iframe class="card-img-top" id="pix_article" src="{{ item.video }}" height="300"
+                                    frameborder="0"
+                                    allow="autoplay; fullscreen" allowfullscreen></iframe>
+                        {% endif %}
+                        <div class="card-body">
+                            <h4 class="bold">{{ item.title }}</h4>
+                            <p class="article">{{ item.content }}<br>
+                                <span class="author red">{{ item.author }}</span></p>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="feedback">
+        <div class="statistics">
+            <div class="stat bold"> {{ stats.attendees }} <br>Participants</div>
+            <div class="stat bold"> {{ stats.speakers }} <br>Speakers</div>
+        </div>
+        <h2 class="nosvaleurs red">AVIS</h2>
+        <div class="comment-all">
+            {% for item in feedback %}
+                {% if item.ispublished is same as(true) %}
+                    <div class="comment-ctn">
+                        <p class="comment bold"><span class="red">"</span> {{ item.comment }} <span class="red">"</span>
+                        </p>
+                        <p class="fb_name bold">{{ item.name }}, <span class="fb_job">{{ item.job }}</p><br>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <p class="post_comment red bold">Poster un avis</p>
+
+        {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'class': 'form-comment'}}) }}
+        <div>
+            {{ form_errors(form) }}
+        </div>
+        <div>
+            {{ form_row(form.name, {'label': 'Prénom'}) }}
+        </div>
+        <div>
+            {{ form_row(form.job, {'label': 'Job'}) }}
+        </div>
+        <div class="message">
+            {{ form_row(form.comment, {'label': 'Commentaire'}) }}
+        </div>
+
+        <button class="btn">{{ button_label|default('Envoyer') }}</button>
+        {{ form_end(form) }}
+    </div>
+
+    <div class="ptn_ctn_hp">
+        <h2 class="hp_partners">Nos Partenaires</h2>
+        <div class="row justify-content-center partner">
+            {% for partner in partners %}
+                <div class="image-partner">
+                    <img src="{{ asset('uploads/files/' ~ partner.logo) }}" alt="{{ partner.name }}">
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <h1 class="edito_title"> A propos de nous </h1>
+    <div class="edito_ctn">
+        <img src="https://i.postimg.cc/YSL96NKd/title.png" alt="Edito Title" id="edito_img">
+        <article class="text-white edito">
+            <h3 class="red edito_subtitle">LE CONCEPT TED</h3>
+            TED (Technology-Entertainement-Design) est une conférence américaine créée en 1984 à
+            New-York dont l'ojectif, à but non lucratif est de "diffuser des idées qui en valent la peine" ("Ideas worth
+            spreading"). Couvrant un éventail de sujets tels que les sciences, l'art ou les problématiques mondiales, la
+            conférence TED met à disposition du public les meilleures conférences
+            sur son site Web. <br>
+            Les conférences TED ont reçu les discours de nombreuses personnalités publiques telles que le président Bill
+            Clinton ; le leader du groupe U2 Bono ; le co fondateur de Wikipédia, Jimmy Wales ; les fondateurs de
+            Google, Sergey Brin et Lawrence E. Page ; le scientifique Antonio Damasio ou le prix Nobel de la paix Al
+            Gore. <br><br>
+            <h3 class="red edito_subtitle">LES CONFERENCES TEDX</h3>
+            Afin de donner l'opportunité à sa communauté de diffuser l'espirt de ses conférences, TED
+            a créé le programme"TEDx". L'idée ? Permettre le partage d'idées, de visions, de connaissances lors de
+            conférences TEDx indépendamment organisées tout en respectant un certain nombre de critères définis par TED.
+            Des intervenants inspirants sont alors invités à partager avec le public lors de "talk" de 8 à 18 minutes
+            maximum qui pourront être visionnées par des milliers de fans de TEDx dans le monde entier.
+        </article>
+    </div>
+
+{% endblock %}

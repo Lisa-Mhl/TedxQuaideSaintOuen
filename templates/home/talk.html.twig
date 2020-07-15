@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+{% block title %}Talks{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/algolia-autocomplete.css') }}">
+{% endblock %}
+{% block body %}
+    <div class="talks_banner" xmlns="http://www.w3.org/1999/html">
+        <h1 class="ptn_title">Talks</h1>
+    </div>
+    <div class="bloc_page_content_talks">
+            {{ form_start(form) }}
+            <div class="form-ctn">
+                <div class="form-search">
+                    {{ form_row(form.name, { 'label': ' '}) }}
+                        <button class="btn" id="search">{{ button_label|default('Rechercher') }}</button>
+                </div>
+            </div>
+            {{ form_end(form) }}
+        <div class="ctn-talks">
+            {% if talks %}
+            <div class="row">
+                {% for talk in talks %}
+                    {% if talk.ispublished is same as(true) %}
+                        <div class="card card-talk col-lg-3 col-md-6 col-sm-9">
+                            <a href="{{ talk.video }}"><img class="card-img-top img-talk" src="{{ asset('uploads/files/' ~ talk.photo) }}" alt="Avatar" style="width:100%"></a>
+                            <div class="card-body talk_body">
+                                <h4><b>{{ talk.title }}</b></h4>
+                                {% for speaker in talk.speakers %}
+                                    <p>{{ speaker.name }}</p>
+                                {% endfor %}
+                                {% for tag in talk.tags %}
+                                    <small class="tag">#{{ tag.name }}</small>
+                                {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+        </div>
+            {% else %}
+                <div class="not-found-talk">
+                    <h2 class="text-white">Nous n'avons rien trouvé</h2>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.jquery.min.js"></script>
+    <script src="{{ asset('js/algolia-autocomplete.js') }}"></script>
+{% endblock %}

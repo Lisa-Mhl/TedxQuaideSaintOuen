@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}speakers{% endblock %}
+
+{% block body %}
+    <div class="talks_banner" xmlns="http://www.w3.org/1999/html">
+        <h1 class="ptn_title">Speakers</h1>
+    </div>
+
+    <div class="speakers_all">
+        <div class="row mobile-speaker-all">
+            {% for speaker in speakers %}
+                <div class="speaker_ctn col-4 mobile-speaker">
+                    <a href="{{ path('info', {'id': speaker.id}) }}"><img src="{{ asset('uploads/files/' ~ speaker.photo) }}" alt="{{ speaker.name }}"></a>
+                    <p class="speaker_name"> {{ speaker.name }}<br>
+                    <p class="red bold">{{ speaker.job }}</p>
+                </div>
+            {% endfor %}
+            <br>
+        </div>
+    </div>
+
+{% endblock %}

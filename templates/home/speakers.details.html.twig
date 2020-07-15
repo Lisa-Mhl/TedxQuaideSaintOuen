@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}A propos de {{ speaker.name }}{% endblock %}
+
+{% block body %}
+    <div class="talks_banner" xmlns="http://www.w3.org/1999/html">
+        <h1 class="ptn_title">A propos de {{ speaker.name }}</h1>
+    </div>
+    <div class="details">
+        <p class="description text-white">{{ speaker.description }} <br><br>
+            {% if speaker.link %}
+            <a href="{{ speaker.link }}" target="_blank">En savoir plus</a><br>
+        {% endif %}
+        <a class="backLink" href="{{ path('speakers') }}">Retour aux speakers</a></p>
+        <div class="details_ctn">
+            <img class="details_pix" src="{{ asset('uploads/files/' ~ speaker.photo) }}" alt="{{ speaker.name }}">
+            <p id="details_info" class="text-white">{{ speaker.name }}, <span class="red"> {{ speaker.job }} </span></p>
+        </div>
+    </div>
+{% endblock %}
