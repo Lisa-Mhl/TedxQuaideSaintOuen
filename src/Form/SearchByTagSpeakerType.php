@@ -2,14 +2,12 @@
 
 namespace App\Form;
 
-use App\Entity\Tag;
-use Doctrine\DBAL\Types\TextType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Routing\RouterInterface;
 
-class SearchByTagType extends AbstractType
+class SearchByTagSpeakerType extends AbstractType
 {
     /**
      * @var RouterInterface
@@ -23,6 +21,9 @@ class SearchByTagType extends AbstractType
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+         /* Data tag url and speaker tag url comes from
+         AdminController and are given to the algolia-autocomplete.js
+         in public/js */
         $builder
             ->add('name', null, ['attr' => [
                 'class' => 'js-search-autocomplete',

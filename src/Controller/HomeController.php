@@ -9,7 +9,7 @@ use App\Entity\Speaker;
 use App\Form\ContactType;
 use App\Form\FeedBackType;
 use App\Form\NewsLetterType;
-use App\Form\SearchByTagType;
+use App\Form\SearchByTagSpeakerType;
 use App\Repository\ArticleRepository;
 use App\Repository\BannerRepository;
 use App\Repository\CategoryTeamRepository;
@@ -36,18 +36,23 @@ class HomeController extends AbstractController
      */
     public function index(BannerRepository $bannerRepository, ArticleRepository $articleRepository, Request $request, FeedbackRepository $feedbackRepository, PartnerRepository $partnerRepository, StatsRepository $statsRepository): Response
     {
+        # SEND THE DATA TO THE DATABASE ON SUBMIT FOR FEEDBACK ON INDEX #
         $feedback = new Feedback();
         $form = $this->createForm(FeedBackType::class, $feedback);
         $form->handleRequest($request);
+
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($feedback);
             $entityManager->flush();
             return $this->redirectToRoute('home');
         }
+
+        # SEND THE DATA TO THE DATABASE ON SUBMIT FOR NEWSLETTER ON INDEX #
         $newsletter = new Newsletter();
         $formNewsLetter = $this->createForm(NewsLetterType::class, $newsletter);
         $formNewsLetter->handleRequest($request);
+
         if ($formNewsLetter->isSubmitted() && $formNewsLetter->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($newsletter);
@@ -73,6 +78,7 @@ class HomeController extends AbstractController
      */
     public function partners(PartnerRepository $partnerRepository, CategoryPartnerRepository $categoryPartnerRepository, Request $request, Mailer $mailer): Response
     {
+        # SEND THE DATA TO THE DATABASE ON SUBMIT FOR CONTACT FORM ON PARTNER #
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
@@ -82,14 +88,17 @@ class HomeController extends AbstractController
             $contact->setCreatedAt(new \DateTime());
             $entityManager->persist($contact);
             $entityManager->flush();
-            // CALL METHOD IN SERVICE TO SEND MAIL
+            // CALL METHOD IN MAILER.PHP SERVICE TO SEND MAIL
             $mailer->contactMail($contact);
 
             return $this->redirectToRoute('home');
         }
+
+        # SEND THE DATA TO THE DATABASE ON SUBMIT FOR NEWSLETTER ON PARTNERS #
         $newsletter = new Newsletter();
         $formNewsLetter = $this->createForm(NewsLetterType::class, $newsletter);
         $formNewsLetter->handleRequest($request);
+
         if ($formNewsLetter->isSubmitted() && $formNewsLetter->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($newsletter);
@@ -111,7 +120,9 @@ class HomeController extends AbstractController
      */
     public function speakers(SpeakerRepository $SpeakerRepository, Request $request): Response
     {
+        # SEND THE DATA TO THE DATABASE ON SUBMIT FOR NEWSLETTER ON SPEAKERS #
         $newsletter = new Newsletter();
+
         $formNewsLetter = $this->createForm(NewsLetterType::class, $newsletter);
         $formNewsLetter->handleRequest($request);
         if ($formNewsLetter->isSubmitted() && $formNewsLetter->isValid()) {
@@ -133,9 +144,11 @@ class HomeController extends AbstractController
      */
     public function info(Speaker $speaker, Request $request): Response
     {
+        # SEND THE DATA TO THE DATABASE ON SUBMIT FOR NEWSLETTER ON SPEAKERS DETAILS #
         $newsletter = new Newsletter();
         $formNewsLetter = $this->createForm(NewsLetterType::class, $newsletter);
         $formNewsLetter->handleRequest($request);
+
         if ($formNewsLetter->isSubmitted() && $formNewsLetter->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($newsletter);
@@ -156,6 +169,7 @@ class HomeController extends AbstractController
      */
     public function contact(Request $request, Mailer $mailer): Response
     {
+        # SEND THE DATA TO THE DATABASE ON SUBMIT FOR CONTACT ON CONTACT #
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
@@ -165,11 +179,13 @@ class HomeController extends AbstractController
             $contact->setCreatedAt(new \DateTime());
             $entityManager->persist($contact);
             $entityManager->flush();
-            // CALL METHOD IN SERVICE TO SEND MAIL
+            // CALL METHOD IN MAILER.PHP SERVICE TO SEND MAIL
             $mailer->contactMail($contact);
 
             return $this->redirectToRoute('home');
         }
+
+        # SEND THE DATA TO THE DATABASE ON SUBMIT FOR NEWSLETTER ON CONTACT #
         $newsletter = new Newsletter();
         $formNewsLetter = $this->createForm(NewsLetterType::class, $newsletter);
         $formNewsLetter->handleRequest($request);
@@ -192,19 +208,25 @@ class HomeController extends AbstractController
      */
     public function talks(Request $request, Searcher $searcher): Response
     {
-        $form = $this->createForm(SearchByTagType::class);
+        # CALL SEARCH FORM TYPE FOR AUTOCOMPLETE #
+        $form = $this->createForm(SearchByTagSpeakerType::class);
         $form->handleRequest($request);
 
+        # ON SUBMIT GIVE TALKS RESULT(S) BY TAG OR SPEAKER #
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->get('name')->getData();
-            // CALL METHOD IN SERVICE TO SEARCH TAG AND SPEAKER
+            // CALL METHOD IN SEARCHER.PHP SERVICE TO SEARCH TAG AND SPEAKER
             $talk = $searcher->searchByTagSpeaker($data);
         } else {
+            # IF FORM SUBMITTED BLANK, RETURN ALL RESULTS #
             $talk = $this->getDoctrine()->getRepository(Talk::class)->findAll();
         }
+
+        # SEND THE DATA TO THE DATABASE ON SUBMIT FOR NEWSLETTER ON TALKS #
         $newsletter = new Newsletter();
         $formNewsLetter = $this->createForm(NewsLetterType::class, $newsletter);
         $formNewsLetter->handleRequest($request);
+
         if ($formNewsLetter->isSubmitted() && $formNewsLetter->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($newsletter);
@@ -225,9 +247,11 @@ class HomeController extends AbstractController
      */
     public function teams(TeamRepository $teamRepository, CategoryTeamRepository $categoryTeamRepository, Request $request): Response
     {
+        # SEND THE DATA TO THE DATABASE ON SUBMIT FOR NEWSLETTER ON TEAMS #
         $newsletter = new Newsletter();
         $formNewsLetter = $this->createForm(NewsLetterType::class, $newsletter);
         $formNewsLetter->handleRequest($request);
+
         if ($formNewsLetter->isSubmitted() && $formNewsLetter->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($newsletter);
@@ -248,9 +272,11 @@ class HomeController extends AbstractController
      */
     public function legalMentions(LegalMentionsRepository $legalMentionsRepository, Request $request): Response
     {
+        # SEND THE DATA TO THE DATABASE ON SUBMIT FOR NEWSLETTER ON LEGAL MENTIONS #
         $newsletter = new Newsletter();
         $formNewsLetter = $this->createForm(NewsLetterType::class, $newsletter);
         $formNewsLetter->handleRequest($request);
+
         if ($formNewsLetter->isSubmitted() && $formNewsLetter->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($newsletter);

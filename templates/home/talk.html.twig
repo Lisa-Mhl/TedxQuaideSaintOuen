@@ -22,7 +22,7 @@
             <div class="row">
                 {% for talk in talks %}
                     {% if talk.ispublished is same as(true) %}
-                        <div class="card card-talk col-lg-3 col-md-6 col-sm-9">
+                        <div class="card card-talk col-xl-3 col-lg-5 col-md-6 col-sm-9">
                             <a href="{{ talk.video }}"><img class="card-img-top img-talk" src="{{ asset('uploads/files/' ~ talk.photo) }}" alt="Avatar" style="width:100%"></a>
                             <div class="card-body talk_body">
                                 <h4><b>{{ talk.title }}</b></h4>
