@@ -64,6 +64,11 @@
     margin-top: 1em;
 }
 
+#edito_img {
+    height: 50%;
+    margin: auto;
+}
+
 .partner {
     margin-left: 0;
 }
@@ -206,7 +211,7 @@
 .edito_ctn {
     display: flex;
     flex-direction: row;
-    width: 80%;
+    width: 85%;
     text-align: justify;
     margin-left: auto;
     margin-right: auto;
@@ -362,11 +367,11 @@ body {
 .team_ctn {
     text-align: center;
     color: white;
-    margin: 3em auto -5em;
+    margin: 3em 2em -5em;
 }
 
 .row-team {
-    margin-left: 0;
+    margin-left: inherit;
 }
 
 .team_all {
@@ -592,11 +597,35 @@ footer a:hover {
 
 /*///////////////////////////////////////////////// TABLETTE //////////////////////////////////////////////////*/
 
+@media only screen and (max-width: 1400px) {
+
+    /*HOME*/
+    .edito_ctn {
+        flex-direction: column;
+    }
+
+    #edito_img {
+        height: 20em;
+        margin: auto auto 1em;
+    }
+
+    .edito_subtitle {
+        text-align: center;
+    }
+}
+
 @media only screen and (max-width: 1000px) {
 
     /*TALKS*/
     .form-search {
         flex-direction: column;
+    }
+
+    .card-talk {
+        width: 450px;
+        background-color: transparent;
+        margin-bottom: 2em;
+        margin-right: unset;
     }
 
     #search {
@@ -645,20 +674,6 @@ footer a:hover {
         margin-left: 15px;
     }
 
-    .edito_ctn {
-        flex-direction: column;
-    }
-
-    #edito_img {
-        height: 350px;
-        margin: auto;
-        margin-bottom: 1em;
-    }
-
-    .edito_subtitle {
-        text-align: center;
-    }
-
     /* DETAILS */
     .details {
         display: flex;
@@ -689,7 +704,6 @@ footer a:hover {
     /* SPEAKERS */
     .mobile-speaker-all {
         flex-direction: column;
-        margin-left: 0;
     }
 
     .mobile-speaker {
@@ -749,6 +763,11 @@ footer a:hover {
         width: 95%;
         margin-right: auto;
         margin-left: auto;
+    }
+
+    #edito_img {
+        height: 10em;
+        margin: auto auto 1em;
     }
 
     .banner_ctn, #banner {
@@ -828,15 +847,9 @@ footer a:hover {
     /* SPEAKERS */
     .mobile-speaker-all {
         flex-direction: column;
-        margin-left: 0;
     }
 
     .mobile-speaker {
         max-width: 100%;
-    }
-
-    /* EQUIPE */
-    .row-team {
-        margin-left: 15px;
     }
 }

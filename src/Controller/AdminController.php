@@ -25,6 +25,7 @@ class AdminController extends AbstractController
      */
     public function getYoutubeVideoTalk(Request $request)
     {
+        # GET THE YOUTUBE LINK FOR EACH ROW IN EASY-ADMIN #
         $repository = $this->getDoctrine()->getRepository(Talk::class);
         $id = $request->query->get('id');
         $talk = $repository->find($id);
@@ -37,6 +38,7 @@ class AdminController extends AbstractController
      */
     public function getYoutubeVideoArticle(Request $request)
     {
+        # GET THE YOUTUBE LINK FOR EACH ROW IN EASY-ADMIN #
         $repository = $this->getDoctrine()->getRepository(Article::class);
         $id = $request->query->get('id');
         $article = $repository->find($id);
@@ -49,6 +51,7 @@ class AdminController extends AbstractController
      */
     public function getLinkedinSpeaker(Request $request)
     {
+        # GET THE SOCIAL LINK FOR EACH ROW IN EASY-ADMIN #
         $repository = $this->getDoctrine()->getRepository(Speaker::class);
         $id = $request->query->get('id');
         $speaker = $repository->find($id);
@@ -61,6 +64,7 @@ class AdminController extends AbstractController
      */
     public function getLinkedinTeam(Request $request)
     {
+        # GET THE SOCIAL LINK FOR EACH ROW IN EASY-ADMIN #
         $repository = $this->getDoctrine()->getRepository(Team::class);
         $id = $request->query->get('id');
         $team = $repository->find($id);
@@ -73,6 +77,7 @@ class AdminController extends AbstractController
      */
     public function sendEmailContact(Request $request, Mailer $mailer)
     {
+        # SEND AN EMAIL USING THE TEMPLATE TO THE CONTACT IN EASY-ADMIN #
         $repository = $this->getDoctrine()->getRepository(Contact::class);
         $id = $request->query->get('id');
         $contact = $repository->find($id);
@@ -81,7 +86,7 @@ class AdminController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // CALL METHOD IN SERVICE TO SEND MAIL
+            // CALL METHOD IN MAILER.PHP SERVICE TO SEND MAIL
             $mailer->adminContactEmail($contact);
 
             return $this->redirectToRoute('easyadmin', ['entity' => 'Contact']);
@@ -98,6 +103,7 @@ class AdminController extends AbstractController
      */
     public function getNewsLetterEmails(NewsletterRepository $newsletterRepository)
     {
+        # GET ALL THE EMAIL ON A BLANK PAGE FOR NEWSLETTER IN EASY-ADMIN #
         return $this->render('admin/newsletter_email.html.twig', [
             'newsletters' => $newsletterRepository->findAll(),
         ]);

@@ -17,6 +17,7 @@ class UserUtilityController extends AbstractController
      */
     public function getTagsApi(TagRepository $tagRepository, Request $request)
     {
+        # TURN DATABASE DATA INTO JSON FOR AUTOCOMPLETE #
         $tags = $tagRepository->findAllMatching($request->query->get('query'));
 
         return $this->json([
@@ -29,6 +30,7 @@ class UserUtilityController extends AbstractController
      */
     public function getSpeakersApi(SpeakerRepository $speakerRepository, Request $request)
     {
+        # TURN DATABASE DATA INTO JSON FOR AUTOCOMPLETE #
         $speakers = $speakerRepository->findAllMatching($request->query->get('query'));
 
         return $this->json([
