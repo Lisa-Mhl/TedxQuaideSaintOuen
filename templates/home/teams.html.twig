@@ -12,7 +12,7 @@
 
     <div class="team_all">
         <div class="row">
-            {% for category in categories %}
+            {% for category in categories|sort((a,b) => a.name > b.name ) %}
                 <div class="row row-team">
                     {% for team in category.teams %}
                         <div class="team_ctn">

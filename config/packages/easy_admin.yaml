@@ -24,6 +24,8 @@ easy_admin:
     entities:
         Talks:
             class: App\Entity\Talk
+            help: "<i style='color: #4b6df5' class='fas fa-info-circle'></i> Vous pouvez décider si vous voulez publier les talks grâce au bouton Publié <br>
+                   <i style='color: #4b6df5' class='fas fa-info-circle'></i> Vous devrez ajouter les tags et les speakers dans leurs onglets respectifs avant de pouvoir les utiliser ici"
             list:
                 actions:
                     - { name: 'youtube_talk', type: 'route', label: 'Youtube', icon: 'video', css_class: 'btn btn-dark', target: '_blank' }
@@ -50,12 +52,13 @@ easy_admin:
                     - { property: 'photoFile', type: 'vich_image', label: 'Fichier photo' }
                     - { property: 'title', label: 'Titre' }
                     - 'video'
-                    - { property: 'speakers', type_options: { by_reference: false }}
-                    - { property: 'tags', type_options: { by_reference: false }}
+                    - { property: 'speakers', type_options: { by_reference: false }, help: "<i style='color: #4b6df5' class='fas fa-info-circle'></i> Cliquez pour choisir un ou plusieurs speakers."}
+                    - { property: 'tags', type_options: { by_reference: false }, help: "<i style='color: #4b6df5' class='fas fa-info-circle'></i> Cliquez pour choisir un ou plusieurs tags."}
                     - { property: 'content', label: 'Contenu' }
 
         Articles:
             class: App\Entity\Article
+            help: "<i style='color: #4b6df5' class='fas fa-info-circle'></i> Vous pouvez décider si vous voulez publier les articles grâce au bouton Publié"
             list:
                 actions:
                     - { name: 'youtube_article', type: 'route', label: 'Youtube', icon: 'video', css_class: 'btn btn-dark', target: '_blank' }
@@ -75,6 +78,7 @@ easy_admin:
                     - 'video'
                     - { property: 'content', label: 'Contenu' }
             form:
+                help: "<i style='color: red' class='fas fa-info-circle'></i> Vous ne pouvez choisir qu'une photo ou vidéo par article"
                 fields:
                     - { property: 'photoFile', type: 'vich_image', label: 'Fichier photo' }
                     - { property: 'title', label: 'Titre' }
@@ -86,7 +90,7 @@ easy_admin:
             class: App\Entity\Speaker
             list:
                 actions:
-                    - { name: 'linkedin_speaker', type: 'route', label: 'Linkedin', icon: 'link', css_class: 'btn btn-dark', target: '_blank' }
+                    - { name: 'linkedin_speaker', type: 'route', label: 'Réseau/Linkedin', icon: 'link', css_class: 'btn btn-dark', target: '_blank' }
                     - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
                     - { name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
                     - { name: 'new', icon: 'plus', label: 'Ajouter', css_class: 'btn btn-success' }
@@ -108,8 +112,8 @@ easy_admin:
                     - { property: 'photoFile', type: 'vich_image', label: 'Fichier photo' }
                     - { property: 'name', label: 'Nom' }
                     - { property: 'job', label: 'Métier' }
-                    - { property: 'link', label: 'Lien' }
-                    - { property: 'talks', type_options: { by_reference: false }}
+                    - { property: 'link', label: 'Lien', help: "<i style='color: #4b6df5' class='fas fa-info-circle'></i> Si vous n'avez pas de lien pour le réseau, mettez un #" }
+                    - { property: 'talks', type_options: { by_reference: false }, help: "<i style='color: #4b6df5' class='fas fa-info-circle'></i> Cliquez pour choisir un ou plusieurs talks."}
                     - 'description'
 
         Tags:
@@ -129,13 +133,14 @@ easy_admin:
             form:
                 fields:
                     - { property: 'name', label: 'Nom' }
-                    - { property: 'talks', type_options: { by_reference: false }}
+                    - { property: 'talks', type_options: { by_reference: false }, help: "<i style='color: #4b6df5' class='fas fa-info-circle'></i> Cliquez pour choisir un ou plusieurs talks."}
 
         Equipe:
             class: App\Entity\Team
+            help: "<i style='color: #4b6df5' class='fas fa-info-circle'></i> Vous devrez ajouter une catégorie dans Categorie_Equipes avant de pouvoir l'utiliser ici"
             list:
                 actions:
-                    - { name: 'linkedin_team', type: 'route', label: 'Linkedin', icon: 'link', css_class: 'btn btn-dark', target: '_blank' }
+                    - { name: 'linkedin_team', type: 'route', label: 'Réseau/Linkedin', icon: 'link', css_class: 'btn btn-dark', target: '_blank' }
                     - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
                     - { name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
                     - { name: 'new', icon: 'plus', label: 'Ajouter', css_class: 'btn btn-success' }
@@ -156,11 +161,12 @@ easy_admin:
                     - { property: 'photoFile', type: 'vich_image', label: 'Fichier photo' }
                     - { property: 'name', label: 'Nom' }
                     - { property: 'job', label: 'Métier' }
-                    - { property: 'link', label: 'Lien' }
-                    - { property: 'category', label: 'Catégorie', type_options: { by_reference: false }}
+                    - { property: 'link', label: 'Lien', help: "<i style='color: #4b6df5' class='fas fa-info-circle'></i> Si vous n'avez pas de lien pour le réseau, mettez un #" }
+                    - { property: 'category', label: 'Catégorie', type_options: { by_reference: false }, help: "<i style='color: #4b6df5' class='fas fa-info-circle'></i> Cliquez pour choisir une catégorie (Obligatoire)"}
 
         Partenaires:
             class: App\Entity\Partner
+            help: "<i style='color: #4b6df5' class='fas fa-info-circle'></i> Vous devrez ajouter une catégorie dans Categorie_Partenaires avant de pouvoir l'utiliser ici"
             list:
                 actions:
                     - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
@@ -179,10 +185,11 @@ easy_admin:
                 fields:
                     - { property: 'logoFile', type: 'vich_image', label: 'Fichier photo' }
                     - { property: 'name', label: 'Nom' }
-                    - { property: 'category', label: 'Catégorie', type_options: { by_reference: false }}
+                    - { property: 'category', label: 'Catégorie', type_options: { by_reference: false }, help: "<i style='color: #4b6df5' class='fas fa-info-circle'></i> Cliquez pour choisir une catégorie. (Obligatoire)"}
 
         Banniere:
             class: App\Entity\Banner
+            help: "<i style='color: #4b6df5' class='fas fa-info-circle'></i> Vous ne pouvez mettre qu'une seule bannière à la fois"
             list:
                 actions:
                     - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
@@ -203,6 +210,7 @@ easy_admin:
         Avis:
             class: App\Entity\Feedback
             disabled_actions: ['new']
+            help: "<i style='color: #4b6df5' class='fas fa-info-circle'></i> Les avis n'apparaissent pas par défaut, vous devez les valider grâce au bouton Publié. (3-4 recommandés)"
             list:
                 actions:
                     - { name: 'show', icon: 'eye', label: false, css_class: 'btn btn-primary' }
@@ -244,6 +252,7 @@ easy_admin:
         NewsLetter:
             class: App\Entity\Newsletter
             disabled_actions: ['new','edit']
+            help: "<i style='color: #4b6df5' class='fas fa-info-circle'></i> Vous pouvez accéder à la liste de tous les emails grâce au bouton Tous les emails"
             list:
                 actions:
                     - { name: 'show', icon: 'eye', label: false, css_class: 'btn btn-primary' }
@@ -260,9 +269,10 @@ easy_admin:
         Contact:
             class: App\Entity\Contact
             disabled_actions: ['edit','new']
+            help: "<i style='color: #4b6df5' class='fas fa-info-circle'></i> Vous pouvez répondre à chaque email en utilisant le bouton répondre, vous aurez le template par défaut."
             list:
                 actions:
-                    - { name: 'email_contact', type: 'route', label: 'Repondre', icon: 'pencil', css_class: 'btn btn-dark', target: '_blank' }
+                    - { name: 'email_contact', type: 'route', label: 'Répondre', icon: 'pencil', css_class: 'btn btn-dark', target: '_blank' }
                     - { name: 'show', icon: 'eye', label: false, css_class: 'btn btn-primary' }
                     - { name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
                 fields:
@@ -282,6 +292,8 @@ easy_admin:
 
         Categorie_Partenaires:
             class: App\Entity\CategoryPartner
+            help: "<i style='color: #4b6df5' class='fas fa-info-circle'></i>  Vous pouvez ajouter des catégories et elles seront triées par années décroissante sur le site. <br>
+                   <i style='color: red' class='fas fa-info-circle'></i> Pour supprimer une catégorie vous devez enlever/dissocier chaque partenaires de celle ci."
             list:
                 actions:
                     - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
@@ -297,11 +309,13 @@ easy_admin:
             form:
                 fields:
                     - { property: 'name', label: 'Nom' }
-                    - { property: 'partners', label: 'Partenaire', type_options: { by_reference: false }}
+                    - { property: 'partners', label: 'Partenaire', type_options: { by_reference: false }, help: "<i style='color: #4b6df5' class='fas fa-info-circle'></i> Cliquez pour choisir des partenaires."}
 
 
         Categorie_Equipes:
             class: App\Entity\CategoryTeam
+            help: "<i style='color: #4b6df5' class='fas fa-info-circle'></i> Nous vous recommandons de ne garder que deux catégories d'équipe. Elles seront affichés par ordre alphabétique sur le site <br>
+                   <i style='color: red' class='fas fa-info-circle'></i> Pour supprimer une catégorie vous devez enlever/dissocier chaque membres de celle ci."
             list:
                 actions:
                     - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
@@ -317,10 +331,11 @@ easy_admin:
             form:
                 fields:
                     - { property: 'name', label: 'Nom' }
-                    - { property: 'teams', label: 'Equipe', type_options: { by_reference: false }}
+                    - { property: 'teams', label: 'Equipe', type_options: { by_reference: false }, help: "<i style='color: #4b6df5' class='fas fa-info-circle'></i> Cliquez pour choisir des membres."}
 
         Mentions_Legales:
             class: App\Entity\LegalMentions
+            help: "<i style='color: #4b6df5' class='fas fa-info-circle'></i> Vous ne pouvez mettre qu'une seule mentions légales à la fois"
             list:
                 actions:
                     - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
